@@ -1,0 +1,2568 @@
+{
+  "projeto": "Karatê Shotokan - Dados Completos",
+  "exportadoEm": "2026-09-05T15:05:18.691Z",
+  "navegacao": [
+    {
+      "id": "home",
+      "label": "Home",
+      "kanji": "家"
+    },
+    {
+      "id": "historia",
+      "label": "História",
+      "kanji": "歴史"
+    },
+    {
+      "id": "fundamentos",
+      "label": "Fundamentos",
+      "kanji": "基本"
+    },
+    {
+      "id": "beneficios",
+      "label": "Benefícios",
+      "kanji": "利益"
+    },
+    {
+      "id": "tecnicas",
+      "label": "Técnicas",
+      "kanji": "技術"
+    },
+    {
+      "id": "katas",
+      "label": "Katas",
+      "kanji": "型"
+    },
+    {
+      "id": "curiosidades",
+      "label": "Curiosidades",
+      "kanji": "雑学"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "Séc. XIV",
+      "title": "Origens em Okinawa",
+      "kanjiTranslate": "Okinawa",
+      "kanji": "沖縄",
+      "text": "Mistura de artes marciais chinesas (Quanfa) com técnicas locais de luta okinawanas dá origem ao 'Te'.",
+      "detail": "O Reino de Ryūkyū (atual Okinawa) mantinha intensas relações comerciais e diplomáticas com a China da dinastia Ming. Monges e mercadores chineses traziam o Quanfa (拳法 — 'lei do punho'), que se mesclava ao Tī okinawano em três centros principais: Shuri, Naha e Tomari. Em 1429 o rei Shō Hashi unifica Okinawa; em 1477 o rei Shō Shin proíbe armas entre nobres e camponeses. Sem espadas, o Tī floresce como arte secreta, transmitida apenas dentro de famílias."
+    },
+    {
+      "year": "1609",
+      "title": "Invasão de Satsuma",
+      "kanjiTranslate": "Satsuma",
+      "kanji": "薩摩",
+      "text": "O clã japonês Satsuma invade Okinawa e impõe novo banimento de armas — o Te se torna ainda mais secreto.",
+      "detail": "O domínio Satsuma, do sul de Kyushu, conquista Ryūkyū e proíbe absolutamente o porte de qualquer arma, mesmo facas longas. A nobreza okinawana (os pechin) recorre clandestinamente ao Te como única defesa. Surgem também as armas Kobudō a partir de ferramentas de fazenda — nunchaku (mangual de arroz), sai, tonfa, kama. O karatê amadurece em silêncio por três séculos, oculto sob o turismo cultural."
+    },
+    {
+      "year": "1868",
+      "title": "Nasce Gichin Funakoshi",
+      "kanjiTranslate": "Funakoshi",
+      "kanji": "船越",
+      "text": "Em Shuri, Okinawa, nasce o futuro fundador do Shotokan.",
+      "detail": "Funakoshi Gichin nasce frágil, prematuro, em uma família nobre empobrecida. Ainda criança torna-se discípulo de dois grandes mestres do Shuri-te: Anko Asato e Anko Itosu. Forma-se professor de escola primária — profissão que exerceria por décadas. Era também poeta e calígrafo, e assinava seus versos com o pseudônimo Shōtō (松濤 — 'ondas de pinheiros'), inspirado no som do vento ao caminhar pelos pinheirais do monte Torao."
+    },
+    {
+      "year": "1901",
+      "title": "Karatê entra nas escolas",
+      "kanjiTranslate": "Escolas",
+      "kanji": "学校",
+      "text": "Anko Itosu introduz o karatê no currículo das escolas primárias de Okinawa.",
+      "detail": "Itosu, mestre de Funakoshi, convence o governo de que o karatê pode formar jovens fortes e disciplinados para o exército imperial. Simplifica katas perigosos, criando os cinco Pinan/Heian. Pela primeira vez o karatê sai da clandestinidade e é ensinado abertamente. Funakoshi, então professor, é peça-chave nessa transição, demonstrando técnicas em escolas de toda a ilha."
+    },
+    {
+      "year": "1922",
+      "title": "Demonstração em Tóquio",
+      "kanjiTranslate": "Tóquio",
+      "kanji": "東京",
+      "text": "Funakoshi apresenta o karatê ao Japão continental a convite do Ministério da Educação.",
+      "detail": "Aos 53 anos, Funakoshi é escolhido para representar Okinawa na 1ª Exposição Nacional de Educação Física, em Tóquio. Sua demonstração impressiona Jigoro Kano (fundador do Judô), que o convida ao Kodokan. Funakoshi decide ficar — abandona o cargo de professor, deixa a família em Okinawa e vive em alojamentos de estudantes, dando aulas em troca de hospedagem. Começa a publicar livros para difundir a arte."
+    },
+    {
+      "year": "1935",
+      "title": "Karatê muda de ideograma",
+      "kanjiTranslate": "Mão Vazia",
+      "kanji": "空手",
+      "text": "Funakoshi muda o ideograma de 唐手 ('mão chinesa') para 空手 ('mão vazia').",
+      "detail": "Em um Japão nacionalista às vésperas da guerra, manter o ideograma 'chinês' era politicamente perigoso. Mas a mudança ia além: 空 (kara, 'vazio') vem do conceito zen-budista de vazio — vazio de armas, vazio de ego, vazio de intenções agressivas. O karatê deixa de ser apenas uma técnica e se afirma como uma via espiritual: Karate-Dō (空手道)."
+    },
+    {
+      "year": "1936",
+      "title": "Fundação do Shotokan",
+      "kanjiTranslate": "Shotokan",
+      "kanji": "松濤館",
+      "text": "É inaugurado o dojo 'Shotokan' — 'Salão das Ondas de Pinheiros', em homenagem ao pseudônimo de Funakoshi.",
+      "detail": "Após anos ensinando em locais emprestados, alunos e admiradores constroem o primeiro dojo permanente de Funakoshi em Zōshigaya, Tóquio. Colocam acima da porta uma placa com a palavra Shōtō-kan. O nome do prédio acabou batizando o estilo — algo que Funakoshi nunca pretendeu, já que para ele só existia 'karatê', sem subdivisões. Seu filho Gigō transforma a técnica nesse período: bases mais longas, chutes altos, kumite dinâmico."
+    },
+    {
+      "year": "1945",
+      "title": "Tragédia e renascimento",
+      "kanjiTranslate": "Renascimento",
+      "kanji": "再生",
+      "text": "O dojo Shotokan é destruído em bombardeio aliado. Gigō Funakoshi morre de tuberculose aos 39 anos.",
+      "detail": "Em maio de 1945, o bombardeio de Tóquio reduz o Shotokan a cinzas. Meses depois, Gigō Funakoshi — o filho que tinha modernizado a técnica — morre de tuberculose. O velho Funakoshi, com 77 anos, perde dojo, filho e país no mesmo ano. Ainda assim, recomeça: reúne os discípulos sobreviventes e segue ensinando até a morte em 1957, repetindo: 'O verdadeiro karatê está dentro de cada um, não nas paredes de um prédio'."
+    },
+    {
+      "year": "1949",
+      "title": "JKA é criada",
+      "kanjiTranslate": "JKA",
+      "kanji": "協会",
+      "text": "Fundada a Japan Karate Association, que populariza o estilo no mundo.",
+      "detail": "Discípulos diretos de Funakoshi — entre eles Masatoshi Nakayama — fundam a Nihon Karate Kyōkai (JKA) para preservar e expandir o ensino. Nakayama sistematiza o currículo, cria as primeiras regras de competição (kumite shiai, 1957) e implementa o lendário 'curso de instrutores', programa de 3 anos que forma os mestres responsáveis por levar o Shotokan ao mundo: Kanazawa, Enoeda, Nishiyama, Kase, Asai, Mikami…"
+    },
+    {
+      "year": "1957",
+      "title": "Falece Gichin Funakoshi",
+      "kanjiTranslate": "Fim",
+      "kanji": "終焉",
+      "text": "Aos 88 anos, o pai do karatê moderno parte — mas seu legado já alcança os cinco continentes.",
+      "detail": "Funakoshi morre em 26 de abril de 1957, em Tóquio. Sua autobiografia 'Karate-Dō: Meu Modo de Vida' já é leitura obrigatória; os Niju Kun (20 preceitos) já foram esculpidos em pedra; seus discípulos já partiram para abrir dojos da Alemanha aos Estados Unidos, da África do Sul à América do Sul. Em seu túmulo, em Kamakura, lê-se: 空手に先手なし — 'No karatê, não existe primeiro ataque'."
+    },
+    {
+      "year": "1960s-80s",
+      "title": "Expansão mundial",
+      "kanjiTranslate": "Popularização",
+      "kanji": "世界",
+      "text": "Mestres da JKA partem para ensinar nos cinco continentes — o karatê deixa de ser japonês para ser do mundo.",
+      "detail": "Hidetaka Nishiyama vai aos EUA (1961); Hirokazu Kanazawa abre a Inglaterra (1965) antes de fundar a SKIF; Keinosuke Enoeda fica no Reino Unido; Taiji Kase domina a Europa Ocidental a partir de Paris; Mikami chega à América Latina. Cada mestre forma milhares de alunos, e em poucas gerações o Shotokan se torna o estilo de karatê mais praticado do planeta — com presença em mais de 190 países."
+    },
+    {
+      "year": "2020",
+      "title": "Olimpíadas de Tóquio",
+      "kanjiTranslate": "Olimpíadas",
+      "kanji": "五輪",
+      "text": "O karatê estreia como modalidade olímpica oficial, exatamente em Tóquio.",
+      "detail": "Após décadas de campanha, o karatê é incluído nos Jogos Olímpicos de Tóquio 2020 (adiados para 2021 pela pandemia). A modalidade é dividida em Kata (formas) e Kumite (combate). O símbolo é poderoso: o estilo nasceu na ilha mais distante do Japão, atravessou o mar para o continente, depois o mundo — e voltou em glória olímpica à terra que o batizou. A medalha de ouro em kata feminino vai para Sandra Sánchez (Espanha); no masculino, para Ryo Kiyuna (Okinawa)."
+    }
+  ],
+  "dojoKun": [
+    {
+      "jp": "一、人格完成に努むること",
+      "romaji": "Hitotsu, jinkaku kansei ni tsutomuru koto",
+      "pt": "Buscar o aperfeiçoamento do caráter.",
+      "text": "O primeiro e mais importante. Antes da técnica, antes da vitória, vem a construção do ser humano. Cada treino é uma oportunidade de lapidar a si mesmo."
+    },
+    {
+      "jp": "一、誠の道を守ること",
+      "romaji": "Hitotsu, makoto no michi o mamoru koto",
+      "pt": "Ser fiel ao caminho da verdade.",
+      "text": "Sinceridade absoluta consigo mesmo e com os outros. Não fingir, não trapacear, não esconder. A verdade — mesmo quando dói — é o único alicerce sólido."
+    },
+    {
+      "jp": "一、努力の精神を養うこと",
+      "romaji": "Hitotsu, doryoku no seishin o yashinau koto",
+      "pt": "Cultivar o espírito de esforço.",
+      "text": "Talento sem esforço se desperdiça; esforço sem talento ainda assim chega ao topo. Doryoku é a virtude japonesa do trabalho persistente, dia após dia, sem alarde."
+    },
+    {
+      "jp": "一、礼儀を重んずること",
+      "romaji": "Hitotsu, reigi o omonzuru koto",
+      "pt": "Respeitar acima de tudo.",
+      "text": "Rei (礼) é o respeito que se manifesta em cada cumprimento, em cada gesto. Respeito ao sensei, ao colega, ao adversário, ao dojo, a si mesmo. Sem rei, não há karatê — há apenas violência."
+    },
+    {
+      "jp": "一、血気の勇を戒むること",
+      "romaji": "Hitotsu, kekki no yū o imashimuru koto",
+      "pt": "Refrear a coragem impetuosa.",
+      "text": "Kekki é o sangue quente, a coragem cega da juventude. O karateca deve ter coragem — mas controlada pela razão. Lutar por orgulho é fracasso; usar a força sem necessidade é traição ao caminho."
+    }
+  ],
+  "mestres": [
+    {
+      "nome": "Gichin Funakoshi",
+      "kanji": "船越 義珍",
+      "anos": "1868–1957",
+      "text": "Pai do karatê moderno. Levou a arte de Okinawa ao Japão, codificou os 20 preceitos (Niju Kun) e fundou o estilo Shotokan. Adotou o pseudônimo 'Shōtō' (松濤 — ondas de pinheiros) por amar caminhar entre os pinheirais ao escrever poesia."
+    },
+    {
+      "nome": "Gigō Funakoshi",
+      "kanji": "船越 義豪",
+      "anos": "1906–1945",
+      "text": "Filho de Gichin. Responsável por dar ao Shotokan suas bases longas e profundas, os chutes altos e a dinâmica atlética que o diferenciam do karatê okinawano original."
+    },
+    {
+      "nome": "Masatoshi Nakayama",
+      "kanji": "中山 正敏",
+      "anos": "1913–1987",
+      "text": "Discípulo direto de Funakoshi. Sistematizou o ensino, criou as competições modernas (kumite shiai) e expandiu o Shotokan pelo mundo via JKA. Autor da série 'Best Karate'."
+    },
+    {
+      "nome": "Hidetaka Nishiyama",
+      "kanji": "西山 英峻",
+      "anos": "1928–2008",
+      "text": "Introduziu o Shotokan nos Estados Unidos em 1961, fundando a AAKF/ITKF. Formou gerações de mestres ocidentais e padronizou regras internacionais."
+    },
+    {
+      "nome": "Hirokazu Kanazawa",
+      "kanji": "金澤 弘和",
+      "anos": "1931–2019",
+      "text": "Lendário competidor — campeão do 1º All Japan mesmo com a mão quebrada. Fundou a SKIF (Shotokan Karate-Do International Federation) e levou o estilo a mais de 100 países."
+    },
+    {
+      "nome": "Keinosuke Enoeda",
+      "kanji": "榎枝 慶之輔",
+      "anos": "1935–2003",
+      "text": "Conhecido como 'O Tigre' por sua ferocidade no tatame. Disseminou o Shotokan no Reino Unido e Europa, tornando-se ícone da JKA fora do Japão."
+    },
+    {
+      "nome": "Taiji Kase",
+      "kanji": "金澤 (加瀬)",
+      "anos": "1929–2004",
+      "text": "Pioneiro do Shotokan na Europa, baseado em Paris. Defendia um karatê marcial e introspectivo, fundando a WKSA."
+    },
+    {
+      "nome": "Tetsuhiko Asai",
+      "kanji": "浅井 哲彦",
+      "anos": "1935–2006",
+      "text": "Famoso por seu karatê fluido e técnicas raras com a mão aberta. Fundou a JKS (Japan Karate Shotorenmei) com ênfase em katas avançados."
+    }
+  ],
+  "preceitosNijuKun": [
+    "1. O karatê começa e termina com o cumprimento (rei).",
+    "2. No karatê não existe primeiro ataque.",
+    "3. O karatê é um auxiliar da justiça.",
+    "4. Conheça-se primeiro a si mesmo, depois ao adversário.",
+    "5. Espírito antes de técnica.",
+    "6. Mantenha a mente livre.",
+    "7. Acidentes nascem da negligência.",
+    "8. O karatê não se limita ao dojo.",
+    "9. O karatê é busca de uma vida inteira.",
+    "10. Aplique o karatê a tudo. Aí está sua beleza."
+  ],
+  "katasShotokan": [
+    {
+      "nome": "Heian Shodan",
+      "kanji": "平安初段",
+      "nivel": "Kyu (8º Kyu)",
+      "mov": 21,
+      "categoria": "Kihon Kata (Básico)",
+      "significado": "Paz e tranquilidade — primeiro nível.",
+      "decomposicao": [
+        {
+          "termo": "Heian",
+          "significado": "Paz e tranquilidade"
+        },
+        {
+          "termo": "Shodan",
+          "significado": "Primeiro nível"
+        }
+      ],
+      "text": "Primeiro kata da série Heian. Introduz a base Zenkutsu-dachi (base frontal longa), bloqueios Gedan-barai e Age-uke, e ataques Oi-zuki com foco na estabilidade e alinhamento do quadril.",
+      "videoUrl": "https://www.youtube.com/embed/q1Rg8rUpjjw?si=OmcOqZQcb9AOxxOO",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Heian Nidan",
+      "kanji": "平安二段",
+      "nivel": "Kyu (7º Kyu)",
+      "mov": 26,
+      "categoria": "Kihon Kata (Básico)",
+      "significado": "Paz e tranquilidade — segundo nível.",
+      "decomposicao": [
+        {
+          "termo": "Heian",
+          "significado": "Paz e tranquilidade"
+        },
+        {
+          "termo": "Nidan",
+          "significado": "Segundo nível"
+        }
+      ],
+      "text": "Apresenta a base recuada Kokutsu-dachi, o bloqueio Shuto-uke (mão em espada) e chutes combinados Yoko-geri e Mae-geri com defesas duplas em ritmo variado.",
+      "videoUrl": "https://www.youtube.com/embed/rgs1ysn0R-0?si=7TkRmTo9oLO9nVZQ",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Heian Sandan",
+      "kanji": "平安三段",
+      "nivel": "Kyu (6º Kyu)",
+      "mov": 20,
+      "categoria": "Kihon Kata (Básico)",
+      "significado": "Paz e tranquilidade — terceiro nível.",
+      "decomposicao": [
+        {
+          "termo": "Heian",
+          "significado": "Paz e tranquilidade"
+        },
+        {
+          "termo": "Sandan",
+          "significado": "Terceiro nível"
+        }
+      ],
+      "text": "Introduz a postura Kiba-dachi (base do cavaleiro), giros rápidos de 180°, defesas com o antebraço (Uchi-uke / Morote-uke), cotoveladas (Empi-uchi) e esquivas a curta distância.",
+      "videoUrl": "https://www.youtube.com/embed/1MrRmimBJoA?si=mmgN8na94_1ywXPG",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Heian Yondan",
+      "kanji": "平安四段",
+      "nivel": "Kyu (5º Kyu)",
+      "mov": 27,
+      "categoria": "Kihon Kata (Básico)",
+      "significado": "Paz e tranquilidade — quarto nível.",
+      "decomposicao": [
+        {
+          "termo": "Heian",
+          "significado": "Paz e tranquilidade"
+        },
+        {
+          "termo": "Yondan",
+          "significado": "Quarto nível"
+        }
+      ],
+      "text": "Kata dinâmico com alternância de ritmo e expansão. Apresenta bloqueios duplos Morote-uke e Juji-uke, chutes altos frontais e laterais, e cotoveladas combinadas com joelhadas (Hiza-geri).",
+      "videoUrl": "https://www.youtube.com/embed/k72E1u962Qg?si=ofEwfitGWoxeOi0X",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Heian Godan",
+      "kanji": "平安五段",
+      "nivel": "Kyu (4º Kyu)",
+      "mov": 23,
+      "categoria": "Kihon Kata (Básico)",
+      "significado": "Paz e tranquilidade — quinto nível.",
+      "decomposicao": [
+        {
+          "termo": "Heian",
+          "significado": "Paz e tranquilidade"
+        },
+        {
+          "termo": "Godan",
+          "significado": "Quinto nível"
+        }
+      ],
+      "text": "Síntese dos katas Heian. Trabalha defesas em níveis variados, contra-ataques simultâneos de soco e cotovelo, e o emblemático salto com giro (Tobi-komi) aterrissando em Kosa-dachi.",
+      "videoUrl": "https://www.youtube.com/embed/JA0Ym97vjLg?si=K7OP2XvEVRsUCJhF",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Tekki Shodan",
+      "kanji": "鉄騎初段",
+      "nivel": "Kyu / Dan (3º Kyu)",
+      "mov": 29,
+      "categoria": "Naihanchi (Base Lateral)",
+      "significado": "Cavaleiro de ferro — primeiro nível.",
+      "decomposicao": [
+        {
+          "termo": "Tekki",
+          "significado": "Cavaleiro de ferro"
+        },
+        {
+          "termo": "Shodan",
+          "significado": "Primeiro nível"
+        }
+      ],
+      "text": "Executado inteiramente em Kiba-dachi ao longo de uma linha reta horizontal única. Desenvolve extrema solidez de base, força nos quadris e técnicas de combate corpo a corpo.",
+      "videoUrl": "https://youtu.be/1MrRmimBJoA?si=fzzXDrlIReDRZmdk",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Tekki Nidan",
+      "kanji": "鉄騎二段",
+      "nivel": "Dan (2º Dan)",
+      "mov": 24,
+      "categoria": "Naihanchi (Base Lateral)",
+      "significado": "Cavaleiro de ferro — segundo nível.",
+      "decomposicao": [
+        {
+          "termo": "Tekki",
+          "significado": "Cavaleiro de ferro"
+        },
+        {
+          "termo": "Nidan",
+          "significado": "Segundo nível"
+        }
+      ],
+      "text": "Segunda forma da série Tekki. Enfatiza defesas de gancho (Kagi-zuki), agarramentos e golpes curtos laterais sem perder o alinhamento da base Kiba-dachi.",
+      "videoUrl": "",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Tekki Sandan",
+      "kanji": "鉄騎三段",
+      "nivel": "Dan (3º Dan)",
+      "mov": 36,
+      "categoria": "Naihanchi (Base Lateral)",
+      "significado": "Cavaleiro de ferro — terceiro nível.",
+      "decomposicao": [
+        {
+          "termo": "Tekki",
+          "significado": "Cavaleiro de ferro"
+        },
+        {
+          "termo": "Sandan",
+          "significado": "Terceiro nível"
+        }
+      ],
+      "text": "A variação mais rápida e complexa de Tekki. Requer coordenação rítmica ágil de braços e rotação precisa do tronco mantendo a postura firme.",
+      "videoUrl": "https://youtu.be/1MrRmimBJoA?si=fzzXDrlIReDRZmdk",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Bassai-Dai",
+      "kanji": "披塞大",
+      "nivel": "Dan (1º Dan - Shodan)",
+      "mov": 42,
+      "categoria": "Sentei Kata (Obrigatório)",
+      "significado": "Penetrar ou romper uma fortaleza — versão maior.",
+      "decomposicao": [
+        {
+          "termo": "Bassai",
+          "significado": "Romper a fortaleza"
+        },
+        {
+          "termo": "Dai",
+          "significado": "Versão maior"
+        }
+      ],
+      "text": "Kata enérgico e imponente que simboliza transformar desvantagem em vantagem com determinação inabalável. Alterna ataques pesados com bloqueios precisos.",
+      "videoUrl": "https://www.youtube.com/embed/Qpt3W7Y06Kg?si=5pYA7damMFzW00Dx",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Bassai-Sho",
+      "kanji": "披塞小",
+      "nivel": "Dan (3º Dan)",
+      "mov": 27,
+      "categoria": "Tokui Kata (Avançado)",
+      "significado": "Penetrar ou romper uma fortaleza — versão menor.",
+      "decomposicao": [
+        {
+          "termo": "Bassai",
+          "significado": "Romper a fortaleza"
+        },
+        {
+          "termo": "Sho",
+          "significado": "Versão menor"
+        }
+      ],
+      "text": "Variação avançada com defesas sutis de mão aberta, desvios contra bastão (Bo) e contra-ataques precisos que exigem alta sensibilidade tátil.",
+      "videoUrl": "https://www.youtube.com/embed/zpnA13Vg1lY?si=0MItYepXnRt0Hhcv",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Kanku-Dai",
+      "kanji": "観空大",
+      "nivel": "Dan (1º / 2º Dan)",
+      "mov": 65,
+      "categoria": "Sentei Kata (Obrigatório)",
+      "significado": "Observar o céu / Contemplar o vazio — versão maior.",
+      "decomposicao": [
+        {
+          "termo": "Kanku",
+          "significado": "Observar o céu e o vazio"
+        },
+        {
+          "termo": "Dai",
+          "significado": "Versão maior"
+        }
+      ],
+      "text": "O kata mais longo e clássico do Shotokan, predileto de Funakoshi. Inicia com a elevação das mãos formando um triângulo contra o céu e engloba a base de quase todos os Heian.",
+      "videoUrl": "https://www.youtube.com/embed/5Hgi2vi9EbA?si=YIvoV3z4nckosn0b",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Kanku-Sho",
+      "kanji": "観空小",
+      "nivel": "Dan (4º Dan)",
+      "mov": 47,
+      "categoria": "Tokui Kata (Avançado)",
+      "significado": "Observar o céu / Contemplar o vazio — versão menor.",
+      "decomposicao": [
+        {
+          "termo": "Kanku",
+          "significado": "Observar o céu e o vazio"
+        },
+        {
+          "termo": "Sho",
+          "significado": "Versão menor"
+        }
+      ],
+      "text": "Versão compacta e rápida de Kanku, famosa por seus saltos acrobáticos explosivos e combinações de contra-ataque de alta velocidade.",
+      "videoUrl": "https://www.youtube.com/embed/veaayoYQ9D4?si=5h9leVsAiKcpWiRG",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Empi",
+      "kanji": "燕飛",
+      "nivel": "Dan (1º / 2º Dan)",
+      "mov": 37,
+      "categoria": "Sentei Kata (Obrigatório)",
+      "significado": "Voo da andorinha.",
+      "decomposicao": [
+        {
+          "termo": "En",
+          "significado": "Andorinha"
+        },
+        {
+          "termo": "Pi",
+          "significado": "Voo ágil"
+        }
+      ],
+      "text": "Inspirado na agilidade rápida e mudanças repentinas de trajetória de uma andorinha em voo. Apresenta variações de altura corporal, puxões e um salto rápido.",
+      "videoUrl": "https://www.youtube.com/embed/IInNlHZQUrE?si=iDRDyhPcI4kp9i6a",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Jion",
+      "kanji": "慈恩",
+      "nivel": "Dan (1º Dan - Shodan)",
+      "mov": 47,
+      "categoria": "Sentei Kata (Obrigatório)",
+      "significado": "Amor e benevolência — nome de um templo budista clássico.",
+      "decomposicao": [
+        {
+          "termo": "Ji",
+          "significado": "Amor e compaixão"
+        },
+        {
+          "termo": "On",
+          "significado": "Benevolência e gratidão"
+        }
+      ],
+      "text": "Kata nobre e harmonioso de origem Tomari-te. Inicia com a saudação tradicional budista (mão aberta sobre o punho) e apresenta movimentos diretos e pesados.",
+      "videoUrl": "https://www.youtube.com/embed/KErsdtTwqM8?si=VBIq8lrh3RXTfhnV",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Jitte",
+      "kanji": "十手",
+      "nivel": "Dan (2º / 3º Dan)",
+      "mov": 24,
+      "categoria": "Tokui Kata (Defesa de Bastão)",
+      "significado": "Dez mãos — eficácia equivalente a dez oponentes.",
+      "decomposicao": [
+        {
+          "termo": "Jit (Jū)",
+          "significado": "Dez"
+        },
+        {
+          "termo": "Te",
+          "significado": "Mãos"
+        }
+      ],
+      "text": "Kata focado em desarmes e defesas robustas contra ataques de bastão longo (Bo-dori), com bloqueios em gancho e posturas firmes.",
+      "videoUrl": "https://www.youtube.com/embed/IWZOQd6dvww?si=PqjnNvsoSNQHEz7B",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Jiin",
+      "kanji": "慈陰",
+      "nivel": "Dan (3º Dan)",
+      "mov": 35,
+      "categoria": "Tokui Kata (Avançado)",
+      "significado": "Sombra de benevolência / Amor do templo.",
+      "decomposicao": [
+        {
+          "termo": "Ji",
+          "significado": "Amor e misericórdia"
+        },
+        {
+          "termo": "In",
+          "significado": "Sombra ou retiro espiritual"
+        }
+      ],
+      "text": "Completa a trilogia Jion-Jitte-Jiin. Destaca transições calmas e estáveis em Kiba-dachi e Zenkutsu-dachi com controle respiratório profundo.",
+      "videoUrl": "https://www.youtube.com/embed/b8RcGoE7XiI?si=LVmJageVxi3zvOQU",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Hangetsu",
+      "kanji": "半月",
+      "nivel": "Dan (2º Dan)",
+      "mov": 41,
+      "categoria": "Tokui Kata (Naha-te / Respiração)",
+      "significado": "Meia-lua.",
+      "decomposicao": [
+        {
+          "termo": "Han",
+          "significado": "Metade / Meia"
+        },
+        {
+          "termo": "Getsu",
+          "significado": "Lua"
+        }
+      ],
+      "text": "Herança da vertente Shorei/Naha-te. Destaca a base Hangetsu-dachi com passos circulares e contração isométrica profunda acompanhada de respiração sonora (Ibuki).",
+      "videoUrl": "https://www.youtube.com/embed/vOP8dAalfms?si=WuNthW_MhH8RgCcb",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Gankaku",
+      "kanji": "岩鶴",
+      "nivel": "Dan (2º / 3º Dan)",
+      "mov": 42,
+      "categoria": "Tokui Kata (Equilíbrio)",
+      "significado": "Garça sobre a rocha.",
+      "decomposicao": [
+        {
+          "termo": "Gan",
+          "significado": "Rocha ou penhasco"
+        },
+        {
+          "termo": "Kaku",
+          "significado": "Garça"
+        }
+      ],
+      "text": "Caracterizado pela postura Tsuruashi-dachi (equilíbrio unilateral imitando a garça no rochedo) seguido de chute Yoko-geri e contragolpe fulminante de Uraken.",
+      "videoUrl": "https://www.youtube.com/embed/OJi3lwnx0jI?si=3b76maTgCr1h0PYK",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Sochin",
+      "kanji": "壯鎭",
+      "nivel": "Dan (2º / 3º Dan)",
+      "mov": 41,
+      "categoria": "Tokui Kata (Força e Enraizamento)",
+      "significado": "Grande tranquilidade / Força e calma inabalável.",
+      "decomposicao": [
+        {
+          "termo": "So",
+          "significado": "Grande / Vigoroso"
+        },
+        {
+          "termo": "Chin",
+          "significado": "Tranquilidade e calma"
+        }
+      ],
+      "text": "Executado predominantemente na base Sochin-dachi (Fudo-dachi), transmitindo o enraizamento de uma rocha imóvel com explosões musculares e defesas circulares.",
+      "videoUrl": "https://www.youtube.com/embed/KqmlVtZZuxY?si=4L84TF6YlHULQ5YJ",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Nijushiho",
+      "kanji": "二十四歩",
+      "nivel": "Dan (3º / 4º Dan)",
+      "mov": 34,
+      "categoria": "Tokui Kata (Fluidez / Ondas)",
+      "significado": "Vinte e quatro passos.",
+      "decomposicao": [
+        {
+          "termo": "Nijūshi",
+          "significado": "Vinte e quatro"
+        },
+        {
+          "termo": "Ho",
+          "significado": "Passos"
+        }
+      ],
+      "text": "Possui dinâmica fluida que evoca o movimento contínuo das ondas do mar, com bloqueios circulares suaves e penetrantes ataques com a palma da mão.",
+      "videoUrl": "https://www.youtube.com/embed/ZE8EqPvwruE?si=n2_cq_NPjV-1Mpcx",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Chinte",
+      "kanji": "珍手",
+      "nivel": "Dan (3º / 4º Dan)",
+      "mov": 32,
+      "categoria": "Tokui Kata (Mãos Raras)",
+      "significado": "Mãos raras / Mãos incomuns.",
+      "decomposicao": [
+        {
+          "termo": "Chin",
+          "significado": "Raro ou incomum"
+        },
+        {
+          "termo": "Te",
+          "significado": "Mãos"
+        }
+      ],
+      "text": "Contém técnicas circulares com as pontas dos dedos dirigidas a pontos vitais (Nihon-nukite) e termina com os três saltos rítmicos para retorno ao ponto inicial do Enbusen.",
+      "videoUrl": "https://www.youtube.com/embed/RgwDv8MChWg?si=FmLnBgqLsKij7Elj",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Unsu",
+      "kanji": "雲手",
+      "nivel": "Avançado (4º Dan / Mestre)",
+      "mov": 48,
+      "categoria": "Tokui Kata (Competição / Mestre)",
+      "significado": "Mãos nas nuvens.",
+      "decomposicao": [
+        {
+          "termo": "Un",
+          "significado": "Nuvem"
+        },
+        {
+          "termo": "Su",
+          "significado": "Mãos"
+        }
+      ],
+      "text": "Considerado um dos katas mais complexos e atléticos do Karatê. Inclui defesa do solo com chute Mikazuki-geri e o espetacular salto giratório de 360° no ar.",
+      "videoUrl": "https://www.youtube.com/embed/MjVKvHf_Ny0?si=TzIKaHXgjdOwLovK",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Meikyo",
+      "kanji": "明鏡",
+      "nivel": "Dan (3º / 4º Dan)",
+      "mov": 33,
+      "categoria": "Tokui Kata (Espelho Limpo)",
+      "significado": "Espelho limpo / Espelho polido.",
+      "decomposicao": [
+        {
+          "termo": "Mei",
+          "significado": "Límpido e claro"
+        },
+        {
+          "termo": "Kyo",
+          "significado": "Espelho"
+        }
+      ],
+      "text": "Expressa a serenidade mental de um espelho sem reflexos distorcidos. Contém bloqueios triangulares (Sankaku-uke) e saltos com troca rápida de base.",
+      "videoUrl": "https://www.youtube.com/embed/HbX9X3JEI1E?si=IUnTW8UKP1s3hn53",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Wankan",
+      "kanji": "王冠",
+      "nivel": "Dan (4º Dan / Mestre)",
+      "mov": 24,
+      "categoria": "Tokui Kata (Coroa do Rei)",
+      "significado": "Coroa do rei.",
+      "decomposicao": [
+        {
+          "termo": "Wan",
+          "significado": "Rei"
+        },
+        {
+          "termo": "Kan",
+          "significado": "Coroa"
+        }
+      ],
+      "text": "O kata mais curto do Shotokan com um único Kiai no final. Apresenta agarramentos e desequilíbrios executados com nobreza e elegância rítmica.",
+      "videoUrl": "https://www.youtube.com/embed/DzFP2UilMtI?si=td3g8MVHyovJN9bL",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Gojushiho-Dai",
+      "kanji": "五十四歩大",
+      "nivel": "Dan (4º / 5º Dan)",
+      "mov": 67,
+      "categoria": "Tokui Kata (54 Passos Maior)",
+      "significado": "Cinquenta e quatro passos — versão maior.",
+      "decomposicao": [
+        {
+          "termo": "Gojūshi-ho",
+          "significado": "54 passos"
+        },
+        {
+          "termo": "Dai",
+          "significado": "Versão maior"
+        }
+      ],
+      "text": "Kata extenso com raízes antigas no estilo da Fênix, utilizando bicos de mão (Washide) e golpes de lança (Nukite) em ritmo constante e cadenciado.",
+      "videoUrl": "https://www.youtube.com/embed/qVGcqVEBRRs?si=cc2n0Mi_p6nBgBLD",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Gojushiho-Sho",
+      "kanji": "五十四歩小",
+      "nivel": "Dan (4º / 5º Dan)",
+      "mov": 65,
+      "categoria": "Tokui Kata (54 Passos Menor)",
+      "significado": "Cinquenta e quatro passos — versão menor.",
+      "decomposicao": [
+        {
+          "termo": "Gojūshi-ho",
+          "significado": "54 passos"
+        },
+        {
+          "termo": "Sho",
+          "significado": "Versão menor"
+        }
+      ],
+      "text": "Variação refinada e de alta precisão técnica com ataques de mão aberta a curta distância, muito consagrada em finais de campeonatos mundiais.",
+      "videoUrl": "https://www.youtube.com/embed/c2qiJNrCYGw?si=nC4ozrMCFna66xkK",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    },
+    {
+      "nome": "Taikyoku Shodan",
+      "kanji": "太極初段",
+      "nivel": "Iniciante (Básico)",
+      "mov": 20,
+      "categoria": "Kihon Kata (Iniciante)",
+      "significado": "Grande causa primordial — primeiro nível.",
+      "decomposicao": [
+        {
+          "termo": "Taikyoku",
+          "significado": "Grande causa primordial / Início"
+        },
+        {
+          "termo": "Shodan",
+          "significado": "Primeiro nível"
+        }
+      ],
+      "text": "Forma introdutória simplificada criada por Funakoshi para o aprendizado fundamental do traçado do Enbusen em 'I', Zenkutsu-dachi e bloqueio Gedan-barai.",
+      "videoUrl": "https://www.youtube.com/embed/jH6bv4GDpp0?si=UCRzd_uzwV0D4Kv-",
+      "enbusenUrl": "",
+      "imagemUrl": ""
+    }
+  ],
+  "graduacoes": [
+    {
+      "faixa": "Branca",
+      "jp": "白帯",
+      "txt": "Iniciante. A mente vazia, pronta para receber."
+    },
+    {
+      "faixa": "Amarela",
+      "jp": "黄帯",
+      "txt": "Primeiros movimentos firmes — o sol que nasce."
+    },
+    {
+      "faixa": "Vermelha",
+      "jp": "赤帯",
+      "txt": "Energia e ímpeto da juventude técnica."
+    },
+    {
+      "faixa": "Laranja",
+      "jp": "橙帯",
+      "txt": "Transição. O calor do fogo interno."
+    },
+    {
+      "faixa": "Verde",
+      "jp": "緑帯",
+      "txt": "Crescimento — como o broto que vira árvore."
+    },
+    {
+      "faixa": "Roxa",
+      "jp": "紫帯",
+      "txt": "Profundidade. Estudo de katas intermediários."
+    },
+    {
+      "faixa": "Marrom",
+      "jp": "茶帯",
+      "txt": "Maturidade técnica. Pronto para o Shodan."
+    },
+    {
+      "faixa": "Preta",
+      "jp": "黒帯",
+      "txt": "Não é o fim — é o verdadeiro começo. Shodan = 1º dan."
+    }
+  ],
+  "pilares": [
+    {
+      "kanji": "基本",
+      "nome": "Kihon",
+      "pt": "Técnicas Básicas e Fundamentos",
+      "tagline": "A matriz biomecânica e o alicerce de toda técnica.",
+      "oque_e": "O treinamento metódico e exaustivo das técnicas fundamentais isoladas — bases (dachi), socos (tsuki), defesas (uke) e chutes (keri) — executados repetidamente em linhas retas e rotações.",
+      "para_que_serve": "Construir a memória neuromuscular, corrigir a postura e o alinhamento esquelético, gerar potência instantânea e garantir que a reação em combate ocorra sem hesitação mental."
+    },
+    {
+      "kanji": "型",
+      "nome": "Kata",
+      "pt": "Formas e Combate Coreografado",
+      "tagline": "A enciclopédia viva e histórica do estilo Shotokan.",
+      "oque_e": "Sequências estruturadas de movimentos defensivos e ofensivos contra múltiplos adversários imaginários, traçados em um diagrama geométrico espacial (Enbusen).",
+      "para_que_serve": "Preservar o repertório marcial tradicional, treinar transições rítmicas de equilíbrio, controle respiratório e desvendar aplicações práticas de autodefesa real (Bunkai)."
+    },
+    {
+      "kanji": "組手",
+      "nome": "Kumite",
+      "pt": "Combate Prático com Parceiro",
+      "tagline": "O laboratório de teste sob pressão e confronto real.",
+      "oque_e": "A aplicação direta e controlada dos fundamentos contra um adversário real, evoluindo do combate combinado (Gohon/Sanbon/Ippon Kumite) ao combate livre (Jiyu Kumite).",
+      "para_que_serve": "Calibrar a percepção de distância crítica (Maai), tempo de reação (Timing), leitura das intenções do adversário, autocontrole sob estresse e respeito à integridade física do colega."
+    }
+  ],
+  "etiquetaDojo": [
+    {
+      "kanji": "礼",
+      "nome": "Rei",
+      "romaji": "Rei-shiki",
+      "traducao": "O Cumprimento e Respeito Mútuo",
+      "oque_e": "O ato solene e formal de curvar o tronco em reverência, realizado ao entrar e sair do dojo, antes e depois de cada kata, exercício ou combate.",
+      "para_que_serve": "Desarmar o ego, demonstrar humildade e gratidão ao mestre (Sensei) e firmar um compromisso tácito de segurança, lealdade e confiança com o parceiro de treino.",
+      "detalhes": [
+        {
+          "titulo": "Ritsurei (立礼)",
+          "desc": "Cumprimento em pé, inclinando a coluna a cerca de 15 a 30 graus mantendo a postura ereta e o olhar respeitoso."
+        },
+        {
+          "titulo": "Zarei (座礼)",
+          "desc": "Cumprimento tradicional ajoelhado em Seiza, apoiando as mãos no solo em formato triangular antes de inclinar a cabeça."
+        }
+      ]
+    },
+    {
+      "kanji": "押忍",
+      "nome": "Oss",
+      "romaji": "Osu (Oshi Shinobu)",
+      "traducao": "Perseverança, Resiliência e Paciência",
+      "oque_e": "Abreviação da expressão 'Oshi Shinobu' (empurrar e suportar). É a saudação universal no cotidiano do dojo, servindo como 'olá', 'obrigado', 'compreendi' e 'vou me esforçar'.",
+      "para_que_serve": "Expressar espírito inabalável (Fudoshin), prontidão imediata perante instruções difíceis e determinação para superar a dor, o cansaço e os limites mentais e físicos com calma."
+    },
+    {
+      "kanji": "道場訓",
+      "nome": "Dōjō Kun",
+      "romaji": "Dōjō Precepts",
+      "traducao": "Os 5 Preceitos Éticos do Dojo",
+      "oque_e": "O código de conduta e filosofia moral composto por cinco regras, recitado em voz alta no final de cada treino por todos os alunos e professores em Seiza.",
+      "para_que_serve": "Assegurar que o conhecimento marcial de combate seja sempre guiado pelo aperfeiçoamento do caráter, verdade, esforço, respeito e controle do ímpeto agressivo."
+    }
+  ],
+  "principiosTecnicos": [
+    {
+      "k": "決め",
+      "n": "Kime",
+      "traducao": "Foco e Contração Instantânea",
+      "oque_e": "A contração muscular total e explosiva concentrada no milissegundo exato do impacto, seguida imediatamente por relaxamento muscular.",
+      "para_que_serve": "Transferir a máxima energia cinética ao alvo sem empurrar, gerando impacto penetrante enquanto economiza energia e prepara o corpo para o próximo movimento."
+    },
+    {
+      "k": "気合",
+      "n": "Kiai",
+      "traducao": "União da Energia e Grito Espiritual",
+      "oque_e": "A expiração explosiva e emissão vocal originada na região do baixo ventre (Tanden / Hara) no clímax da técnica.",
+      "para_que_serve": "Sincronizar a respiração diafragmática, enrijecer a parede abdominal contra eventuais contra-ataques e desestabilizar psicologicamente o oponente."
+    },
+    {
+      "k": "残心",
+      "n": "Zanshin",
+      "traducao": "Mente Alerta e Presença Contínua",
+      "oque_e": "O estado de consciência vigilante e serenidade atenta que permanece ativo mesmo após o término de um golpe ou sequência de kata.",
+      "para_que_serve": "Evitar o relaxamento prematuro ou triunfalismo no tatame, mantendo o praticante 100% pronto para reagir a qualquer nova ameaça ou contra-ataque súbito."
+    },
+    {
+      "k": "間合",
+      "n": "Maai",
+      "traducao": "Distância e Espaço Estratégico",
+      "oque_e": "A mensuração espacial e temporal dinâmica entre você e o adversário, calculada em função do alcance dos membros e da velocidade de deslocamento.",
+      "para_que_serve": "Permitir atacar com precisão cirúrgica no momento em que o oponente não consegue reagir e esquivar-se com o mínimo de deslocamento necessário."
+    },
+    {
+      "k": "拍子",
+      "n": "Hyoshi",
+      "traducao": "Ritmo, Cadência e Tempo",
+      "oque_e": "O compasso temporal e a cadência respiratória que ditam a troca de iniciativas durante uma luta.",
+      "para_que_serve": "Quebrar o padrão de tempo esperado pelo adversário para antecipar golpes (Sen no Sen) e atacar nos momentos de transição e vulnerabilidade."
+    },
+    {
+      "k": "腰",
+      "n": "Koshi",
+      "traducao": "Uso do Quadril e Centro de Gravidade",
+      "oque_e": "A rotação, basculamento e travamento da cintura pélvica integrando a base dos pés com os membros superiores.",
+      "para_que_serve": "Atuar como o motor gerador de força do corpo; no Karatê tradicional, a força de um golpe não vem do braço isolado, mas sim do giro explosivo do quadril."
+    },
+    {
+      "k": "引手",
+      "n": "Hikite",
+      "traducao": "Puxada da Mão Oposta",
+      "oque_e": "O recolhimento enérgico do braço oposto em direção à cintura no momento exato em que o outro braço desfere o soco ou bloqueio.",
+      "para_que_serve": "Criar uma reação oposta em rotação (ação e reação), duplicando a velocidade e a penetração do golpe atacante enquanto protege o flanco."
+    },
+    {
+      "k": "初心",
+      "n": "Shoshin",
+      "traducao": "Mente de Principiante",
+      "oque_e": "A mentalidade de humildade e receptividade perpétua, independentemente do tempo de treino ou graduação de faixa.",
+      "para_que_serve": "Eliminar a arrogância e a ilusão de autossuficiência, permitindo que faixas-pretas e mestres continuem refinando os fundamentos básicos a cada treino."
+    },
+    {
+      "k": "無心",
+      "n": "Mushin",
+      "traducao": "Mente Livre / Estado de Fluxo",
+      "oque_e": "O estado de mente límpida e espontânea, sem interferência de pensamentos de medo, hesitação, vaidade ou cálculo consciente excessivo.",
+      "para_que_serve": "Permitir respostas motoras automáticas e reflexivas na velocidade da luz durante o combate, agindo de forma intuitiva como a água que se molda ao recipiente."
+    }
+  ],
+  "dicionario": [
+    {
+      "jp": "道場",
+      "romaji": "Dōjō",
+      "pt": "Local de prática — literalmente 'lugar do caminho'."
+    },
+    {
+      "jp": "先生",
+      "romaji": "Sensei",
+      "pt": "Mestre, aquele que nasceu antes."
+    },
+    {
+      "jp": "道着",
+      "romaji": "Gi (Dōgi)",
+      "pt": "Uniforme branco usado no treino."
+    },
+    {
+      "jp": "帯",
+      "romaji": "Obi",
+      "pt": "Faixa que indica a graduação."
+    },
+    {
+      "jp": "礼",
+      "romaji": "Rei",
+      "pt": "Cumprimento — manifestação de respeito."
+    },
+    {
+      "jp": "押忍",
+      "romaji": "Oss / Osu",
+      "pt": "Saudação de respeito, paciência e perseverança."
+    }
+  ],
+  "beneficios": [
+    {
+      "kanji": "律",
+      "titulo": "Disciplina",
+      "text": "Rotina de treino constante forja a autodisciplina aplicável à vida toda."
+    },
+    {
+      "kanji": "信",
+      "titulo": "Autoconfiança",
+      "text": "Superar limites no tatame fortalece a coragem fora dele."
+    },
+    {
+      "kanji": "体",
+      "titulo": "Condicionamento",
+      "text": "Cardio, força e potência integrados em cada sessão."
+    },
+    {
+      "kanji": "柔",
+      "titulo": "Flexibilidade",
+      "text": "Chutes altos e bases profundas ampliam mobilidade articular."
+    },
+    {
+      "kanji": "集",
+      "titulo": "Foco",
+      "text": "Cada técnica exige presença total — kime — no instante."
+    },
+    {
+      "kanji": "敬",
+      "titulo": "Respeito",
+      "text": "Etiqueta do dojo cultiva respeito por mestre, colega e adversário."
+    }
+  ],
+  "depoimentos": [
+    {
+      "nome": "Ana, 34",
+      "antes": "Sedentária, ansiosa.",
+      "depois": "Faixa azul, 3x/semana. Dorme melhor, foca mais."
+    },
+    {
+      "nome": "Hiroshi, 58",
+      "antes": "Estresse no trabalho.",
+      "depois": "Encontrou o silêncio no kata. Voltou a sorrir."
+    },
+    {
+      "nome": "Lucas, 9",
+      "antes": "Tímido na escola.",
+      "depois": "Mais confiante e respeitoso com colegas."
+    }
+  ],
+  "categoriasTecnicas": [
+    {
+      "id": "Socos",
+      "label": "Socos e Golpes (Tsuki / Uchi)",
+      "kanji": "突 · 打"
+    },
+    {
+      "id": "Chutes",
+      "label": "Chutes (Keri)",
+      "kanji": "蹴"
+    },
+    {
+      "id": "Defesas",
+      "label": "Defesas (Uke)",
+      "kanji": "受"
+    },
+    {
+      "id": "Bases",
+      "label": "Bases e Posturas (Dachi)",
+      "kanji": "立"
+    },
+    {
+      "id": "Katas",
+      "label": "Katas (型)",
+      "kanji": "型"
+    }
+  ],
+  "tecnicas": [
+    {
+      "tipo": "Tsuki",
+      "cat": "Socos",
+      "nome": "Choku-Zuki",
+      "kanji": "直突き",
+      "pt": "Soco direto (parado)",
+      "desc": "Soco reto executado a partir de Heiko ou Kiba-dachi, sem deslocamento. Fundamento absoluto."
+    },
+    {
+      "tipo": "Tsuki",
+      "cat": "Socos",
+      "nome": "Oi-Zuki",
+      "kanji": "追い突き",
+      "pt": "Soco com avanço",
+      "desc": "Soco com a mão do mesmo lado da perna que avança (mesmo lado). Técnica símbolo do Shotokan."
+    },
+    {
+      "tipo": "Tsuki",
+      "cat": "Socos",
+      "nome": "Gyaku-Zuki",
+      "kanji": "逆突き",
+      "pt": "Soco inverso",
+      "desc": "Soco com a mão oposta à perna da frente. Gera potência pela rotação total do quadril."
+    },
+    {
+      "tipo": "Tsuki",
+      "cat": "Socos",
+      "nome": "Kizami-Zuki",
+      "kanji": "刻み突き",
+      "pt": "Soco curto / jab",
+      "desc": "Soco rápido da mão da frente, usado para medir distância e tomar a iniciativa (sen)."
+    },
+    {
+      "tipo": "Tsuki",
+      "cat": "Socos",
+      "nome": "Kage-Zuki",
+      "kanji": "鉤突き",
+      "pt": "Soco em gancho",
+      "desc": "Soco curvo, semelhante a um cross horizontal, eficaz em curta distância."
+    },
+    {
+      "tipo": "Tsuki",
+      "cat": "Socos",
+      "nome": "Ura-Zuki",
+      "kanji": "裏突き",
+      "pt": "Soco invertido (palma p/ cima)",
+      "desc": "Soco com o punho virado para cima, em distância muito curta. Comum em katas."
+    },
+    {
+      "tipo": "Tsuki",
+      "cat": "Socos",
+      "nome": "Tate-Zuki",
+      "kanji": "立て突き",
+      "pt": "Soco vertical",
+      "desc": "Soco com o punho na vertical (polegar para cima). Permite mais alcance em alturas médias."
+    },
+    {
+      "tipo": "Tsuki",
+      "cat": "Socos",
+      "nome": "Age-Zuki",
+      "kanji": "上げ突き",
+      "pt": "Soco ascendente / uppercut",
+      "desc": "Soco que sobe em arco, mirando o queixo do adversário."
+    },
+    {
+      "tipo": "Tsuki",
+      "cat": "Socos",
+      "nome": "Yama-Zuki",
+      "kanji": "山突き",
+      "pt": "Soco de montanha",
+      "desc": "Soco duplo simultâneo em níveis diferentes (alto + médio). Aparece em Bassai-sho."
+    },
+    {
+      "tipo": "Tsuki",
+      "cat": "Socos",
+      "nome": "Awase-Zuki",
+      "kanji": "合せ突き",
+      "pt": "Soco em forma de U",
+      "desc": "Soco duplo onde ambos os punhos atingem alvos verticalmente alinhados."
+    },
+    {
+      "tipo": "Tsuki",
+      "cat": "Socos",
+      "nome": "Morote-Zuki",
+      "kanji": "諸手突き",
+      "pt": "Soco de duas mãos",
+      "desc": "Dois socos simultâneos, ambos no mesmo alvo. Maximiza força concentrada."
+    },
+    {
+      "tipo": "Tsuki",
+      "cat": "Socos",
+      "nome": "Nukite",
+      "kanji": "貫手",
+      "pt": "Ataque com a ponta dos dedos",
+      "desc": "Estocada com a mão em lança. Mira pontos vitais (olhos, garganta, plexo)."
+    },
+    {
+      "tipo": "Uchi",
+      "cat": "Socos",
+      "nome": "Uraken-Uchi",
+      "kanji": "裏拳打ち",
+      "pt": "Golpe com o dorso do punho",
+      "desc": "Chicote rápido com as costas do punho. Comum contra a têmpora."
+    },
+    {
+      "tipo": "Uchi",
+      "cat": "Socos",
+      "nome": "Tettsui-Uchi",
+      "kanji": "鉄鎚打ち",
+      "pt": "Martelo de ferro",
+      "desc": "Golpe descendente com a base do punho fechado, como um martelo."
+    },
+    {
+      "tipo": "Uchi",
+      "cat": "Socos",
+      "nome": "Shuto-Uchi",
+      "kanji": "手刀打ち",
+      "pt": "Golpe com cutelo de mão",
+      "desc": "Golpe com a borda externa da mão aberta. Famoso pelo 'karate chop'."
+    },
+    {
+      "tipo": "Uchi",
+      "cat": "Socos",
+      "nome": "Haito-Uchi",
+      "kanji": "背刀打ち",
+      "pt": "Cutelo invertido",
+      "desc": "Golpe com a borda interna da mão aberta (lado do polegar)."
+    },
+    {
+      "tipo": "Uchi",
+      "cat": "Socos",
+      "nome": "Empi-Uchi",
+      "kanji": "猿臂打ち",
+      "pt": "Cotovelada",
+      "desc": "Família de golpes com o cotovelo: mae, yoko, ushiro, mawashi, otoshi, tate."
+    },
+    {
+      "tipo": "Uchi",
+      "cat": "Socos",
+      "nome": "Hiza-Geri",
+      "kanji": "膝蹴り",
+      "pt": "Joelhada",
+      "desc": "Golpe ascendente com o joelho, devastador em distância curta."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Mae-Geri Keage",
+      "kanji": "前蹴り蹴上",
+      "pt": "Chute frontal de chicote",
+      "desc": "Chute frontal ascendente e rápido, usando o koshi (base dos dedos)."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Mae-Geri Kekomi",
+      "kanji": "前蹴り蹴込",
+      "pt": "Chute frontal penetrante",
+      "desc": "Chute frontal em linha reta, com impulso de quadril, para empurrar o oponente."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Mawashi-Geri",
+      "kanji": "回し蹴り",
+      "pt": "Chute circular",
+      "desc": "Chute em arco horizontal — peito do pé (haisoku) ou koshi conforme o nível."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Yoko-Geri Keage",
+      "kanji": "横蹴り蹴上",
+      "pt": "Chute lateral de chicote",
+      "desc": "Chute lateral rápido e ascendente, com a borda do pé (sokuto)."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Yoko-Geri Kekomi",
+      "kanji": "横蹴り蹴込",
+      "pt": "Chute lateral penetrante",
+      "desc": "Chute lateral em linha reta com a borda do pé. Forte para atravessar a guarda."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Ushiro-Geri",
+      "kanji": "後ろ蹴り",
+      "pt": "Chute para trás",
+      "desc": "Chute reto para trás com o calcanhar (kakato). Usado após giro."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Ura-Mawashi-Geri",
+      "kanji": "裏回し蹴り",
+      "pt": "Chute circular invertido",
+      "desc": "Chute em arco no sentido contrário ao mawashi, atingindo com o calcanhar (gancho)."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Mikazuki-Geri",
+      "kanji": "三日月蹴り",
+      "pt": "Chute em meia-lua",
+      "desc": "Chute em arco vertical para dentro com a planta do pé. Também usado para bloquear."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Gyaku-Mawashi-Geri",
+      "kanji": "逆回し蹴り",
+      "pt": "Mawashi invertido",
+      "desc": "Chute mawashi feito com a perna recuada após rotação. Surpreende o adversário."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Kin-Geri",
+      "kanji": "金的蹴り",
+      "pt": "Chute baixo (virilha)",
+      "desc": "Chute curto e ascendente com o peito do pé — apenas em defesa pessoal, ilegal em competição."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Fumikomi",
+      "kanji": "踏み込み",
+      "pt": "Pisada",
+      "desc": "Pisada descendente com o calcanhar, mirando joelho ou pé do oponente."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Tobi-Geri",
+      "kanji": "飛び蹴り",
+      "pt": "Chute saltado",
+      "desc": "Categoria de chutes executados em voo (mae-tobi, yoko-tobi, nidan-geri etc.)."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Nidan-Geri",
+      "kanji": "二段蹴り",
+      "pt": "Chute duplo no ar",
+      "desc": "Salta-se e executa dois chutes em sequência antes de aterrissar."
+    },
+    {
+      "tipo": "Keri",
+      "cat": "Chutes",
+      "nome": "Ashi-Barai",
+      "kanji": "足払い",
+      "pt": "Varredura de pé",
+      "desc": "Rasteira lateral para desequilibrar o oponente."
+    },
+    {
+      "tipo": "Uke",
+      "cat": "Defesas",
+      "nome": "Age-Uke",
+      "kanji": "上げ受け",
+      "pt": "Defesa alta",
+      "desc": "Bloqueio ascendente com o antebraço, contra ataques à cabeça (jodan)."
+    },
+    {
+      "tipo": "Uke",
+      "cat": "Defesas",
+      "nome": "Soto-Uke",
+      "kanji": "外受け",
+      "pt": "Defesa de fora p/ dentro",
+      "desc": "Antebraço varre de fora para dentro contra socos médios (chudan)."
+    },
+    {
+      "tipo": "Uke",
+      "cat": "Defesas",
+      "nome": "Uchi-Uke",
+      "kanji": "内受け",
+      "pt": "Defesa de dentro p/ fora",
+      "desc": "Antebraço varre de dentro para fora. Cria abertura para contra-ataque com gyaku."
+    },
+    {
+      "tipo": "Uke",
+      "cat": "Defesas",
+      "nome": "Gedan-Barai",
+      "kanji": "下段払い",
+      "pt": "Varredura baixa",
+      "desc": "Defesa descendente que afasta chutes e socos baixos."
+    },
+    {
+      "tipo": "Uke",
+      "cat": "Defesas",
+      "nome": "Shuto-Uke",
+      "kanji": "手刀受け",
+      "pt": "Defesa com cutelo de mão",
+      "desc": "Bloqueio com a borda da mão aberta, executado em Kokutsu-dachi."
+    },
+    {
+      "tipo": "Uke",
+      "cat": "Defesas",
+      "nome": "Morote-Uke",
+      "kanji": "諸手受け",
+      "pt": "Defesa reforçada (2 mãos)",
+      "desc": "Uchi-uke reforçado pelo punho oposto apoiando o antebraço."
+    },
+    {
+      "tipo": "Uke",
+      "cat": "Defesas",
+      "nome": "Juji-Uke",
+      "kanji": "十字受け",
+      "pt": "Defesa em X (cruz)",
+      "desc": "Ambos os antebraços cruzados em X — alta (jodan) ou baixa (gedan)."
+    },
+    {
+      "tipo": "Uke",
+      "cat": "Defesas",
+      "nome": "Kakiwake-Uke",
+      "kanji": "掻き分け受け",
+      "pt": "Defesa que abre",
+      "desc": "Defesa para escapar de uma pegada dupla, abrindo os braços para fora."
+    },
+    {
+      "tipo": "Uke",
+      "cat": "Defesas",
+      "nome": "Sukui-Uke",
+      "kanji": "掬い受け",
+      "pt": "Defesa em concha",
+      "desc": "Defesa com a mão em concha que 'pega' o chute do oponente por baixo."
+    },
+    {
+      "tipo": "Uke",
+      "cat": "Defesas",
+      "nome": "Osae-Uke",
+      "kanji": "押さえ受け",
+      "pt": "Defesa pressionando",
+      "desc": "Defesa que pressiona o ataque para baixo, controlando a linha central."
+    },
+    {
+      "tipo": "Uke",
+      "cat": "Defesas",
+      "nome": "Nagashi-Uke",
+      "kanji": "流し受け",
+      "pt": "Defesa de desvio",
+      "desc": "Defesa que redireciona suavemente o ataque, como água que escorre."
+    },
+    {
+      "tipo": "Uke",
+      "cat": "Defesas",
+      "nome": "Haishu-Uke",
+      "kanji": "背手受け",
+      "pt": "Defesa com dorso da mão",
+      "desc": "Defesa rápida usando o dorso da mão aberta."
+    },
+    {
+      "tipo": "Dachi",
+      "cat": "Bases",
+      "nome": "Heisoku-Dachi",
+      "kanji": "閉足立ち",
+      "pt": "Base de pés juntos",
+      "desc": "Pés totalmente unidos. Posição inicial cerimonial."
+    },
+    {
+      "tipo": "Dachi",
+      "cat": "Bases",
+      "nome": "Musubi-Dachi",
+      "kanji": "結び立ち",
+      "pt": "Base do rei",
+      "desc": "Calcanhares juntos, pés abertos em V. Usada no rei (cumprimento)."
+    },
+    {
+      "tipo": "Dachi",
+      "cat": "Bases",
+      "nome": "Heiko-Dachi",
+      "kanji": "平行立ち",
+      "pt": "Base paralela",
+      "desc": "Pés paralelos na largura dos ombros. Pronto para iniciar."
+    },
+    {
+      "tipo": "Dachi",
+      "cat": "Bases",
+      "nome": "Hachiji-Dachi",
+      "kanji": "八字立ち",
+      "pt": "Base do '8'",
+      "desc": "Pés afastados com as pontas viradas para fora, formando o kanji 八."
+    },
+    {
+      "tipo": "Dachi",
+      "cat": "Bases",
+      "nome": "Zenkutsu-Dachi",
+      "kanji": "前屈立ち",
+      "pt": "Base frontal longa",
+      "desc": "Postura ofensiva clássica: 60% do peso à frente, perna de trás esticada. Símbolo do Shotokan."
+    },
+    {
+      "tipo": "Dachi",
+      "cat": "Bases",
+      "nome": "Kokutsu-Dachi",
+      "kanji": "後屈立ち",
+      "pt": "Base recuada",
+      "desc": "70% do peso atrás, joelho da frente flexionado. Defensiva por natureza."
+    },
+    {
+      "tipo": "Dachi",
+      "cat": "Bases",
+      "nome": "Kiba-Dachi",
+      "kanji": "騎馬立ち",
+      "pt": "Base do cavaleiro",
+      "desc": "Base lateral profunda, peso 50/50, joelhos sobre os dedos. Forja pernas de aço."
+    },
+    {
+      "tipo": "Dachi",
+      "cat": "Bases",
+      "nome": "Shiko-Dachi",
+      "kanji": "四股立ち",
+      "pt": "Base do sumô",
+      "desc": "Como Kiba-dachi, mas com as pontas dos pés viradas 45° para fora."
+    },
+    {
+      "tipo": "Dachi",
+      "cat": "Bases",
+      "nome": "Sanchin-Dachi",
+      "kanji": "三戦立ち",
+      "pt": "Base das três batalhas",
+      "desc": "Pés virados para dentro, joelhos pressionados. Postura interna do Goju e raros katas Shotokan (Hangetsu)."
+    },
+    {
+      "tipo": "Dachi",
+      "cat": "Bases",
+      "nome": "Neko-Ashi-Dachi",
+      "kanji": "猫足立ち",
+      "pt": "Base do gato",
+      "desc": "Peso quase todo na perna de trás, perna da frente apenas tocando o solo com a planta."
+    },
+    {
+      "tipo": "Dachi",
+      "cat": "Bases",
+      "nome": "Tsuru-Ashi-Dachi",
+      "kanji": "鶴足立ち",
+      "pt": "Base da garça",
+      "desc": "Equilíbrio sobre uma perna, a outra dobrada contra o joelho de apoio."
+    },
+    {
+      "tipo": "Dachi",
+      "cat": "Bases",
+      "nome": "Fudo-Dachi",
+      "kanji": "不動立ち",
+      "pt": "Base imóvel / sochin",
+      "desc": "Postura híbrida entre zenkutsu e kiba — equilíbrio absoluto, símbolo da imobilidade."
+    }
+  ],
+  "curiosidades": [
+    {
+      "titulo": "Por que o uniforme é branco?",
+      "text": "O branco representa pureza, simplicidade e a mente do iniciante (shoshin). Todos começam iguais, qualquer que seja seu passado."
+    },
+    {
+      "titulo": "Significado das cores das faixas",
+      "text": "A faixa começa branca e escurece com o suor e o tempo, até virar preta — daí surgiu a tradição. Hoje as cores intermediárias (amarela, verde, roxa, marrom) indicam o progresso técnico."
+    },
+    {
+      "titulo": "O que significa 'Oss'?",
+      "text": "Contração de 'Oshi Shinobu' (押し忍ぶ): empurrar e suportar. Resume o espírito de perseverança diante do esforço."
+    },
+    {
+      "titulo": "O kata mais longo: Unsu",
+      "text": "雲手 — 'Mãos na Nuvem'. 48 movimentos incluindo um salto giratório de 360°. Considerado um dos katas mais avançados."
+    },
+    {
+      "titulo": "Shotokan x outros estilos",
+      "text": "Shotokan privilegia bases longas e técnicas lineares poderosas. Goju-ryu usa bases mais curtas e respiração sonora. Wado-ryu integra esquivas do jiu-jitsu."
+    },
+    {
+      "titulo": "25 de outubro: Karate no Hi",
+      "text": "空手の日 — Dia do Karatê, oficializado em Okinawa em 2005, marcando a data em que o nome '空手' foi adotado em 1936."
+    },
+    {
+      "titulo": "Por que 'mãos vazias'?",
+      "text": "空手 (kara-te) significa 'mão vazia'. Funakoshi mudou o ideograma original (唐手 — 'mão chinesa') para enfatizar o aspecto filosófico: vazio de armas, vazio de ego."
+    },
+    {
+      "titulo": "O Tigre de Shotokan",
+      "text": "O símbolo do tigre dentro de um círculo foi desenhado por Hoan Kosugi. O tigre representa força e calma, qualidades buscadas pelo praticante."
+    },
+    {
+      "titulo": "Niju Kun — os 20 preceitos",
+      "text": "Funakoshi deixou 20 princípios filosóficos. O primeiro: 'Karate começa e termina com o cumprimento (rei)'."
+    },
+    {
+      "titulo": "Kime — o instante decisivo",
+      "text": "決め — a contração total e instantânea de músculos no impacto da técnica. Sem kime, o golpe não tem vida."
+    },
+    {
+      "titulo": "A faixa preta não é o final",
+      "text": "Shodan (初段) significa literalmente 'primeiro degrau'. A faixa preta marca o início do aprendizado real — quando o praticante finalmente conhece o suficiente para começar a compreender."
+    },
+    {
+      "titulo": "O dojo mais antigo do mundo",
+      "text": "O Shotokan original (1936) em Zōshigaya, Tóquio, foi destruído em 1945. Hoje, o dojo da JKA Honbu em Ebisu (Tóquio) é considerado o quartel-general do estilo."
+    },
+    {
+      "titulo": "Kobudō — armas de fazenda",
+      "text": "Quando armas foram proibidas em Okinawa, camponeses adaptaram ferramentas agrícolas: nunchaku (mangual de arroz), tonfa (manivela de moinho), sai (tridente de pesca), bō (bastão) e kama (foice)."
+    },
+    {
+      "titulo": "O Ikken Hissatsu",
+      "text": "一拳必殺 — 'Um golpe, uma morte'. Conceito filosófico que não incentiva violência, mas sim a busca pela técnica perfeita: cada golpe deve ser dado como se fosse o único."
+    },
+    {
+      "titulo": "Zanshin — a mente que permanece",
+      "text": "残心 — Após executar uma técnica, o praticante deve manter a atenção plena, pronto para reagir. Zanshin é a diferença entre um golpe de karateca e um golpe de amador."
+    },
+    {
+      "titulo": "O Karate nas Olimpíadas",
+      "text": "O karatê estreou nos Jogos de Tóquio 2020 (2021), mas foi removido de Paris 2024. A modalidade busca voltar em Los Angeles 2028, mostrando que a luta pelo reconhecimento olímpico continua."
+    }
+  ],
+  "preceitosFunakoshi": [
+    "空手に先手なし — No karatê, não existe atitude ofensiva.",
+    "礼に始まり礼に終わる — Karate começa e termina com o cumprimento.",
+    "心を磨け — Pule o ego, lapide o coração."
+  ],
+  "katas26Detalhados": [
+    {
+      "id": "heian-shodan",
+      "nome": "Heian Shodan",
+      "categoria": "Heian",
+      "faixaRecomendada": "6º Kyu (Amarela)",
+      "quantidadeMovimentos": 21,
+      "posicoesKiai": "Movimentos 9 e 17",
+      "significadoNome": "Paz e Tranquilidade 1",
+      "tecnicasDestaque": "Gedan Barai, Oi Zuki, Age Uke, Shuto Uke",
+      "nivelDificuldade": "Iniciante",
+      "videoUrl": "https://www.youtube.com/embed/q1Rg8rUpjjw?si=OmcOqZQcb9AOxxOO",
+      "embusenOficialImg": "/images/embusen/oficial/heian-shodan.png",
+      "embusenCompletoImg": "/images/embusen/completo/heian-shodan.png",
+      "bunkai": [
+        "Gedan Barai inicial: Bloqueio contra chute baixo ou raspagem do pulso preso para libertação de pulso empunhado.",
+        "Age Uke em avanço: Defesa subindo sob soco alto (Jodan Zuki), abrindo a guarda do oponente e atingindo a mandíbula com a articulação do antebraço.",
+        "Shuto Uke final: Bloqueio lateral com o canto da mão desviando soco e aplicando ataque no pescoço/artéria carótida do adversário."
+      ],
+      "movimentos": [
+        "1. Virar 90° à esquerda em Zenkutsu-dachi -> Gedan Barai esquerdo.",
+        "2. Avançar em Zenkutsu-dachi -> Oi Zuki direito (chudan).",
+        "3. Giro de 180° à direita em Zenkutsu-dachi -> Gedan Barai direito.",
+        "4. Recolher o pé direito e desferir Tetsui Uchi direito (ou avançar e bater).",
+        "5. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.",
+        "6. Virar 90° à esquerda para a linha central em Zenkutsu-dachi -> Gedan Barai esquerdo.",
+        "7. Avançar em Zenkutsu-dachi -> Age Uke direito.",
+        "8. Avançar em Zenkutsu-dachi -> Age Uke esquerdo.",
+        "9. Avançar em Zenkutsu-dachi -> Age Uke direito (KIAI).",
+        "10. Giro de 270° à esquerda em Zenkutsu-dachi -> Gedan Barai esquerdo.",
+        "11. Avançar em Zenkutsu-dachi -> Oi Zuki direito.",
+        "12. Giro de 180° à direita em Zenkutsu-dachi -> Gedan Barai direito.",
+        "13. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.",
+        "14. Virar 90° à esquerda para a linha central em Zenkutsu-dachi -> Gedan Barai esquerdo.",
+        "15. Avançar em Zenkutsu-dachi -> Oi Zuki direito.",
+        "16. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.",
+        "17. Avançar em Zenkutsu-dachi -> Oi Zuki direito (KIAI).",
+        "18. Giro de 270° à esquerda em Kokutsu-dachi -> Shuto Uke esquerdo.",
+        "19. Avançar 45° à direita em Kokutsu-dachi -> Shuto Uke direito.",
+        "20. Giro de 135° à direita em Kokutsu-dachi -> Shuto Uke direito.",
+        "21. Avançar 45° à esquerda em Kokutsu-dachi -> Shuto Uke esquerdo."
+      ]
+    },
+    {
+      "id": "heian-nidan",
+      "nome": "Heian Nidan",
+      "categoria": "Heian",
+      "faixaRecomendada": "5º Kyu (Roxa)",
+      "quantidadeMovimentos": 26,
+      "posicoesKiai": "Movimentos 11 e 26",
+      "significadoNome": "Paz e Tranquilidade 2",
+      "tecnicasDestaque": "Haiwan Uke, Yoko Geri, Uraken Uchi, Nukite, Gyaku Zuki",
+      "nivelDificuldade": "Iniciante",
+      "videoUrl": "https://www.youtube.com/embed/rgs1ysn0R-0?si=7TkRmTo9oLO9nVZQ",
+      "embusenOficialImg": "/images/embusen/oficial/heian-nidan.png",
+      "embusenCompletoImg": "/images/embusen/completo/heian-nidan.png",
+      "bunkai": [
+        "Bloco duplo / Haiwan Uke inicial: Defesa simultânea no rosto e estômago, ou desarme de agarrão no peito usando torque dos cotovelos.",
+        "Yoko Geri + Uraken: Chute de junta no joelho/costela do oponente seguido de golpe com dorso do punho na têmpora.",
+        "Nukite (mão em lança): Pressionar o braço do oponente para baixo com a mão guia e perfurar o plexo solar com a ponta dos dedos."
+      ],
+      "movimentos": [
+        "1. Virar 90° à esquerda em Kokutsu-dachi -> Haiwan Uke esquerdo com Jodan Kamae.",
+        "2. Extensão dos braços alterando a posição dos punhos.",
+        "3. Trazer o punho direito ao quadril e bater em Uraken Uchi / Yoko Geri esquerdo simultâneo.",
+        "4. Caír em Kokutsu-dachi à direita -> Shuto Uke direito.",
+        "5. Virar para o lado direito em Kokutsu-dachi -> Haiwan Uke direito com Jodan Kamae.",
+        "6. Extensão dos braços alterando a posição dos punhos.",
+        "7. Trazer o punho esquerdo ao quadril e bater em Uraken Uchi / Yoko Geri direito simultâneo.",
+        "8. Virar para o centro em Kokutsu-dachi -> Osae Uke esquerdo com armação de ataque.",
+        "9. Avançar em Zenkutsu-dachi -> Nukite direito (palma para baixo, mão esquerda apoiando o cotovelo) (KIAI).",
+        "10. Giro de 270° em Kokutsu-dachi -> Shuto Uke esquerdo.",
+        "11. Avançar 45° à direita em Kokutsu-dachi -> Shuto Uke direito.",
+        "12. Giro de 135° em Kokutsu-dachi -> Shuto Uke direito.",
+        "13. Avançar 45° à esquerda em Kokutsu-dachi -> Shuto Uke esquerdo.",
+        "14. Virar 90° em Zenkutsu-dachi -> Gyaku Uchi Uke direito.",
+        "15. Mae Geri direito sem avançar -> cair em Zenkutsu-dachi com Gyaku Zuki esquerdo.",
+        "16. Uchi Uke esquerdo na mesma base.",
+        "17. Mae Geri esquerdo -> cair em Zenkutsu-dachi com Gyaku Zuki direito.",
+        "18. Avançar em Zenkutsu-dachi -> Morote Uke direito.",
+        "19. Giro de 270° em Zenkutsu-dachi -> Gedan Barai esquerdo.",
+        "20. Avançar 45° em Zenkutsu-dachi -> Age Uke direito.",
+        "21. Giro de 135° em Zenkutsu-dachi -> Gedan Barai direito.",
+        "22. Avançar 45° em Zenkutsu-dachi -> Age Uke esquerdo (KIAI)."
+      ]
+    },
+    {
+      "id": "heian-sandan",
+      "nome": "Heian Sandan",
+      "categoria": "Heian",
+      "faixaRecomendada": "4º Kyu (Vermelha)",
+      "quantidadeMovimentos": 20,
+      "posicoesKiai": "Movimentos 10 e 20",
+      "significadoNome": "Paz e Tranquilidade 3",
+      "tecnicasDestaque": "Uchi Uke, Fumikomi, Kiba-dachi, Empi Uchi",
+      "nivelDificuldade": "Iniciante",
+      "videoUrl": "https://www.youtube.com/embed/1MrRmimBJoA?si=mmgN8na94_1ywXPG",
+      "embusenOficialImg": "/images/embusen/oficial/heian-sandan.png",
+      "embusenCompletoImg": "/images/embusen/completo/heian-sandan.png",
+      "bunkai": [
+        "Uchi Uke / Gedan Barai duplo: Bloqueio de soco médio enquanto se desvia um chute baixo.",
+        "Pressão de Cotovelo em Kiba-dachi: Liberação de agarre por trás colando os braços do agressor ao corpo e atingindo suas costelas com o cotovelo.",
+        "Giro com Uraken/Fumikomi: Pisada forte no pé do oponente (Fumikomi) para prendê-lo e rotação rápida aplicando Uraken no rosto."
+      ],
+      "movimentos": [
+        "1. Virar 90° à esquerda em Uchi Hachiji-dachi -> Uchi Uke esquerdo.",
+        "2. Juntar os pés em Heisoku-dachi -> Uchi Uke direito / Gedan Barai esquerdo.",
+        "3. Manter Heisoku-dachi -> Uchi Uke esquerdo / Gedan Barai direito.",
+        "4. Virar 180° à direita em Uchi Hachiji-dachi -> Uchi Uke direito.",
+        "5. Juntar os pés em Heisoku-dachi -> Uchi Uke esquerdo / Gedan Barai direito.",
+        "6. Manter Heisoku-dachi -> Uchi Uke direito / Gedan Barai esquerdo.",
+        "7. Virar 90° para o centro em Kokutsu-dachi -> Morote Uke esquerdo.",
+        "8. Avançar em Zenkutsu-dachi -> Nukite direito sob mão esquerda.",
+        "9. Giro de 180° em Kiba-dachi -> Sokumen Empi Uchi esquerdo.",
+        "10. Avançar em Kiba-dachi -> Tate Zuki direito (KIAI).",
+        "11. Trazer os pés para Heisoku-dachi colocando as mãos na cintura.",
+        "12. Avançar o pé direito desferindo Fumikomi em Kiba-dachi -> Empi Uchi direito.",
+        "13. Avançar o pé esquerdo desferindo Fumikomi em Kiba-dachi -> Empi Uchi esquerdo.",
+        "14. Avançar o pé direito desferindo Fumikomi em Kiba-dachi -> Empi Uchi direito.",
+        "15. Giro de tronco mantendo Kiba-dachi -> Tate Shuto Uke esquerdo.",
+        "16. Avançar em Zenkutsu-dachi -> Oi Zuki direito.",
+        "17. Giro de 180° puxando o pé direito -> Morote Zuki em Kiba-dachi.",
+        "18. Avançar mantendo Kiba-dachi -> Morote Zuki posterior (KIAI)."
+      ]
+    },
+    {
+      "id": "heian-yondan",
+      "nome": "Heian Yondan",
+      "categoria": "Heian",
+      "faixaRecomendada": "3º Kyu (Laranja)",
+      "quantidadeMovimentos": 27,
+      "posicoesKiai": "Movimentos 13 e 25",
+      "significadoNome": "Paz e Tranquilidade 4",
+      "tecnicasDestaque": "Kakiwake Uke, Mae Geri, Empi Uchi, Juji Uke, Hiza Geri",
+      "nivelDificuldade": "Intermediário",
+      "videoUrl": "https://www.youtube.com/embed/k72E1u962Qg?si=ofEwfitGWoxeOi0X",
+      "embusenOficialImg": "/images/embusen/oficial/heian-yondan.png",
+      "embusenCompletoImg": "/images/embusen/completo/heian-yondan.png",
+      "bunkai": [
+        "Kakiwake Uke inicial: Abertura com braços cruzados para afastar agarre duplo na lapela ou enforcamento.",
+        "Mae Geri + Empi: Chute frontal na virilha ou estômago para puxar a cabeça do oponente para frente e desferir cotovelada na mandíbula.",
+        "Juji Uke (Bloqueio Cruzado) / Hiza Geri: Segurar a cabeça do oponente após defender um chute e puxá-la contra a joelhada (Hiza Geri)."
+      ],
+      "movimentos": [
+        "1. Virar 90° à esquerda em Kokutsu-dachi -> Haiwan Uke duplo lento.",
+        "2. Virar 180° à direita em Kokutsu-dachi -> Haiwan Uke duplo lento.",
+        "3. Virar 90° para o centro em Zenkutsu-dachi -> Juji Uke baixo.",
+        "4. Avançar em Kokutsu-dachi -> Morote Uke.",
+        "5. Trazer o pé esquerdo para Kosa-dachi e erguer o quadril -> Yoko Geri esquerdo / Uraken Uchi simultâneo.",
+        "6. Cair em Zenkutsu-dachi -> Mae Empi Uchi direito.",
+        "7. Trazer o pé direito para Kosa-dachi -> Yoko Geri direito / Uraken Uchi simultâneo.",
+        "8. Cair em Zenkutsu-dachi -> Mae Empi Uchi esquerdo.",
+        "9. Virar 90° para a esquerda em Zenkutsu-dachi -> Shuto Uke alto / Shuto Gedan Barai.",
+        "10. Mae Geri direito -> cair em Kosa-dachi com Uraken Uchi direito (KIAI).",
+        "11. Giro de 270° em Kokutsu-dachi -> Kakiwake Uke.",
+        "12. Mae Geri direito -> cair em Zenkutsu-dachi com Oi Zuki direito.",
+        "13. Gyaku Zuki esquerdo na mesma base.",
+        "14. Giro de 180° em Kokutsu-dachi -> Kakiwake Uke.",
+        "15. Mae Geri esquerdo -> cair em Zenkutsu-dachi com Oi Zuki esquerdo.",
+        "16. Gyaku Zuki direito na mesma base.",
+        "17. Virar 90° para o centro em Kokutsu-dachi -> Morote Uke esquerdo.",
+        "18. Avançar em Kokutsu-dachi -> Morote Uke direito.",
+        "19. Avançar em Kokutsu-dachi -> Morote Uke esquerdo.",
+        "20. Agarrar a cabeça do oponente com ambas as mãos em projeção.",
+        "21. Hiza Geri direito saltado (KIAI).",
+        "22. Cair em Kokutsu-dachi -> Shuto Uke esquerdo.",
+        "23. Recuar em Kokutsu-dachi -> Shuto Uke direito."
+      ]
+    },
+    {
+      "id": "heian-godan",
+      "nome": "Heian Godan",
+      "categoria": "Heian",
+      "faixaRecomendada": "2º Kyu (Verde)",
+      "quantidadeMovimentos": 23,
+      "posicoesKiai": "Movimentos 12 e 19",
+      "significadoNome": "Paz e Tranquilidade 5",
+      "tecnicasDestaque": "Mikazuki Geri, Juji Uke Baixo, Tobi Uke (Salto), Kousa-dachi",
+      "nivelDificuldade": "Intermediário",
+      "videoUrl": "https://www.youtube.com/embed/JA0Ym97vjLg?si=K7OP2XvEVRsUCJhF",
+      "embusenOficialImg": "/images/embusen/oficial/heian-godan.png",
+      "embusenCompletoImg": "/images/embusen/completo/heian-godan.png",
+      "bunkai": [
+        "Kasa Dachi / Uchi Uke + Gyaku Zuki: Defesa de soco direto contra-atacando rapidamente na linha de sintura.",
+        "Juji Uke Baixo + Mikazuki Geri: Defesa de chute baixo cruzando os punhos, segurando a perna e aplicando chute circular com a sola do pé no braço do oponente para desequilibrá-lo.",
+        "Salto (Tobi Uke): Esquiva por cima de uma rasteira/varredura com bastão e queda amortecida para estrangulamento ou contra-ataque."
+      ],
+      "movimentos": [
+        "1. Virar 90° à esquerda em Kokutsu-dachi -> Uchi Uke esquerdo.",
+        "2. Gyaku Zuki direito na mesma base.",
+        "3. Transição para Heisoku-dachi trazendo o punho esquerdo na cintura.",
+        "4. Virar 180° à direita em Kokutsu-dachi -> Uchi Uke direito.",
+        "5. Gyaku Zuki esquerdo na mesma base.",
+        "6. Transição para Heisoku-dachi trazendo o punho direito na cintura.",
+        "7. Virar 90° para o centro em Zenkutsu-dachi -> Morote Uke direito.",
+        "8. Avançar em Zenkutsu-dachi -> Juji Uke baixo (mãos fechadas).",
+        "9. Elevar os punhos cruzados para Juji Uke alto em Zenkutsu-dachi.",
+        "10. Abrir os braços em rotação e desferir Chudan Zuki direito em Zenkutsu-dachi.",
+        "11. Avançar em Zenkutsu-dachi -> Oi Zuki direito (KIAI).",
+        "12. Giro de 180° em Kiba-dachi -> Gedan Barai duplo.",
+        "13. Mikazuki Geri direito atingindo a palma da mão esquerda -> cair em Kiba-dachi com Mae Empi Uchi.",
+        "14. Cruzar perna direita em Kosa-dachi -> Morote Uke alto.",
+        "15. Elevar o joelho direito saltando no ar (Tobi Uke).",
+        "16. Cair em Kosa-dachi -> Juji Uke baixo (KIAI).",
+        "17. Virar 90° em Zenkutsu-dachi -> Morote Uke direito.",
+        "18. Transição para Kokutsu-dachi -> Teisho Uke baixo esquerdo com Nukite alto.",
+        "19. Giro de 180° em Kokutsu-dachi -> Teisho Uke baixo direito com Nukite alto.",
+        "20. Avançar em Zenkutsu-dachi -> Manji Uke.",
+        "21. Transição em Heisoku-dachi trazendo o punho ao quadril.",
+        "22. Giro de 180° em Zenkutsu-dachi -> Manji Uke.",
+        "23. Transição final em Heisoku-dachi."
+      ]
+    },
+    {
+      "id": "tekki-shodan",
+      "nome": "Tekki Shodan",
+      "categoria": "Tekki",
+      "faixaRecomendada": "1º Kyu (Marrom)",
+      "quantidadeMovimentos": 29,
+      "posicoesKiai": "Movimentos 15 e 29",
+      "significadoNome": "Cavaleiro de Ferro 1",
+      "tecnicasDestaque": "Kiba-dachi, Kagizuki, Morote Uke, Nami Gaeshi, Sokumen Zuki",
+      "nivelDificuldade": "Intermediário",
+      "videoUrl": "https://www.youtube.com/embed/1MrRmimBJoA?si=fzzXDrlIReDRZmdk",
+      "embusenOficialImg": "/images/embusen/oficial/tekki-shodan.png",
+      "embusenCompletoImg": "/images/embusen/completo/tekki-shodan.png",
+      "bunkai": [
+        "Kagizuki (Soco em Gancho): Gancho de curta distância contornando a guarda ou defesa de gancho contra soco lateral.",
+        "Morote Uke em Kiba-dachi: Bloqueio reforçado apoiando a mão no cotovelo para absorver impacto pesado e puxar o braço do inimigo para uma chave de articulação.",
+        "Nami Gaeshi: Defesa com a sola do pé desfiando chute na virilha ou rasteira para pisar no joelho do agressor."
+      ],
+      "movimentos": [
+        "1. Cruzar pé esquerdo sobre o direito em Kosa-dachi -> Cruza braços e assume Kiba-dachi olhando à esquerda.",
+        "2. Haiwan Uke esquerdo em Kiba-dachi.",
+        "3. Kagizuki direito (soco em gancho cruzado pela frente do peito).",
+        "4. Virar a cabeça para a direita -> Gedan Barai direito + Uchi Uke esquerdo cruzado.",
+        "5. Nami Gaeshi (elevação do pé direito defendendo a virilha) caindo em Kiba-dachi -> Morote Uke direito.",
+        "6. Nami Gaeshi com pé esquerdo caindo em Kiba-dachi -> Morote Uke esquerdo.",
+        "7. Sokumen Zuki esquerdo (soco lateral) em Kiba-dachi.",
+        "8. Uraken Uchi esquerdo para o lado.",
+        "9. Cruzar o pé direito sobre o esquerdo em Kosa-dachi.",
+        "10. Assumir Kiba-dachi olhando para a direita -> Haiwan Uke direito.",
+        "11. Kagizuki esquerdo.",
+        "12. Gedan Barai esquerdo + Uchi Uke direito cruzado.",
+        "13. Nami Gaeshi esquerdo caindo em Kiba-dachi -> Morote Uke esquerdo.",
+        "14. Nami Gaeshi direito caindo em Kiba-dachi -> Morote Uke direito.",
+        "15. Sokumen Zuki direito em Kiba-dachi (KIAI).",
+        "16. Uraken Uchi direito lateral.",
+        "17-28. Repetição do ciclo simétrico de Nami Gaeshi, bloqueios cruzados e Kagizuki retornando à esquerda.",
+        "29. Sokumen Zuki final em Kiba-dachi (KIAI)."
+      ]
+    },
+    {
+      "id": "tekki-nidan",
+      "nome": "Tekki Nidan",
+      "categoria": "Tekki",
+      "faixaRecomendada": "1º Dan (Preta)",
+      "quantidadeMovimentos": 24,
+      "posicoesKiai": "Movimentos 12 e 24",
+      "significadoNome": "Cavaleiro de Ferro 2",
+      "tecnicasDestaque": "Jodan Tate Uke, Soco Duplo Curto, Kiba-dachi, Catenas Laterais",
+      "nivelDificuldade": "Avançado",
+      "videoUrl": "",
+      "embusenOficialImg": "/images/embusen/oficial/tekki-nidan.png",
+      "embusenCompletoImg": "/images/embusen/completo/tekki-nidan.png",
+      "bunkai": [
+        "Jodan Tate Uke / Kamae alto: Defesa de gancho cruzado alto segurando a cabeça/pescoço do oponente.",
+        "Soco Duplo em Curta Distância: Liberação de agarre duplo pela frente prensando os cotovelos do inimigo e acertando as costelas flutuantes."
+      ],
+      "movimentos": [
+        "1. Postura inicial em Kiba-dachi -> Jodan Tate Uke esquerdo.",
+        "2. Trazer o punho direito sob o cotovelo esquerdo.",
+        "3. Mudança de guarda para Jodan Tate Uke direito.",
+        "4. Ataque curto duplo de punhos prensando a linha do abdômen.",
+        "5. Cruzar perna esquerda em Kosa-dachi.",
+        "6. Encaixe firme em Kiba-dachi -> Uchi Uke duplo.",
+        "7. Extensão de braços em Kamae alto lateral.",
+        "8. Trazer as mãos abertas para a cintura em retenção.",
+        "9. Disparo de soco duplo lateral em curta distância.",
+        "10. Nami Gaeshi com perna direita.",
+        "11. Cair em Kiba-dachi -> Morote Uke direito.",
+        "12. Sokumen Zuki direito em Kiba-dachi (KIAI).",
+        "13-23. Repetição simétrica da sequência de defesas e socos curtos deslocando-se para o lado esquerdo em Kiba-dachi.",
+        "24. Sokumen Zuki final à esquerda em Kiba-dachi (KIAI)."
+      ]
+    },
+    {
+      "id": "tekki-sandan",
+      "nome": "Tekki Sandan",
+      "categoria": "Tekki",
+      "faixaRecomendada": "2º Dan (Preta)",
+      "quantidadeMovimentos": 36,
+      "posicoesKiai": "Movimentos 16 e 36",
+      "significadoNome": "Cavaleiro de Ferro 3",
+      "tecnicasDestaque": "Tsuri Uke, Socos Rápidos Cruzados, Kiba-dachi, Cambiamento de Nível",
+      "nivelDificuldade": "Avançado",
+      "videoUrl": "https://www.youtube.com/embed/1MrRmimBJoA?si=fzzXDrlIReDRZmdk",
+      "embusenOficialImg": "/images/embusen/oficial/tekki-sandan.png",
+      "embusenCompletoImg": "/images/embusen/completo/tekki-sandan.png",
+      "bunkai": [
+        "Tsuri Uke (Bloqueio Elevação): Desvio rápido de soco direto empurrando o cotovelo do oponente para cima para expor o tronco.",
+        "Socos rápidos cruzados em Kiba-dachi: Ataques curtos de alta velocidade focados no plexo, garganta e queixo a partir de um encurralamento contra a parede."
+      ],
+      "movimentos": [
+        "1. Assumir Kiba-dachi -> Tsuri Uke esquerdo rápido.",
+        "2. Choku Zuki direito cruzando a linha do corpo.",
+        "3. Gedan Barai esquerdo em Kiba-dachi.",
+        "4. Tsuri Uke direito rápido.",
+        "5. Choku Zuki esquerdo cruzando o corpo.",
+        "6. Gedan Barai direito em Kiba-dachi.",
+        "7. Cruzar perna esquerda em Kosa-dachi -> armação de punhos.",
+        "8. Encaixar Kiba-dachi -> Soco duplo curto baixo.",
+        "9. Nami Gaeshi direito caindo em Kiba-dachi -> Uchi Uke duplo.",
+        "10. Nami Gaeshi esquerdo caindo em Kiba-dachi -> Uchi Uke duplo.",
+        "11-15. Alternância rápida de socos em gancho (Kagizuki) e desvios de punho sem desfazer a base Kiba-dachi.",
+        "16. Sokumen Zuki esquerdo lateral (KIAI).",
+        "17-35. Repetição do ciclo de Tsuri Uke e sequências de impacto cruzadas para o lado direito.",
+        "36. Sokumen Zuki final para a direita em Kiba-dachi (KIAI)."
+      ]
+    },
+    {
+      "id": "bassai-dai",
+      "nome": "Bassai Dai",
+      "categoria": "Avançados",
+      "faixaRecomendada": "1º Kyu / 1º Dan",
+      "quantidadeMovimentos": 42,
+      "posicoesKiai": "Movimentos 19 e 42",
+      "significadoNome": "Romper a Fortaleza - Grande",
+      "tecnicasDestaque": "Koshin In, Sokumen Awase Uke, Yama Zuki, Tsukami Uke",
+      "nivelDificuldade": "Avançado",
+      "videoUrl": "https://www.youtube.com/embed/Qpt3W7Y06Kg?si=5pYA7damMFzW00Dx",
+      "embusenOficialImg": "/images/embusen/oficial/bassai-dai.png",
+      "embusenCompletoImg": "/images/embusen/completo/bassai-dai.png",
+      "bunkai": [
+        "Koshin In (Entrada forte): Quebra de guarda projetando o corpo para dentro e derrubando o oponente com ombrada/trava de joelho.",
+        "Yama Zuki: Ataque duplo simultâneo (um soco baixo no abdômen e um alto no rosto) passando por cima e por baixo da guarda do oponente."
+      ],
+      "movimentos": [
+        "1. Em Heisoku-dachi, cruzar as mãos à frente -> Avançar forte em Kousa-dachi desferindo Uso-sochi / Morote Tsukami.",
+        "2. Girar 180° à esquerda para Zenkutsu-dachi -> Uchi Uke direito e Gedan Kamae esquerdo.",
+        "3. Virar 180° à direita em Zenkutsu-dachi -> Uchi Uke esquerdo.",
+        "4. Avançar em Zenkutsu-dachi -> Sokumen Awase Uke (bloqueio frontal duplo com palmas).",
+        "5. Girar 90° à esquerda em Zenkutsu-dachi -> Tate Shuto Uke.",
+        "6. Avançar em Zenkutsu-dachi -> Chudan Zuki direito.",
+        "7. Recolher o pé direito mudando a base e aplicar Gyaku Zuki esquerdo.",
+        "8. Giro de 180° em Zenkutsu-dachi -> Tate Shuto Uke esquerdo.",
+        "9. Avançar em Zenkutsu-dachi -> Chudan Zuki esquerdo.",
+        "10. Recuar levemente -> Gyaku Zuki direito.",
+        "11. Puxar o pé direito mantendo o corpo lateralizado -> Yoko Geri / Uraken Uchi simultâneos.",
+        "12. Cair em Kokutsu-dachi -> Shuto Uke esquerdo.",
+        "13. Avançar em Kokutsu-dachi -> Shuto Uke direito.",
+        "14. Avançar em Kokutsu-dachi -> Shuto Uke esquerdo.",
+        "15. Recuar o pé esquerdo em Kokutsu-dachi -> Shuto Uke direito.",
+        "16. Puxar as mãos ao quadril e avançar desferindo Sokumen Morote Age Uke esquerdo.",
+        "17. Avançar desferindo Sokumen Morote Age Uke direito.",
+        "18. Avançar desferindo Sokumen Morote Age Uke esquerdo.",
+        "19. Avançar rápido com corte de braço e travar em Kiba-dachi -> Yama Zuki (KIAI).",
+        "20. Recuar a perna em Zenkutsu-dachi -> Gedan Barai / Sukui Uke.",
+        "21. Transição de quadril -> Gedan Kake Uke.",
+        "22. Girar o tronco em Zenkutsu-dachi -> Yama Zuki.",
+        "23. Recuar a perna em Zenkutsu-dachi -> Gedan Barai.",
+        "24. Transição de quadril -> Gedan Kake Uke.",
+        "25. Girar para Zenkutsu-dachi -> Yama Zuki.",
+        "26. Transição em Kiba-dachi -> Hasami Zuki (soco tesoura).",
+        "27. Sukui Uke em Kiba-dachi.",
+        "28. Fumikomi em Kiba-dachi com cotovelada.",
+        "29-33. Sequência de bloqueios laterais e elevações de joelho.",
+        "34-37. Varredura em semi-círculo -> transição para Kokutsu-dachi com Shuto Uke em três direções.",
+        "38-40. Shuto Uke recuando e avançando no eixo em T.",
+        "41. Avançar e cravar a postura em Kiba-dachi -> Gedan Sukui Uke.",
+        "42. Rotação final de braço unindo a base em Heisoku-dachi (KIAI)."
+      ]
+    },
+    {
+      "id": "kanku-dai",
+      "nome": "Kanku Dai",
+      "categoria": "Avançados",
+      "faixaRecomendada": "1º Dan",
+      "quantidadeMovimentos": 65,
+      "posicoesKiai": "Movimentos 15 e 65",
+      "significadoNome": "Contemplar o Céu - Grande",
+      "tecnicasDestaque": "Visão em Triângulo, Yoko Geri, Esquiva Rasa no Solo, Tobi Geri",
+      "nivelDificuldade": "Avançado",
+      "videoUrl": "https://www.youtube.com/embed/5Hgi2vi9EbA?si=YIvoV3z4nckosn0b",
+      "embusenOficialImg": "/images/embusen/oficial/kanku-dai.png",
+      "embusenCompletoImg": "/images/embusen/completo/kanku-dai.png",
+      "bunkai": [
+        "Triângulo Inicial ao Céu: Desvio duplo de ataque no rosto enquanto se projeta a visão central.",
+        "Rotações no solo / Esquivas rasas: Esquiva de golpe circular alto jogando o tronco no chão para aplicar rasteira (Maniwa) ou chutar o tornozelo do oponente."
+      ],
+      "movimentos": [
+        "1. Em Yoi, elevar ambas as mãos abertas formando um triângulo no topo enquanto olha para o céu.",
+        "2. Abrir os braços circularmente descendendo a guarda -> cair em Kokutsu-dachi com Shuto Uke.",
+        "3. Virar para a direita em Kokutsu-dachi -> Shuto Uke.",
+        "4. Avançar para a frente em Kokutsu-dachi -> Shuto Uke.",
+        "5. Virar em Zenkutsu-dachi -> Tate Shiho Zuki esquerdo.",
+        "6. Gyaku Zuki direito na mesma base.",
+        "7. Giro de 180° em Zenkutsu-dachi -> Tate Shiho Zuki direito.",
+        "8. Gyaku Zuki esquerdo na mesma base.",
+        "9. Yoko Geri com o pé direito e Uraken Uchi simultâneo.",
+        "10. Cair em Kokutsu-dachi -> Shuto Uke esquerdo.",
+        "11. Yoko Geri com o pé esquerdo e Uraken Uchi simultâneo.",
+        "12. Cair em Kokutsu-dachi -> Shuto Uke direito.",
+        "13. Avançar em Kokutsu-dachi -> Shuto Uke esquerdo.",
+        "14. Avançar em Zenkutsu-dachi -> Osae Uke.",
+        "15. Avançar reto em Zenkutsu-dachi -> Nukite direito com mão esquerda em apoio (KIAI).",
+        "16. Giro completo de 360° em Kokutsu-dachi -> Shuto Uke esquerdo.",
+        "17. Avançar em Kokutsu-dachi -> Shuto Uke direito.",
+        "18. Giro de 90° em Zenkutsu-dachi -> Age Uke esquerdo.",
+        "19. Avançar em Zenkutsu-dachi -> Oi Zuki direito.",
+        "20. Giro de 180° em Zenkutsu-dachi -> Age Uke direito.",
+        "21. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.",
+        "22. Virar para o centro em Zenkutsu-dachi -> Gedan Barai esquerdo.",
+        "23. Avançar em Zenkutsu-dachi -> Oi Zuki direito.",
+        "24. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.",
+        "25. Avançar em Zenkutsu-dachi -> Oi Zuki direito.",
+        "26-35. Entrada lateral com combinações de Mae Geri, quedas em Uraken e giros curtos em Kiba-dachi.",
+        "36-45. Sequência de Uchi Uke e Gyakuzuki alternando direções em 45°.",
+        "46-55. Elevação de joelhos para bloqueio e descida rasa com palmas das mãos apoiadas no solo.",
+        "56. Subir do solo de forma explosiva em Zenkutsu-dachi -> Chudan Zuki.",
+        "57-64. Sequência de saltos (Tobi Geri) girando o corpo no ar e caindo em Kiba-dachi com Uraken.",
+        "65. Trava final em Zenkutsu-dachi com Oi Zuki alto (KIAI)."
+      ]
+    },
+    {
+      "id": "jion",
+      "nome": "Jion",
+      "categoria": "Avançados",
+      "faixaRecomendada": "1º Dan",
+      "quantidadeMovimentos": 47,
+      "posicoesKiai": "Movimentos 17 e 47",
+      "significadoNome": "Amor e Gratidão (Templo Budista)",
+      "tecnicasDestaque": "Saudação Shao-Lin, Age Uke / Gedan Barai duplo, Kiba-dachi com Kagizuki",
+      "nivelDificuldade": "Intermediário-Avançado",
+      "videoUrl": "https://www.youtube.com/embed/KErsdtTwqM8?si=VBIq8lrh3RXTfhnV",
+      "embusenOficialImg": "/images/embusen/oficial/jion.png",
+      "embusenCompletoImg": "/images/embusen/completo/jion.png",
+      "bunkai": [
+        "Jodan Age Uke / Gedan Barai simultâneo: Bloqueio simultâneo de ataque duplo (soco alto e chute baixo).",
+        "Avanços com Socos Diretos: Atropelamento tático aplicando Ikken Hisatsu (golpe decisivo) mantendo a estrutura firme."
+      ],
+      "movimentos": [
+        "1. Saudação em Renno-dachi (punho direito coberto pela mão esquerda na frente do peito).",
+        "2. Recuar o pé direito para Zenkutsu-dachi -> Jodan Age Uke esquerdo e Gedan Barai direito simultâneos.",
+        "3. Avançar em Zenkutsu-dachi -> Jodan Age Uke direito e Gedan Barai esquerdo.",
+        "4. Avançar em Zenkutsu-dachi -> Jodan Age Uke esquerdo com Gedan Barai direito.",
+        "5. Girar 90° à esquerda em Zenkutsu-dachi -> Jodan Age Uke esquerdo.",
+        "6. Avançar em Zenkutsu-dachi -> Oi Zuki direito.",
+        "7. Girar 180° à direita em Zenkutsu-dachi -> Jodan Age Uke direito.",
+        "8. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.",
+        "9. Girar 90° para o centro em Zenkutsu-dachi -> Gedan Barai esquerdo.",
+        "10. Avançar em Zenkutsu-dachi -> Age Uke direito.",
+        "11. Avançar em Zenkutsu-dachi -> Age Uke esquerdo.",
+        "12. Avançar em Zenkutsu-dachi -> Age Uke direito.",
+        "13. Mae Geri direito -> cair em Zenkutsu-dachi com Gyaku Zuki esquerdo e Chudan Zuki direito (Ren Zuki).",
+        "14. Mae Geri esquerdo -> cair em Zenkutsu-dachi com Gyaku Zuki direito e Chudan Zuki esquerdo.",
+        "15. Mae Geri direito -> cair em Zenkutsu-dachi com Gyaku Zuki esquerdo e Chudan Zuki direito.",
+        "16. Avançar em Zenkutsu-dachi -> Morote Uke direito.",
+        "17. Rotação de 180° para Kiba-dachi -> Morote Uke esquerdo (KIAI).",
+        "18-28. Movimentação lateral contínua em Kiba-dachi atacando com Kagizuki e defesas Juji Uke.",
+        "29-38. Recuo em Kokutsu-dachi aplicando Shuto Uke em diagonal nos quatro cantos do Embusen.",
+        "39-46. Mudança de base rápida para Zenkutsu-dachi desferindo ataques contínuos de Gyaku Zuki e bloqueios com cotovelo.",
+        "47. Giro final de 180° em Kiba-dachi atacando com gancho duplo na linha média (KIAI)."
+      ]
+    },
+    {
+      "id": "empi",
+      "nome": "Empi",
+      "categoria": "Avançados",
+      "faixaRecomendada": "1º Dan",
+      "quantidadeMovimentos": 37,
+      "posicoesKiai": "Movimentos 15 e 36",
+      "significadoNome": "O Voo da Andorinha",
+      "tecnicasDestaque": "Age Zuki, Mahi Empi Uchi, Mudança de Nível Rasa, Tobi Geri (360°)",
+      "nivelDificuldade": "Avançado",
+      "videoUrl": "https://www.youtube.com/embed/IInNlHZQUrE?si=iDRDyhPcI4kp9i6a",
+      "embusenOficialImg": "/images/embusen/oficial/empi.png",
+      "embusenCompletoImg": "/images/embusen/completo/empi.png",
+      "bunkai": [
+        "Subida e Queda Rápida: Puxar a cabeça do oponente para baixo aplicando cotovelada e agachando para pegada de perna/queda.",
+        "Salto Gira-Corpo (Tobi Geri): Esquiva de varredura baixa saltando por cima e aplicando chute/joelhada no tórax."
+      ],
+      "movimentos": [
+        "1. Em Asahi-dachi, puxar o quadril e posicionar o punho esquerdo sobre o punho direito.",
+        "2. Salto baixo/passada rápida caindo em Kiba-dachi -> Gedan Kamae.",
+        "3. Subir em Zenkutsu-dachi -> Age Zuki direito.",
+        "4. Puxar o oponente agachando em Kiba-dachi -> Mahi Empi Uchi (cotovelada para baixo).",
+        "5. Subir em Zenkutsu-dachi -> Age Zuki esquerdo.",
+        "6. Agachar em Kiba-dachi -> Mahi Empi Uchi esquerdo.",
+        "7. Subir em Zenkutsu-dachi -> Age Zuki direito.",
+        "8. Agachar em Kiba-dachi -> Mahi Empi Uchi direito.",
+        "9. Virar 90° em Kokutsu-dachi -> Shuto Uke esquerdo.",
+        "10. Avançar em Zenkutsu-dachi -> Oi Zuki direito.",
+        "11. Giro de 180° em Kokutsu-dachi -> Shuto Uke direito.",
+        "12. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.",
+        "13. Virar 90° para o centro em Kokutsu-dachi -> Shuto Uke esquerdo.",
+        "14. Avançar em Zenkutsu-dachi -> Oi Zuki direito.",
+        "15. Giro rápido de tronco em Zenkutsu-dachi com soco nas costas (KIAI).",
+        "16-25. Sequência rápida em zigue-zague com varreduras de perna, defesas com a tatsu da mão e Uraken.",
+        "26-34. Avanços em linha central com Tate Zuki seguido de esquiva agachada com a mão tocando o solo.",
+        "35. Impulso do solo executando salto completo em rotação (Tobi Geri).",
+        "36. Queda controlada em Kokutsu-dachi -> Shuto Uke esquerdo (KIAI).",
+        "37. Recuo leve do pé frontal finalizando o bloco de defesa em Kokutsu-dachi."
+      ]
+    },
+    {
+      "id": "hangetsu",
+      "nome": "Hangetsu",
+      "categoria": "Avançados",
+      "faixaRecomendada": "1º Dan",
+      "quantidadeMovimentos": 41,
+      "posicoesKiai": "Movimentos 11 e 40",
+      "significadoNome": "Meia-Lua",
+      "tecnicasDestaque": "Hangetsu-dachi, Respiração Ibuki, Kakiwake Uke, Mikazuki Geri",
+      "nivelDificuldade": "Avançado",
+      "videoUrl": "https://www.youtube.com/embed/vOP8dAalfms?si=WuNthW_MhH8RgCcb",
+      "embusenOficialImg": "/images/embusen/oficial/hangetsu.png",
+      "embusenCompletoImg": "/images/embusen/completo/hangetsu.png",
+      "bunkai": [
+        "Passada Circular / Mikazuki Uke: Gancho com a perna para travar a coxa/pé do oponente desestabilizando a base dele.",
+        "Respiração Tensa + Bloqueios Curto: Defesa sob pressão mantendo o corpo enrijecido para suportar impactos sem perder a posição de combate."
+      ],
+      "movimentos": [
+        "1. Avançar o pé direito em curva ajustando a base em Hangetsu-dachi -> Kakiwake Uke lento com respiração Ibuki.",
+        "2. Avançar o pé esquerdo em curva em Hangetsu-dachi -> Kakiwake Uke lento.",
+        "3. Avançar o pé direito em Hangetsu-dachi -> Kakiwake Uke lento.",
+        "4. Manter a base e desferir Gyaku Zuki esquerdo rápido.",
+        "5. Chudan Zuki direito rápido.",
+        "6. Uchi Uke esquerdo mantendo a tensão da base.",
+        "7. Avançar o pé esquerdo em Hangetsu-dachi -> Kakiwake Uke lento.",
+        "8. Gyaku Zuki direito rápido.",
+        "9. Chudan Zuki esquerdo rápido.",
+        "10. Uchi Uke direito mantendo a tensão.",
+        "11. Transição para o eixo central em Hangetsu-dachi com Sokumen Uke (KIAI).",
+        "12-25. Defesas circulares com a sola do pé (Mikazuki Geri) caindo na base enraizada e contra-atacando com Ura Zuki (soco curto).",
+        "26-35. Giro de 180° com mudança para Zenkutsu-dachi, aplicando bloqueios baixos e subidas rápidas com a palma da mão (Teisho Uke).",
+        "36-39. Avanço direto aplicando três socos contínuos em aceleração crescente.",
+        "40. Trava em Hangetsu-dachi com bloqueio duplo e compressão abdominal (KIAI).",
+        "41. Recuo gradual da perna retornando a postura ereta em Shizentai."
+      ]
+    },
+    {
+      "id": "gankaku",
+      "nome": "Gankaku",
+      "categoria": "Avançados",
+      "faixaRecomendada": "2º Dan",
+      "quantidadeMovimentos": 42,
+      "posicoesKiai": "Movimentos 28 e 42",
+      "significadoNome": "Grou sobre a Rocha",
+      "tecnicasDestaque": "Tsuru-ashi-dachi, Yoko Geri + Uraken, Koshiken, Manji Uke",
+      "nivelDificuldade": "Especialista",
+      "videoUrl": "https://www.youtube.com/embed/OJi3lwnx0jI?si=3b76maTgCr1h0PYK",
+      "embusenOficialImg": "/images/embusen/oficial/gankaku.png",
+      "embusenCompletoImg": "/images/embusen/completo/gankaku.png",
+      "bunkai": [
+        "Tsuru-ashi-dachi (Postura do Grou): Pisada firme na perna do adversário para prendê-lo e manter apoio em uma perna só, liberando a outra para chutes laterais na cabeça."
+      ],
+      "movimentos": [
+        "1. Em Kousa-dachi, cruzar os braços baixos -> Rotação para Kiba-dachi desferindo Tate Uke.",
+        "2. Virar o corpo 180° mantendo Kiba-dachi -> Tate Uke para o outro lado.",
+        "3. Girar 90° para o centro em Zenkutsu-dachi -> Gedan Barai esquerdo.",
+        "4. Avançar em Zenkutsu-dachi -> Oi Zuki direito.",
+        "5. Girar 180° em Zenkutsu-dachi -> Gedan Barai direito.",
+        "6. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.",
+        "7. Girar 90° ao centro em Zenkutsu-dachi -> Kae-Uke (bloqueio de palma dupla).",
+        "8. Elevar a perna direita recolhendo o pé atrás do joelho esquerdo em Tsuru-ashi-dachi -> Guarda alta.",
+        "9. Yoko Geri + Uraken Uchi simultâneos em Tsuru-ashi-dachi.",
+        "10. Cair em Zenkutsu-dachi -> Empi Uchi (cotovelada).",
+        "11. Elevar a perna esquerda em Tsuru-ashi-dachi -> Guarda alta.",
+        "12. Yoko Geri + Uraken Uchi simultâneos.",
+        "13. Cair em Zenkutsu-dachi -> Empi Uchi esquerdo.",
+        "14-27. Sequência central em Zenkutsu-dachi desferindo ataques com o dorso da mão (Koshiken) e Gyaku Zuki acelerados.",
+        "28. Elevação final rápida em Tsuru-ashi-dachi e duplo ataque (KIAI).",
+        "29-41. Defesas cruzadas baixas em Kokutsu-dachi e giros de desequilíbrio em Kiba-dachi.",
+        "42. Salto final em giro com queda cravada em Kiba-dachi executando Manji Uke (KIAI)."
+      ]
+    },
+    {
+      "id": "jitte",
+      "nome": "Jitte",
+      "categoria": "Avançados",
+      "faixaRecomendada": "2º Dan",
+      "quantidadeMovimentos": 24,
+      "posicoesKiai": "Movimentos 13 e 24",
+      "significadoNome": "Dez Mãos",
+      "tecnicasDestaque": "Jodan Cross Uke, Teisho Uke, Kaki Uke (Desarme de Bastão), Hasami Zuki",
+      "nivelDificuldade": "Avançado",
+      "videoUrl": "https://www.youtube.com/embed/IWZOQd6dvww?si=PqjnNvsoSNQHEz7B",
+      "embusenOficialImg": "/images/embusen/oficial/jitte.png",
+      "embusenCompletoImg": "/images/embusen/completo/jitte.png",
+      "bunkai": [
+        "Movimentos de Gancho Duplo: Bloqueio, torção e desarmamento de ataques desferidos com bastão (Bo) ou armas curtas."
+      ],
+      "movimentos": [
+        "1. Em Heisoku-dachi, levantar a mão direita fechada coberta pela mão esquerda aberta na altura do rosto.",
+        "2. Recuar o pé direito para Zenkutsu-dachi -> Jodan Cross Uke.",
+        "3. Avançar em Zenkutsu-dachi -> Kakiwake Uke.",
+        "4. Avançar em Zenkutsu-dachi -> Teisho Uke alto com a mão direita.",
+        "5. Girar 180° em Zenkutsu-dachi -> Teisho Uke alto com a mão esquerda.",
+        "6. Virar 90° para o centro em Zenkutsu-dachi -> Yama Barai.",
+        "7. Avançar em Zenkutsu-dachi -> Kaki Uke direito.",
+        "8. Avançar em Zenkutsu-dachi -> Kaki Uke esquerdo.",
+        "9. Avançar em Zenkutsu-dachi -> Kaki Uke direito.",
+        "10-12. Repetição dos bloqueios em gancho com torção de pulso.",
+        "13. Rotação forte para Kiba-dachi desferindo Morote Age Zuki (KIAI).",
+        "14-23. Sequência lateral firme em Kiba-dachi com Gedan Barai, ataques com a palma da mão e rotação de braços em torção.",
+        "24. Encaixe final de quadril em Kiba-dachi com Hasami Zuki duplo (KIAI)."
+      ]
+    },
+    {
+      "id": "bassai-sho",
+      "nome": "Bassai Sho",
+      "categoria": "Avançados",
+      "faixaRecomendada": "2º Dan",
+      "quantidadeMovimentos": 27,
+      "posicoesKiai": "Movimentos 18 e 27",
+      "significadoNome": "Romper a Fortaleza - Pequeno",
+      "tecnicasDestaque": "Haishu Uke, Seiryuto Uke, Nami Gaeshi, Tsukami Uke",
+      "nivelDificuldade": "Especialista",
+      "videoUrl": "https://www.youtube.com/embed/zpnA13Vg1lY?si=0MItYepXnRt0Hhcv",
+      "embusenOficialImg": "/images/embusen/oficial/bassai-sho.png",
+      "embusenCompletoImg": "/images/embusen/completo/bassai-sho.png",
+      "bunkai": [
+        "Haishu Uke (Costas da mão): Desvio suave de ataque de bastão direcionando a arma para longe, seguido de pisada na articulação do joelho do atacante."
+      ],
+      "movimentos": [
+        "1. Em Heisoku-dachi, erguer o braço direito em guarda cruzada.",
+        "2. Recuar para Kokutsu-dachi -> Haishu Uke.",
+        "3. Avançar o pé para Zenkutsu-dachi -> Seiryuto Uke.",
+        "4. Recuar para Kokutsu-dachi -> Haishu Uke esquerdo.",
+        "5. Avançar para Zenkutsu-dachi -> Seiryuto Uke esquerdo.",
+        "6-8. Repetição simétrica de desvios com costas da mão e ataques com a borda da mão alternando as pernas.",
+        "9-14. Transição para Kiba-dachi executando rasteiras baixas com a sola do pé (Nami Gaeshi) seguidas de Morote Uke.",
+        "15-17. Giro de 180° em Zenkutsu-dachi com projeção do punho no solo (Choku Zuki baixo).",
+        "18. Elevação rápida da base para Kiba-dachi com gancho de cotovelo (KIAI).",
+        "19-26. Sequência de desvio de armas curtas usando Tsukami Uke e recuos em Kokutsu-dachi.",
+        "27. Puxada final de braço caindo firme em Kiba-dachi com Gedan Barai duplo (KIAI)."
+      ]
+    },
+    {
+      "id": "kanku-sho",
+      "nome": "Kanku Sho",
+      "categoria": "Avançados",
+      "faixaRecomendada": "2º Dan",
+      "quantidadeMovimentos": 48,
+      "posicoesKiai": "Movimentos 15 e 48",
+      "significadoNome": "Contemplar o Céu - Pequeno",
+      "tecnicasDestaque": "Morote Uke, Salto Vertical de Esquiva, Morote Zuki, Empi Uchi",
+      "nivelDificuldade": "Especialista",
+      "videoUrl": "https://www.youtube.com/embed/veaayoYQ9D4?si=5h9leVsAiKcpWiRG",
+      "embusenOficialImg": "/images/embusen/oficial/kanku-sho.png",
+      "embusenCompletoImg": "/images/embusen/completo/kanku-sho.png",
+      "bunkai": [
+        "Salto com Giro Alto: Esquiva de ataque com espada/bastão em varredura baixa, utilizando a rotação do salto para cair atacando o pescoço."
+      ],
+      "movimentos": [
+        "1. Em Yoi, cruzar as mãos à frente do corpo -> Avançar o pé esquerdo para Zenkutsu-dachi executando Morote Uke.",
+        "2. Transição rápida de braço para Uchi Uke / Gedan Barai.",
+        "3. Virar 180° em Zenkutsu-dachi -> Morote Uke direito.",
+        "4. Transição de braço para Uchi Uke / Gedan Barai.",
+        "5-10. Sequência em T com avanços rápidos em Zenkutsu-dachi misturando Oi Zuki, Gyaku Zuki e bloqueios Uchi Uke.",
+        "11. Yoko Geri / Uraken esquerdo.",
+        "12. Cair em Kokutsu-dachi -> Shuto Uke.",
+        "13. Yoko Geri / Uraken direito.",
+        "14. Cair em Kokutsu-dachi -> Shuto Uke.",
+        "15. Salto vertical completo sobre ataque baixo caindo no solo em Kousa-dachi -> Teisho Uke para baixo (KIAI).",
+        "16-30. Subida explosiva do solo para Zenkutsu-dachi desferindo Morote Zuki duplo e combinações de Mae Geri.",
+        "31-47. Rotações em diagonal desferindo Uraken Uchi, Empi Uchi e defesas abertas com a palma da mão.",
+        "48. Avanço final cravado em Zenkutsu-dachi com Oi Zuki alto (KIAI)."
+      ]
+    },
+    {
+      "id": "chinte",
+      "nome": "Chinte",
+      "categoria": "Avançados",
+      "faixaRecomendada": "2º Dan",
+      "quantidadeMovimentos": 32,
+      "posicoesKiai": "Movimentos 28 e 32",
+      "significadoNome": "Mãos Estranhas / Raras",
+      "tecnicasDestaque": "Nihon Nukite, Nakadaka Ippon Ken, Ryosho Jodan Uke, Tate-tobi",
+      "nivelDificuldade": "Avançado",
+      "videoUrl": "https://www.youtube.com/embed/RgwDv8MChWg?si=FmLnBgqLsKij7Elj",
+      "embusenOficialImg": "/images/embusen/oficial/chinte.png",
+      "embusenCompletoImg": "/images/embusen/completo/chinte.png",
+      "bunkai": [
+        "Nihon Nukite (Dois dedos): Contra-ataque de emergência direcionado aos olhos do agressor em situações de agarrão corporal."
+      ],
+      "movimentos": [
+        "1. Em Heisoku-dachi, levar os punhos cruzados à cintura.",
+        "2. Avançar em Zenkutsu-dachi -> Tate Shuto Uke direito.",
+        "3. Avançar em Zenkutsu-dachi -> Tate Shuto Uke esquerdo.",
+        "4. Avançar em Zenkutsu-dachi -> Tate Shuto Uke direito.",
+        "5. Rotação circular ampla dos braços em Zenkutsu-dachi -> Ryosho Jodan Uke.",
+        "6-12. Ataques de impacto duplo e elevações laterais de braço.",
+        "13-20. Ataques focados nos olhos e pontos vitais utilizando Nihon Nukite combinados com Nakadaka Ippon Ken.",
+        "21-27. Giros de quadril em Kiba-dachi executando golpes de martelo com o punho (Tetsui Uchi).",
+        "28. Ataque de impacto duplo com a palma da mão na cabeça em Zenkutsu-dachi (KIAI).",
+        "29-31. Três pequenos saltos consecutivos com os pés juntos (Tate-tobi) para trás para reajustar o Embusen.",
+        "32. Trava final em Heisoku-dachi reequilibrando a postura (KIAI)."
+      ]
+    },
+    {
+      "id": "unsu",
+      "nome": "Unsu",
+      "categoria": "Avançados",
+      "faixaRecomendada": "3º Dan",
+      "quantidadeMovimentos": 48,
+      "posicoesKiai": "Movimentos 36 e 48",
+      "significadoNome": "Mãos de Nuvens",
+      "tecnicasDestaque": "Keito Uke, Mawashi Geri de 360° no Solo, Salto Mortal 360° no Ar",
+      "nivelDificuldade": "Especialista",
+      "videoUrl": "https://www.youtube.com/embed/MjVKvHf_Ny0?si=TzIKaHXgjdOwLovK",
+      "embusenOficialImg": "/images/embusen/oficial/unsu.png",
+      "embusenCompletoImg": "/images/embusen/completo/unsu.png",
+      "bunkai": [
+        "Chute Rasteiro 360° no Solo: Queda intencional para se esquivar de golpe alto, acertando chute na virilha/perna do oponente a partir do chão.",
+        "Salto Mortal 360°: Liberar-se de múltiplos agarradores em círculo com salto e giro violento de corpo."
+      ],
+      "movimentos": [
+        "1. Em Heisoku-dachi, afastar as mãos suavemente para os lados simulando o afastamento de nuvens.",
+        "2. Avançar em Zenkutsu-dachi -> Keito Uke seguido por Ippon Nukite.",
+        "3. Virar 180° em Zenkutsu-dachi -> Keito Uke seguido por Ippon Nukite.",
+        "4-8. Repetição rápida de esquivas laterais com Keito Uke e estocadas nos pontos vitais do oponente.",
+        "9-15. Mudança de ritmo com passadas em Kiba-dachi executando Mawashi Uke e pancadas de cotovelo.",
+        "16-24. Projeção do corpo em agachamento total com a mão esquerda no solo -> Mawashi Geri rasante em 360° a partir do chão.",
+        "25-35. Subida rápida desferindo Gyaku Zuki contínuos, Mae Geri e rotações rasas de esquiva.",
+        "36. Salto mortal giratório de 360° no ar para se libertar de agarre -> aterrissagem firme em Kiba-dachi (KIAI).",
+        "37-47. Bloco final de defesas Haishu Uke e rotações pesadas de braço para desestabilizar o adversário.",
+        "48. Avanço decisivo em Zenkutsu-dachi desferindo Chudan Zuki (KIAI)."
+      ]
+    },
+    {
+      "id": "sochin",
+      "nome": "Sochin",
+      "categoria": "Avançados",
+      "faixaRecomendada": "2º Dan",
+      "quantidadeMovimentos": 41,
+      "posicoesKiai": "Movimentos 28 e 40",
+      "significadoNome": "Espírito Inabalável / Força Tranquila",
+      "tecnicasDestaque": "Sochin-dachi (Fudo-dachi), Tate Shuto Uke, Nagashi Uke, Yoko Geri",
+      "nivelDificuldade": "Avançado",
+      "videoUrl": "https://www.youtube.com/embed/KqmlVtZZuxY?si=4L84TF6YlHULQ5YJ",
+      "embusenOficialImg": "/images/embusen/oficial/sochin.png",
+      "embusenCompletoImg": "/images/embusen/completo/sochin.png",
+      "bunkai": [
+        "Sochin-dachi com Tate Shuto: Enraizamento contra empurrão ou investida de grande impacto, retendo o avanço e aplicando golpe com a lateral da mão na garganta."
+      ],
+      "movimentos": [
+        "1. Em Shizentai, recuar o pé direito para Sochin-dachi -> Tate Shuto Uke esquerdo e Gedan Kamae direito.",
+        "2. Avançar o pé direito em Sochin-dachi -> Gyaku Zuki esquerdo + Oi Zuki direito duplo.",
+        "3. Giro de 180° em Sochin-dachi -> Tate Shuto Uke direito.",
+        "4. Avançar em Sochin-dachi -> Gyaku Zuki esquerdo + Oi Zuki direito.",
+        "5. Girar 90° para a esquerda em Sochin-dachi -> Tate Shuto Uke.",
+        "6. Yoko Geri lateral em Sochin-dachi sem alterar a altura da base.",
+        "7. Cair em Sochin-dachi -> Empi Uchi.",
+        "8. Uraken Uchi na mesma postura.",
+        "9-27. Avanços lineares em Sochin-dachi com combinações de Age Uke, Gyaku Zuki e bloqueios com as palmas da mão (Teisho Uke).",
+        "28. Trava em Sochin-dachi desferindo soco duplo forte (KIAI).",
+        "29-39. Giros em 45° mantendo a base firme com Nagashi Uke e contra-ataques de soco direto.",
+        "40. Avanço pesado e definitivo em Sochin-dachi desferindo Oi Zuki (KIAI).",
+        "41. Recuo gradual do pé frontal retornando à postura inicial em Shizentai."
+      ]
+    },
+    {
+      "id": "nijushiho",
+      "nome": "Nijushiho",
+      "categoria": "Avançados",
+      "faixaRecomendada": "2º Dan",
+      "quantidadeMovimentos": 34,
+      "posicoesKiai": "Movimentos 18 e 33",
+      "significadoNome": "24 Passos",
+      "tecnicasDestaque": "Haisho Uke, Sanchin-dachi, Empi Uchi sobre Palma, Mawashi Uke",
+      "nivelDificuldade": "Avançado",
+      "videoUrl": "https://www.youtube.com/embed/ZE8EqPvwruE?si=n2_cq_NPjV-1Mpcx",
+      "embusenOficialImg": "/images/embusen/oficial/nijushiho.png",
+      "embusenCompletoImg": "/images/embusen/completo/nijushiho.png",
+      "bunkai": [
+        "Haisho Uke Fluído: Bloqueio flexível desviando a trajetória do soco direto e redirecionando a força do oponente para uma cotovelada lateral rápida (Empi)."
+      ],
+      "movimentos": [
+        "1. Em Heisoku-dachi, abrir o pé esquerdo para Sanchin-dachi -> Haisho Uke.",
+        "2. Avançar em Sanchin-dachi -> Gyaku Zuki direito rápido.",
+        "3. Avançar em Sanchin-dachi -> Haisho Uke com a mão esquerda.",
+        "4. Gyaku Zuki esquerdo em Sanchin-dachi.",
+        "5-8. Troca fluida para Kiba-dachi com cotovelada sobre a palma da mão (Empi Uchi) e Uchiki rápido.",
+        "9-17. Passadas laterais com desvios curtos, Mae Geri de articulação e queda imediata em Kokutsu-dachi aplicando Shuto Uke.",
+        "18. Mudança de ritmo explosiva em Zenkutsu-dachi com soco duplo central (KIAI).",
+        "19-32. Sequência fluida em T alternando Mawashi Uke, Teisho Uke e chutar com o calcanhar (Fumikomi).",
+        "33. Trava final em Kiba-dachi aplicando golpe de gancho duplo (KIAI).",
+        "34. Recolhimento do pé esquerdo unindo os calcanhares em Heisoku-dachi."
+      ]
+    },
+    {
+      "id": "gojushiho-dai",
+      "nome": "Gojushiho Dai",
+      "categoria": "Avançados",
+      "faixaRecomendada": "3º Dan",
+      "quantidadeMovimentos": 67,
+      "posicoesKiai": "Movimentos 59 e 66",
+      "significadoNome": "54 Passos - Grande",
+      "tecnicasDestaque": "Iwashaguruma, Ippon Nukite, Neko-ashi-dachi, Seiryuto Uke",
+      "nivelDificuldade": "Especialista",
+      "videoUrl": "https://www.youtube.com/embed/qVGcqVEBRRs?si=cc2n0Mi_p6nBgBLD",
+      "embusenOficialImg": "/images/embusen/oficial/gojushiho-dai.png",
+      "embusenCompletoImg": "/images/embusen/completo/gojushiho-dai.png",
+      "bunkai": [
+        "Iwashaguruma (Bico de Pássaro): Ataque focado com a articulação dos dedos (Ippon Nukite) em artérias e pontos vitais da garganta/axila."
+      ],
+      "movimentos": [
+        "1. Em Heisoku-dachi, mover o pé esquerdo para Neko-ashi-dachi -> Iwashaguruma.",
+        "2. Avançar em Neko-ashi-dachi -> Iwashaguruma oposto.",
+        "3. Avançar em Zenkutsu-dachi -> Seiryuto Uke.",
+        "4. Avançar em Zenkutsu-dachi -> Ippon Nukite direito.",
+        "5-18. Sequência em diagonal avançando em Zenkutsu-dachi e Kiba-dachi atacando com Ippon Nukite e Uraken.",
+        "19-35. Varreduras contínuas de perna alternando com socos diretos em aceleração e giros de 180° com Gedan Barai.",
+        "36-58. Rotações angulares com defesas Shuto Uke em Kokutsu-dachi, transicionando para ataques de cotovelo e bloqueios duplos.",
+        "59. Avanço decisivo em Zenkutsu-dachi aplicando Tate Zuki (KIAI).",
+        "60-65. Sequência rápida de desarmes e giros de quadril em Kiba-dachi.",
+        "66. Soco final em Zenkutsu-dachi (KIAI).",
+        "67. Retorno gradual à posição ereta Shizentai."
+      ]
+    },
+    {
+      "id": "gojushiho-sho",
+      "nome": "Gojushiho Sho",
+      "categoria": "Avançados",
+      "faixaRecomendada": "3º Dan",
+      "quantidadeMovimentos": 65,
+      "posicoesKiai": "Movimentos 58 e 64",
+      "significadoNome": "54 Passos - Pequeno",
+      "tecnicasDestaque": "Seiryuto Uke, Nukite Central, Neko-ashi-dachi, Haishu Uke",
+      "nivelDificuldade": "Especialista",
+      "videoUrl": "https://www.youtube.com/embed/c2qiJNrCYGw?si=nC4ozrMCFna66xkK",
+      "embusenOficialImg": "/images/embusen/oficial/gojushiho-sho.png",
+      "embusenCompletoImg": "/images/embusen/completo/gojushiho-sho.png",
+      "bunkai": [
+        "Seiryuto (Aresta da Mão/Mandíbula): Defesa de estocada direta abrindo a linha central e desferindo corte de mão no queixo/têmpora."
+      ],
+      "movimentos": [
+        "1. Em Heisoku-dachi, recuar o pé direito para Neko-ashi-dachi -> Seiryuto Uke suave.",
+        "2. Avançar em Neko-ashi-dachi -> Seiryuto Uke oposto.",
+        "3. Avançar em Zenkutsu-dachi -> Nukite direito na linha central.",
+        "4. Avançar em Zenkutsu-dachi -> Nukite esquerdo.",
+        "5-15. Avanços lineares em Zenkutsu-dachi intercalados por bloqueios de palma Teisho Uke.",
+        "16-32. Movimentação rápida em zigue-zague com Gyakuzuki, trocas de base para Kiba-dachi e pancadas com a lateral do punho (Tetsui Uchi).",
+        "33-57. Sequência de desvios angulares com as costas das mãos (Haishu Uke), acompanhados por Mae Geri e cotoveladas.",
+        "58. Entrada forte em Zenkutsu-dachi com Oi Zuki alto (KIAI).",
+        "59-63. Giros de defesa baixa e esquivas de braço.",
+        "64. Ataque final de lança de mão em Zenkutsu-dachi (KIAI).",
+        "65. Recolhimento do pé para a postura neutra em Yoi."
+      ]
+    },
+    {
+      "id": "meikyo",
+      "nome": "Meikyo",
+      "categoria": "Avançados",
+      "faixaRecomendada": "3º Dan",
+      "quantidadeMovimentos": 33,
+      "posicoesKiai": "Movimento 32",
+      "significadoNome": "Espelho Limpo",
+      "tecnicasDestaque": "Guarda Espelhada, Bo Uke (Bloqueio de Bastão alto), Sankaku Tobi",
+      "nivelDificuldade": "Especialista",
+      "videoUrl": "https://www.youtube.com/embed/HbX9X3JEI1E?si=IUnTW8UKP1s3hn53",
+      "embusenOficialImg": "/images/embusen/oficial/meikyo.png",
+      "embusenCompletoImg": "/images/embusen/completo/meikyo.png",
+      "bunkai": [
+        "Soko na Mente / Espelho Limpo: A mente deve estar sem máculas como um espelho. Contém o bloqueio de bastão pesado aplicado acima da cabeça com as duas mãos."
+      ],
+      "movimentos": [
+        "1. Em Heisoku-dachi, elevar ambas as mãos abertas espelhadas na frente do rosto e descer lentamente.",
+        "2. Avançar o pé esquerdo para Zenkutsu-dachi -> Age Uke direito.",
+        "3. Avançar em Zenkutsu-dachi -> Age Uke esquerdo.",
+        "4. Avançar em Zenkutsu-dachi -> Age Uke direito.",
+        "5-15. Troca rápida para Kiba-dachi desferindo Empi Uchi lateral, seguido de giros de 180° com Gedan Barai e Gyaku Zuki.",
+        "16-31. Sequência central simulando defesa contra bastão alto (Bo Uke), segurando a arma imaginária sobre a cabeça e aplicando chutes frontais Mae Geri.",
+        "32. Salto baixo triangulado (Sankaku Tobi) caindo em Kiba-dachi com Gedan Kamae (KIAI).",
+        "33. Ajuste de base e retorno à posição Shizentai."
+      ]
+    },
+    {
+      "id": "jiin",
+      "nome": "Jiin",
+      "categoria": "Avançados",
+      "faixaRecomendada": "2º Dan",
+      "quantidadeMovimentos": 35,
+      "posicoesKiai": "Movimentos 11 e 35",
+      "significadoNome": "Amor e Proteção / Solo Sagrado",
+      "tecnicasDestaque": "Jodan Age Uke / Gedan Barai simultâneos, Fumikomi, Morote Zuki",
+      "nivelDificuldade": "Avançado",
+      "videoUrl": "https://www.youtube.com/embed/b8RcGoE7XiI?si=LVmJageVxi3zvOQU",
+      "embusenOficialImg": "/images/embusen/oficial/jiin.png",
+      "embusenCompletoImg": "/images/embusen/completo/jiin.png",
+      "bunkai": [
+        "Pivoteamento em Kiba Dachi: Defesa contra ataques laterais simultâneos, utilizando o giro sobre o calcanhar para gerar energia de impacto duplo."
+      ],
+      "movimentos": [
+        "1. Saudação em Renno-dachi com o punho direito coberto pela mão esquerda na frente do peito.",
+        "2. Avançar o pé esquerdo em Zenkutsu-dachi -> Jodan Age Uke / Gedan Barai simultâneos.",
+        "3. Avançar em Zenkutsu-dachi -> Jodan Age Uke direito / Gedan Barai esquerdo.",
+        "4. Girar 90° para Kiba-dachi -> Sokumen Zuki.",
+        "5. Juji Uke baixo em Kiba-dachi.",
+        "6-10. Alternância de golpes laterais em Kiba-dachi.",
+        "11. Pisotão forte (Fumikomi) em Kiba-dachi desferindo Morote Zuki duplo (KIAI).",
+        "12-34. Avanços centrais em Zenkutsu-dachi com combinações de Mae Geri, Ren Zuki (socos duplos) e defesas baixas Gedan Barai.",
+        "35. Giro final de 180° caindo em Kiba-dachi com Morote Age Zuki duplo (KIAI)."
+      ]
+    },
+    {
+      "id": "wankan",
+      "nome": "Wankan",
+      "categoria": "Avançados",
+      "faixaRecomendada": "3º Dan",
+      "quantidadeMovimentos": 24,
+      "posicoesKiai": "Movimento 24",
+      "significadoNome": "Coroa Real",
+      "tecnicasDestaque": "Nage Waza Kamae (Agarre/Projeção), Tate Zuki, Ren Zuki acelerado",
+      "nivelDificuldade": "Especialista",
+      "videoUrl": "https://www.youtube.com/embed/DzFP2UilMtI?si=td3g8MVHyovJN9bL",
+      "embusenOficialImg": "/images/embusen/oficial/wankan.png",
+      "embusenCompletoImg": "/images/embusen/completo/wankan.png",
+      "bunkai": [
+        "Agarre e Projeção: Desvio do punho do oponente segurando o cotovelo e a lapela para aplicar um arremesso/derrubada curta (Nage Waza)."
+      ],
+      "movimentos": [
+        "1. Em Heisoku-dachi, dar um passo à frente em Renno-dachi com as mãos em guarda suave.",
+        "2. Avançar o pé esquerdo em Zenkutsu-dachi -> Nage Waza Kamae (postura de agarre/projeção).",
+        "3. Puxar o braço do oponente em rotação caindo em Kokutsu-dachi -> Shuto Uke.",
+        "4. Avançar em Zenkutsu-dachi -> Tate Zuki.",
+        "5. Avançar em Zenkutsu-dachi -> Gyaku Zuki.",
+        "6-12. Avanços retos em Zenkutsu-dachi e esquivas laterais curtas.",
+        "13-23. Sequência rápida em Kiba-dachi com desvios de punho, pancadas de cotovelo e saltos curtos de ajuste de posição.",
+        "24. Avanço decisivo em Zenkutsu-dachi cravando o soco duplo acelerado (Ren Zuki) (KIAI)."
+      ]
+    }
+  ],
+  "textFiles": {
+    "dataKatas": "==================================================\r\n1. HEIAN SHODAN\r\n==================================================\r\nBUNKAI:\r\n- Gedan Barai inicial: Bloqueio contra chute baixo ou raspagem do pulso preso para libertação de pulso empunhado.\r\n- Age Uke em avanço: Defesa subindo sob soco alto (Jodan Zuki), abrindo a guarda do oponente e atingindo a mandíbula com a articulação do antebraço.\r\n- Shuto Uke final: Bloqueio lateral com o canto da mão desviando soco e aplicando ataque no pescoço/artéria carótida do adversário.\r\n\r\nMOVIMENTOS:\r\n1. Virar 90° à esquerda em Zenkutsu-dachi -> Gedan Barai esquerdo.\r\n2. Avançar em Zenkutsu-dachi -> Oi Zuki direito (chudan).\r\n3. Giro de 180° à direita em Zenkutsu-dachi -> Gedan Barai direito.\r\n4. Recolher o pé direito e desferir Tetsui Uchi direito (ou avançar e bater).\r\n5. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.\r\n6. Virar 90° à esquerda para a linha central em Zenkutsu-dachi -> Gedan Barai esquerdo.\r\n7. Avançar em Zenkutsu-dachi -> Age Uke direito.\r\n8. Avançar em Zenkutsu-dachi -> Age Uke esquerdo.\r\n9. Avançar em Zenkutsu-dachi -> Age Uke direito (KIAI).\r\n10. Giro de 270° à esquerda em Zenkutsu-dachi -> Gedan Barai esquerdo.\r\n11. Avançar em Zenkutsu-dachi -> Oi Zuki direito.\r\n12. Giro de 180° à direita em Zenkutsu-dachi -> Gedan Barai direito.\r\n13. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.\r\n14. Virar 90° à esquerda para a linha central em Zenkutsu-dachi -> Gedan Barai esquerdo.\r\n15. Avançar em Zenkutsu-dachi -> Oi Zuki direito.\r\n16. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.\r\n17. Avançar em Zenkutsu-dachi -> Oi Zuki direito (KIAI).\r\n18. Giro de 270° à esquerda em Kokutsu-dachi -> Shuto Uke esquerdo.\r\n19. Avançar 45° à direita em Kokutsu-dachi -> Shuto Uke direito.\r\n20. Giro de 135° à direita em Kokutsu-dachi -> Shuto Uke direito.\r\n21. Avançar 45° à esquerda em Kokutsu-dachi -> Shuto Uke esquerdo.\r\n\r\n==================================================\r\n2. HEIAN NIDAN\r\n==================================================\r\nBUNKAI:\r\n- Bloco duplo / Haiwan Uke inicial: Defesa simultânea no rosto e estômago, ou desarme de agarrão no peito usando torque dos cotovelos.\r\n- Yoko Geri + Uraken: Chute de junta no joelho/costela do oponente seguido de golpe com dorso do punho na têmpora.\r\n- Nukite (mão em lança): Pressionar o braço do oponente para baixo com a mão guia e perfurar o plexo solar com a ponta dos dedos.\r\n\r\nMOVIMENTOS:\r\n1. Virar 90° à esquerda em Kokutsu-dachi -> Haiwan Uke esquerdo com Jodan Kamae.\r\n2. Extensão dos braços alterando a posição dos punhos.\r\n3. Trazer o punho direito ao quadril e bater em Uraken Uchi / Yoko Geri esquerdo simultâneo.\r\n4. Caír em Kokutsu-dachi à direita -> Shuto Uke direito.\r\n5. Virar para o lado direito em Kokutsu-dachi -> Haiwan Uke direito com Jodan Kamae.\r\n6. Extensão dos braços alterando a posição dos punhos.\r\n7. Trazer o punho esquerdo ao quadril e bater em Uraken Uchi / Yoko Geri direito simultâneo.\r\n8. Virar para o centro em Kokutsu-dachi -> Osae Uke esquerdo com armação de ataque.\r\n9. Avançar em Zenkutsu-dachi -> Nukite direito (palma para baixo, mão esquerda apoiando o cotovelo) (KIAI).\r\n10. Giro de 270° em Kokutsu-dachi -> Shuto Uke esquerdo.\r\n11. Avançar 45° à direita em Kokutsu-dachi -> Shuto Uke direito.\r\n12. Giro de 135° em Kokutsu-dachi -> Shuto Uke direito.\r\n13. Avançar 45° à esquerda em Kokutsu-dachi -> Shuto Uke esquerdo.\r\n14. Virar 90° em Zenkutsu-dachi -> Gyaku Uchi Uke direito.\r\n15. Mae Geri direito sem avançar -> cair em Zenkutsu-dachi com Gyaku Zuki esquerdo.\r\n16. Uchi Uke esquerdo na mesma base.\r\n17. Mae Geri esquerdo -> cair em Zenkutsu-dachi com Gyaku Zuki direito.\r\n18. Avançar em Zenkutsu-dachi -> Morote Uke direito.\r\n19. Giro de 270° em Zenkutsu-dachi -> Gedan Barai esquerdo.\r\n20. Avançar 45° em Zenkutsu-dachi -> Age Uke direito.\r\n21. Giro de 135° em Zenkutsu-dachi -> Gedan Barai direito.\r\n22. Avançar 45° em Zenkutsu-dachi -> Age Uke esquerdo (KIAI).\r\n\r\n==================================================\r\n3. HEIAN SANDAN\r\n==================================================\r\nBUNKAI:\r\n- Uchi Uke / Gedan Barai duplo: Bloqueio de soco médio enquanto se desvia um chute baixo.\r\n- Pressão de Cotovelo em Kiba-dachi: Liberação de agarre por trás colando os braços do agressor ao corpo e atingindo suas costelas com o cotovelo.\r\n- Giro com Uraken/Fumikomi: Pisada forte no pé do oponente (Fumikomi) para prendê-lo e rotação rápida aplicando Uraken no rosto.\r\n\r\nMOVIMENTOS:\r\n1. Virar 90° à esquerda em Uchi Hachiji-dachi -> Uchi Uke esquerdo.\r\n2. Juntar os pés em Heisoku-dachi -> Uchi Uke direito / Gedan Barai esquerdo.\r\n3. Manter Heisoku-dachi -> Uchi Uke esquerdo / Gedan Barai direito.\r\n4. Virar 180° à direita em Uchi Hachiji-dachi -> Uchi Uke direito.\r\n5. Juntar os pés em Heisoku-dachi -> Uchi Uke esquerdo / Gedan Barai direito.\r\n6. Manter Heisoku-dachi -> Uchi Uke direito / Gedan Barai esquerdo.\r\n7. Virar 90° para o centro em Kokutsu-dachi -> Morote Uke esquerdo.\r\n8. Avançar em Zenkutsu-dachi -> Nukite direito sob mão esquerda.\r\n9. Giro de 180° em Kiba-dachi -> Sokumen Empi Uchi esquerdo.\r\n10. Avançar em Kiba-dachi -> Tate Zuki direito (KIAI).\r\n11. Trazer os pés para Heisoku-dachi colocando as mãos na cintura.\r\n12. Avançar o pé direito desferindo Fumikomi em Kiba-dachi -> Empi Uchi direito.\r\n13. Avançar o pé esquerdo desferindo Fumikomi em Kiba-dachi -> Empi Uchi esquerdo.\r\n14. Avançar o pé direito desferindo Fumikomi em Kiba-dachi -> Empi Uchi direito.\r\n15. Giro de tronco mantendo Kiba-dachi -> Tate Shuto Uke esquerdo.\r\n16. Avançar em Zenkutsu-dachi -> Oi Zuki direito.\r\n17. Giro de 180° puxando o pé direito -> Morote Zuki em Kiba-dachi.\r\n18. Avançar mantendo Kiba-dachi -> Morote Zuki posterior (KIAI).\r\n\r\n==================================================\r\n4. HEIAN YONDAN\r\n==================================================\r\nBUNKAI:\r\n- Kakiwake Uke inicial: Abertura com braços cruzados para afastar agarre duplo na lapela ou enforcamento.\r\n- Mae Geri + Empi: Chute frontal na virilha ou estômago para puxar a cabeça do oponente para frente e desferir cotovelada na mandíbula.\r\n- Juji Uke (Bloqueio Cruzado) / Hiza Geri: Segurar a cabeça do oponente após defender um chute e puxá-la contra a joelhada (Hiza Geri).\r\n\r\nMOVIMENTOS:\r\n1. Virar 90° à esquerda em Kokutsu-dachi -> Haiwan Uke duplo lento.\r\n2. Virar 180° à direita em Kokutsu-dachi -> Haiwan Uke duplo lento.\r\n3. Virar 90° para o centro em Zenkutsu-dachi -> Juji Uke baixo.\r\n4. Avançar em Kokutsu-dachi -> Morote Uke.\r\n5. Trazer o pé esquerdo para Kosa-dachi e erguer o quadril -> Yoko Geri esquerdo / Uraken Uchi simultâneo.\r\n6. Cair em Zenkutsu-dachi -> Mae Empi Uchi direito.\r\n7. Trazer o pé direito para Kosa-dachi -> Yoko Geri direito / Uraken Uchi simultâneo.\r\n8. Cair em Zenkutsu-dachi -> Mae Empi Uchi esquerdo.\r\n9. Virar 90° para a esquerda em Zenkutsu-dachi -> Shuto Uke alto / Shuto Gedan Barai.\r\n10. Mae Geri direito -> cair em Kosa-dachi com Uraken Uchi direito (KIAI).\r\n11. Giro de 270° em Kokutsu-dachi -> Kakiwake Uke.\r\n12. Mae Geri direito -> cair em Zenkutsu-dachi com Oi Zuki direito.\r\n13. Gyaku Zuki esquerdo na mesma base.\r\n14. Giro de 180° em Kokutsu-dachi -> Kakiwake Uke.\r\n15. Mae Geri esquerdo -> cair em Zenkutsu-dachi com Oi Zuki esquerdo.\r\n16. Gyaku Zuki direito na mesma base.\r\n17. Virar 90° para o centro em Kokutsu-dachi -> Morote Uke esquerdo.\r\n18. Avançar em Kokutsu-dachi -> Morote Uke direito.\r\n19. Avançar em Kokutsu-dachi -> Morote Uke esquerdo.\r\n20. Agarrar a cabeça do oponente com ambas as mãos em projeção.\r\n21. Hiza Geri direito saltado (KIAI).\r\n22. Cair em Kokutsu-dachi -> Shuto Uke esquerdo.\r\n23. Recuar em Kokutsu-dachi -> Shuto Uke direito.\r\n\r\n==================================================\r\n5. HEIAN GODAN\r\n==================================================\r\nBUNKAI:\r\n- Kasa Dachi / Uchi Uke + Gyaku Zuki: Defesa de soco direto contra-atacando rapidamente na linha de sintura.\r\n- Juji Uke Baixo + Mikazuki Geri: Defesa de chute baixo cruzando os punhos, segurando a perna e aplicando chute circular com a sola do pé no braço do oponente para desequilibrá-lo.\r\n- Salto (Tobi Uke): Esquiva por cima de uma rasteira/varredura com bastão e queda amortecida para estrangulamento ou contra-ataque.\r\n\r\nMOVIMENTOS:\r\n1. Virar 90° à esquerda em Kokutsu-dachi -> Uchi Uke esquerdo.\r\n2. Gyaku Zuki direito na mesma base.\r\n3. Transição para Heisoku-dachi trazendo o punho esquerdo na cintura.\r\n4. Virar 180° à direita em Kokutsu-dachi -> Uchi Uke direito.\r\n5. Gyaku Zuki esquerdo na mesma base.\r\n6. Transição para Heisoku-dachi trazendo o punho direito na cintura.\r\n7. Virar 90° para o centro em Zenkutsu-dachi -> Morote Uke direito.\r\n8. Avançar em Zenkutsu-dachi -> Juji Uke baixo (mãos fechadas).\r\n9. Elevar os punhos cruzados para Juji Uke alto em Zenkutsu-dachi.\r\n10. Abrir os braços em rotação e desferir Chudan Zuki direito em Zenkutsu-dachi.\r\n11. Avançar em Zenkutsu-dachi -> Oi Zuki direito (KIAI).\r\n12. Giro de 180° em Kiba-dachi -> Gedan Barai duplo.\r\n13. Mikazuki Geri direito atingindo a palma da mão esquerda -> cair em Kiba-dachi com Mae Empi Uchi.\r\n14. Cruzar perna direita em Kosa-dachi -> Morote Uke alto.\r\n15. Elevar o joelho direito saltando no ar (Tobi Uke).\r\n16. Cair em Kosa-dachi -> Juji Uke baixo (KIAI).\r\n17. Virar 90° em Zenkutsu-dachi -> Morote Uke direito.\r\n18. Transição para Kokutsu-dachi -> Teisho Uke baixo esquerdo com Nukite alto.\r\n19. Giro de 180° em Kokutsu-dachi -> Teisho Uke baixo direito com Nukite alto.\r\n20. Avançar em Zenkutsu-dachi -> Manji Uke.\r\n21. Transição em Heisoku-dachi trazendo o punho ao quadril.\r\n22. Giro de 180° em Zenkutsu-dachi -> Manji Uke.\r\n23. Transição final em Heisoku-dachi.\r\n\r\n==================================================\r\n6. TEKKI SHODAN\r\n==================================================\r\nBUNKAI:\r\n- Kagizuki (Soco em Gancho): Gancho de curta distância contornando a guarda ou defesa de gancho contra soco lateral.\r\n- Morote Uke em Kiba-dachi: Bloqueio reforçado apoiando a mão no cotovelo para absorver impacto pesado e puxar o braço do inimigo para uma chave de articulação.\r\n- Nami Gaeshi: Defesa com a sola do pé desfiando chute na virilha ou rasteira para pisar no joelho do agressor.\r\n\r\nMOVIMENTOS:\r\n1. Cruzar pé esquerdo sobre o direito em Kosa-dachi -> Cruza braços e assume Kiba-dachi olhando à esquerda.\r\n2. Haiwan Uke esquerdo em Kiba-dachi.\r\n3. Kagizuki direito (soco em gancho cruzado pela frente do peito).\r\n4. Virar a cabeça para a direita -> Gedan Barai direito + Uchi Uke esquerdo cruzado.\r\n5. Nami Gaeshi (elevação do pé direito defendendo a virilha) caindo em Kiba-dachi -> Morote Uke direito.\r\n6. Nami Gaeshi com pé esquerdo caindo em Kiba-dachi -> Morote Uke esquerdo.\r\n7. Sokumen Zuki esquerdo (soco lateral) em Kiba-dachi.\r\n8. Uraken Uchi esquerdo para o lado.\r\n9. Cruzar o pé direito sobre o esquerdo em Kosa-dachi.\r\n10. Assumir Kiba-dachi olhando para a direita -> Haiwan Uke direito.\r\n11. Kagizuki esquerdo.\r\n12. Gedan Barai esquerdo + Uchi Uke direito cruzado.\r\n13. Nami Gaeshi esquerdo caindo em Kiba-dachi -> Morote Uke esquerdo.\r\n14. Nami Gaeshi direito caindo em Kiba-dachi -> Morote Uke direito.\r\n15. Sokumen Zuki direito em Kiba-dachi (KIAI).\r\n16. Uraken Uchi direito lateral.\r\n17-28. Repetição do ciclo simétrico de Nami Gaeshi, bloqueios cruzados e Kagizuki retornando à esquerda.\r\n29. Sokumen Zuki final em Kiba-dachi (KIAI).\r\n\r\n==================================================\r\n7. TEKKI NIDAN\r\n==================================================\r\nBUNKAI:\r\n- Jodan Tate Uke / Kamae alto: Defesa de gancho cruzado alto segurando a cabeça/pescoço do oponente.\r\n- Soco Duplo em Curta Distância: Liberação de agarre duplo pela frente prensando os cotovelos do inimigo e acertando as costelas flutuantes.\r\n\r\nMOVIMENTOS:\r\n1. Postura inicial em Kiba-dachi -> Jodan Tate Uke esquerdo.\r\n2. Trazer o punho direito sob o cotovelo esquerdo.\r\n3. Mudança de guarda para Jodan Tate Uke direito.\r\n4. Ataque curto duplo de punhos prensando a linha do abdômen.\r\n5. Cruzar perna esquerda em Kosa-dachi.\r\n6. Encaixe firme em Kiba-dachi -> Uchi Uke duplo.\r\n7. Extensão de braços em Kamae alto lateral.\r\n8. Trazer as mãos abertas para a cintura em retenção.\r\n9. Disparo de soco duplo lateral em curta distância.\r\n10. Nami Gaeshi com perna direita.\r\n11. Cair em Kiba-dachi -> Morote Uke direito.\r\n12. Sokumen Zuki direito em Kiba-dachi (KIAI).\r\n13-23. Repetição simétrica da sequência de defesas e socos curtos deslocando-se para o lado esquerdo em Kiba-dachi.\r\n24. Sokumen Zuki final à esquerda em Kiba-dachi (KIAI).\r\n\r\n==================================================\r\n8. TEKKI SANDAN\r\n==================================================\r\nBUNKAI:\r\n- Tsuri Uke (Bloqueio Elevação): Desvio rápido de soco direto empurrando o cotovelo do oponente para cima para expor o tronco.\r\n- Socos rápidos cruzados em Kiba-dachi: Ataques curtos de alta velocidade focados no plexo, garganta e queixo a partir de um encurralamento contra a parede.\r\n\r\nMOVIMENTOS:\r\n1. Assumir Kiba-dachi -> Tsuri Uke esquerdo rápido.\r\n2. Choku Zuki direito cruzando a linha do corpo.\r\n3. Gedan Barai esquerdo em Kiba-dachi.\r\n4. Tsuri Uke direito rápido.\r\n5. Choku Zuki esquerdo cruzando o corpo.\r\n6. Gedan Barai direito em Kiba-dachi.\r\n7. Cruzar perna esquerda em Kosa-dachi -> armação de punhos.\r\n8. Encaixar Kiba-dachi -> Soco duplo curto baixo.\r\n9. Nami Gaeshi direito caindo em Kiba-dachi -> Uchi Uke duplo.\r\n10. Nami Gaeshi esquerdo caindo em Kiba-dachi -> Uchi Uke duplo.\r\n11-15. Alternância rápida de socos em gancho (Kagizuki) e desvios de punho sem desfazer a base Kiba-dachi.\r\n16. Sokumen Zuki esquerdo lateral (KIAI).\r\n17-35. Repetição do ciclo de Tsuri Uke e sequências de impacto cruzadas para o lado direito.\r\n36. Sokumen Zuki final para a direita em Kiba-dachi (KIAI).\r\n\r\n==================================================\r\n9. BASSAI DAI\r\n==================================================\r\nBUNKAI:\r\n- Koshin In (Entrada forte): Quebra de guarda projetando o corpo para dentro e derrubando o oponente com ombrada/trava de joelho.\r\n- Yama Zuki: Ataque duplo simultâneo (um soco baixo no abdômen e um alto no rosto) passando por cima e por baixo da guarda do oponente.\r\n\r\nMOVIMENTOS:\r\n1. Em Heisoku-dachi, cruzar as mãos à frente -> Avançar forte em Kousa-dachi desferindo Uso-sochi / Morote Tsukami.\r\n2. Girar 180° à esquerda para Zenkutsu-dachi -> Uchi Uke direito e Gedan Kamae esquerdo.\r\n3. Virar 180° à direita em Zenkutsu-dachi -> Uchi Uke esquerdo.\r\n4. Avançar em Zenkutsu-dachi -> Sokumen Awase Uke (bloqueio frontal duplo com palmas).\r\n5. Girar 90° à esquerda em Zenkutsu-dachi -> Tate Shuto Uke.\r\n6. Avançar em Zenkutsu-dachi -> Chudan Zuki direito.\r\n7. Recolher o pé direito mudando a base e aplicar Gyaku Zuki esquerdo.\r\n8. Giro de 180° em Zenkutsu-dachi -> Tate Shuto Uke esquerdo.\r\n9. Avançar em Zenkutsu-dachi -> Chudan Zuki esquerdo.\r\n10. Recuar levemente -> Gyaku Zuki direito.\r\n11. Puxar o pé direito mantendo o corpo lateralizado -> Yoko Geri / Uraken Uchi simultâneos.\r\n12. Cair em Kokutsu-dachi -> Shuto Uke esquerdo.\r\n13. Avançar em Kokutsu-dachi -> Shuto Uke direito.\r\n14. Avançar em Kokutsu-dachi -> Shuto Uke esquerdo.\r\n15. Recuar o pé esquerdo em Kokutsu-dachi -> Shuto Uke direito.\r\n16. Puxar as mãos ao quadril e avançar desferindo Sokumen Morote Age Uke esquerdo.\r\n17. Avançar desferindo Sokumen Morote Age Uke direito.\r\n18. Avançar desferindo Sokumen Morote Age Uke esquerdo.\r\n19. Avançar rápido com corte de braço e travar em Kiba-dachi -> Yama Zuki (KIAI).\r\n20. Recuar a perna em Zenkutsu-dachi -> Gedan Barai / Sukui Uke.\r\n21. Transição de quadril -> Gedan Kake Uke.\r\n22. Girar o tronco em Zenkutsu-dachi -> Yama Zuki.\r\n23. Recuar a perna em Zenkutsu-dachi -> Gedan Barai.\r\n24. Transição de quadril -> Gedan Kake Uke.\r\n25. Girar para Zenkutsu-dachi -> Yama Zuki.\r\n26. Transição em Kiba-dachi -> Hasami Zuki (soco tesoura).\r\n27. Sukui Uke em Kiba-dachi.\r\n28. Fumikomi em Kiba-dachi com cotovelada.\r\n29-33. Sequência de bloqueios laterais e elevações de joelho.\r\n34-37. Varredura em semi-círculo -> transição para Kokutsu-dachi com Shuto Uke em três direções.\r\n38-40. Shuto Uke recuando e avançando no eixo em T.\r\n41. Avançar e cravar a postura em Kiba-dachi -> Gedan Sukui Uke.\r\n42. Rotação final de braço unindo a base em Heisoku-dachi (KIAI).\r\n\r\n==================================================\r\n10. KANKU DAI\r\n==================================================\r\nBUNKAI:\r\n- Triângulo Inicial ao Céu: Desvio duplo de ataque no rosto enquanto se projeta a visão central.\r\n- Rotações no solo / Esquivas rasas: Esquiva de golpe circular alto jogando o tronco no chão para aplicar rasteira (Maniwa) ou chutar o tornozelo do oponente.\r\n\r\nMOVIMENTOS:\r\n1. Em Yoi, elevar ambas as mãos abertas formando um triângulo no topo enquanto olha para o céu.\r\n2. Abrir os braços circularmente descendendo a guarda -> cair em Kokutsu-dachi com Shuto Uke.\r\n3. Virar para a direita em Kokutsu-dachi -> Shuto Uke.\r\n4. Avançar para a frente em Kokutsu-dachi -> Shuto Uke.\r\n5. Virar em Zenkutsu-dachi -> Tate Shiho Zuki esquerdo.\r\n6. Gyaku Zuki direito na mesma base.\r\n7. Giro de 180° em Zenkutsu-dachi -> Tate Shiho Zuki direito.\r\n8. Gyaku Zuki esquerdo na mesma base.\r\n9. Yoko Geri com o pé direito e Uraken Uchi simultâneo.\r\n10. Cair em Kokutsu-dachi -> Shuto Uke esquerdo.\r\n11. Yoko Geri com o pé esquerdo e Uraken Uchi simultâneo.\r\n12. Cair em Kokutsu-dachi -> Shuto Uke direito.\r\n13. Avançar em Kokutsu-dachi -> Shuto Uke esquerdo.\r\n14. Avançar em Zenkutsu-dachi -> Osae Uke.\r\n15. Avançar reto em Zenkutsu-dachi -> Nukite direito com mão esquerda em apoio (KIAI).\r\n16. Giro completo de 360° em Kokutsu-dachi -> Shuto Uke esquerdo.\r\n17. Avançar em Kokutsu-dachi -> Shuto Uke direito.\r\n18. Giro de 90° em Zenkutsu-dachi -> Age Uke esquerdo.\r\n19. Avançar em Zenkutsu-dachi -> Oi Zuki direito.\r\n20. Giro de 180° em Zenkutsu-dachi -> Age Uke direito.\r\n21. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.\r\n22. Virar para o centro em Zenkutsu-dachi -> Gedan Barai esquerdo.\r\n23. Avançar em Zenkutsu-dachi -> Oi Zuki direito.\r\n24. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.\r\n25. Avançar em Zenkutsu-dachi -> Oi Zuki direito.\r\n26-35. Entrada lateral com combinações de Mae Geri, quedas em Uraken e giros curtos em Kiba-dachi.\r\n36-45. Sequência de Uchi Uke e Gyakuzuki alternando direções em 45°.\r\n46-55. Elevação de joelhos para bloqueio e descida rasa com palmas das mãos apoiadas no solo.\r\n56. Subir do solo de forma explosiva em Zenkutsu-dachi -> Chudan Zuki.\r\n57-64. Sequência de saltos (Tobi Geri) girando o corpo no ar e caindo em Kiba-dachi com Uraken.\r\n65. Trava final em Zenkutsu-dachi com Oi Zuki alto (KIAI).\r\n\r\n==================================================\r\n11. JION\r\n==================================================\r\nBUNKAI:\r\n- Jodan Age Uke / Gedan Barai simultâneo: Bloqueio simultâneo de ataque duplo (soco alto e chute baixo).\r\n- Avanços com Socos Diretos: Atropelamento tático aplicando Ikken Hisatsu (golpe decisivo) mantendo a estrutura firme.\r\n\r\nMOVIMENTOS:\r\n1. Saudação em Renno-dachi (punho direito coberto pela mão esquerda na frente do peito).\r\n2. Recuar o pé direito para Zenkutsu-dachi -> Jodan Age Uke esquerdo e Gedan Barai direito simultâneos.\r\n3. Avançar em Zenkutsu-dachi -> Jodan Age Uke direito e Gedan Barai esquerdo.\r\n4. Avançar em Zenkutsu-dachi -> Jodan Age Uke esquerdo com Gedan Barai direito.\r\n5. Girar 90° à esquerda em Zenkutsu-dachi -> Jodan Age Uke esquerdo.\r\n6. Avançar em Zenkutsu-dachi -> Oi Zuki direito.\r\n7. Girar 180° à direita em Zenkutsu-dachi -> Jodan Age Uke direito.\r\n8. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.\r\n9. Girar 90° para o centro em Zenkutsu-dachi -> Gedan Barai esquerdo.\r\n10. Avançar em Zenkutsu-dachi -> Age Uke direito.\r\n11. Avançar em Zenkutsu-dachi -> Age Uke esquerdo.\r\n12. Avançar em Zenkutsu-dachi -> Age Uke direito.\r\n13. Mae Geri direito -> cair em Zenkutsu-dachi com Gyaku Zuki esquerdo e Chudan Zuki direito (Ren Zuki).\r\n14. Mae Geri esquerdo -> cair em Zenkutsu-dachi com Gyaku Zuki direito e Chudan Zuki esquerdo.\r\n15. Mae Geri direito -> cair em Zenkutsu-dachi com Gyaku Zuki esquerdo e Chudan Zuki direito.\r\n16. Avançar em Zenkutsu-dachi -> Morote Uke direito.\r\n17. Rotação de 180° para Kiba-dachi -> Morote Uke esquerdo (KIAI).\r\n18-28. Movimentação lateral contínua em Kiba-dachi atacando com Kagizuki e defesas Juji Uke.\r\n29-38. Recuo em Kokutsu-dachi aplicando Shuto Uke em diagonal nos quatro cantos do Embusen.\r\n39-46. Mudança de base rápida para Zenkutsu-dachi desferindo ataques contínuos de Gyaku Zuki e bloqueios com cotovelo.\r\n47. Giro final de 180° em Kiba-dachi atacando com gancho duplo na linha média (KIAI).\r\n\r\n==================================================\r\n12. EMPI\r\n==================================================\r\nBUNKAI:\r\n- Subida e Queda Rápida: Puxar a cabeça do oponente para baixo aplicando cotovelada e agachando para pegada de perna/queda.\r\n- Salto Gira-Corpo (Tobi Geri): Esquiva de varredura baixa saltando por cima e aplicando chute/joelhada no tórax.\r\n\r\nMOVIMENTOS:\r\n1. Em Asahi-dachi, puxar o quadril e posicionar o punho esquerdo sobre o punho direito.\r\n2. Salto baixo/passada rápida caindo em Kiba-dachi -> Gedan Kamae.\r\n3. Subir em Zenkutsu-dachi -> Age Zuki direito.\r\n4. Puxar o oponente agachando em Kiba-dachi -> Mahi Empi Uchi (cotovelada para baixo).\r\n5. Subir em Zenkutsu-dachi -> Age Zuki esquerdo.\r\n6. Agachar em Kiba-dachi -> Mahi Empi Uchi esquerdo.\r\n7. Subir em Zenkutsu-dachi -> Age Zuki direito.\r\n8. Agachar em Kiba-dachi -> Mahi Empi Uchi direito.\r\n9. Virar 90° em Kokutsu-dachi -> Shuto Uke esquerdo.\r\n10. Avançar em Zenkutsu-dachi -> Oi Zuki direito.\r\n11. Giro de 180° em Kokutsu-dachi -> Shuto Uke direito.\r\n12. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.\r\n13. Virar 90° para o centro em Kokutsu-dachi -> Shuto Uke esquerdo.\r\n14. Avançar em Zenkutsu-dachi -> Oi Zuki direito.\r\n15. Giro rápido de tronco em Zenkutsu-dachi com soco nas costas (KIAI).\r\n16-25. Sequência rápida em zigue-zague com varreduras de perna, defesas com a tatsu da mão e Uraken.\r\n26-34. Avanços em linha central com Tate Zuki seguido de esquiva agachada com a mão tocando o solo.\r\n35. Impulso do solo executando salto completo em rotação (Tobi Geri).\r\n36. Queda controlada em Kokutsu-dachi -> Shuto Uke esquerdo (KIAI).\r\n37. Recuo leve do pé frontal finalizando o bloco de defesa em Kokutsu-dachi.\r\n\r\n==================================================\r\n13. HANGETSU\r\n==================================================\r\nBUNKAI:\r\n- Passada Circular / Mikazuki Uke: Gancho com a perna para travar a coxa/pé do oponente desestabilizando a base dele.\r\n- Respiração Tensa + Bloqueios Curto: Defesa sob pressão mantendo o corpo enrijecido para suportar impactos sem perder a posição de combate.\r\n\r\nMOVIMENTOS:\r\n1. Avançar o pé direito em curva ajustando a base em Hangetsu-dachi -> Kakiwake Uke lento com respiração Ibuki.\r\n2. Avançar o pé esquerdo em curva em Hangetsu-dachi -> Kakiwake Uke lento.\r\n3. Avançar o pé direito em Hangetsu-dachi -> Kakiwake Uke lento.\r\n4. Manter a base e desferir Gyaku Zuki esquerdo rápido.\r\n5. Chudan Zuki direito rápido.\r\n6. Uchi Uke esquerdo mantendo a tensão da base.\r\n7. Avançar o pé esquerdo em Hangetsu-dachi -> Kakiwake Uke lento.\r\n8. Gyaku Zuki direito rápido.\r\n9. Chudan Zuki esquerdo rápido.\r\n10. Uchi Uke direito mantendo a tensão.\r\n11. Transição para o eixo central em Hangetsu-dachi com Sokumen Uke (KIAI).\r\n12-25. Defesas circulares com a sola do pé (Mikazuki Geri) caindo na base enraizada e contra-atacando com Ura Zuki (soco curto).\r\n26-35. Giro de 180° com mudança para Zenkutsu-dachi, aplicando bloqueios baixos e subidas rápidas com a palma da mão (Teisho Uke).\r\n36-39. Avanço direto aplicando três socos contínuos em aceleração crescente.\r\n40. Trava em Hangetsu-dachi com bloqueio duplo e compressão abdominal (KIAI).\r\n41. Recuo gradual da perna retornando a postura ereta em Shizentai.\r\n\r\n==================================================\r\n14. GANKAKU\r\n==================================================\r\nBUNKAI:\r\n- Tsuru-ashi-dachi (Postura do Grou): Pisada firme na perna do adversário para prendê-lo e manter apoio em uma perna só, liberando a outra para chutes laterais na cabeça.\r\n\r\nMOVIMENTOS:\r\n1. Em Kousa-dachi, cruzar os braços baixos -> Rotação para Kiba-dachi desferindo Tate Uke.\r\n2. Virar o corpo 180° mantendo Kiba-dachi -> Tate Uke para o outro lado.\r\n3. Girar 90° para o centro em Zenkutsu-dachi -> Gedan Barai esquerdo.\r\n4. Avançar em Zenkutsu-dachi -> Oi Zuki direito.\r\n5. Girar 180° em Zenkutsu-dachi -> Gedan Barai direito.\r\n6. Avançar em Zenkutsu-dachi -> Oi Zuki esquerdo.\r\n7. Girar 90° ao centro em Zenkutsu-dachi -> Kae-Uke (bloqueio de palma dupla).\r\n8. Elevar a perna direita recolhendo o pé atrás do joelho esquerdo em Tsuru-ashi-dachi -> Guarda alta.\r\n9. Yoko Geri + Uraken Uchi simultâneos em Tsuru-ashi-dachi.\r\n10. Cair em Zenkutsu-dachi -> Empi Uchi (cotovelada).\r\n11. Elevar a perna esquerda em Tsuru-ashi-dachi -> Guarda alta.\r\n12. Yoko Geri + Uraken Uchi simultâneos.\r\n13. Cair em Zenkutsu-dachi -> Empi Uchi esquerdo.\r\n14-27. Sequência central em Zenkutsu-dachi desferindo ataques com o dorso da mão (Koshiken) e Gyaku Zuki acelerados.\r\n28. Elevação final rápida em Tsuru-ashi-dachi e duplo ataque (KIAI).\r\n29-41. Defesas cruzadas baixas em Kokutsu-dachi e giros de desequilíbrio em Kiba-dachi.\r\n42. Salto final em giro com queda cravada em Kiba-dachi executando Manji Uke (KIAI).\r\n\r\n==================================================\r\n15. JITTE\r\n==================================================\r\nBUNKAI:\r\n- Movimentos de Gancho Duplo: Bloqueio, torção e desarmamento de ataques desferidos com bastão (Bo) ou armas curtas.\r\n\r\nMOVIMENTOS:\r\n1. Em Heisoku-dachi, levantar a mão direita fechada coberta pela mão esquerda aberta na altura do rosto.\r\n2. Recuar o pé direito para Zenkutsu-dachi -> Jodan Cross Uke.\r\n3. Avançar em Zenkutsu-dachi -> Kakiwake Uke.\r\n4. Avançar em Zenkutsu-dachi -> Teisho Uke alto com a mão direita.\r\n5. Girar 180° em Zenkutsu-dachi -> Teisho Uke alto com a mão esquerda.\r\n6. Virar 90° para o centro em Zenkutsu-dachi -> Yama Barai.\r\n7. Avançar em Zenkutsu-dachi -> Kaki Uke direito.\r\n8. Avançar em Zenkutsu-dachi -> Kaki Uke esquerdo.\r\n9. Avançar em Zenkutsu-dachi -> Kaki Uke direito.\r\n10-12. Repetição dos bloqueios em gancho com torção de pulso.\r\n13. Rotação forte para Kiba-dachi desferindo Morote Age Zuki (KIAI).\r\n14-23. Sequência lateral firme em Kiba-dachi com Gedan Barai, ataques com a palma da mão e rotação de braços em torção.\r\n24. Encaixe final de quadril em Kiba-dachi com Hasami Zuki duplo (KIAI).\r\n\r\n==================================================\r\n16. BASSAI SHO\r\n==================================================\r\nBUNKAI:\r\n- Haishu Uke (Costas da mão): Desvio suave de ataque de bastão direcionando a arma para longe, seguido de pisada na articulação do joelho do atacante.\r\n\r\nMOVIMENTOS:\r\n1. Em Heisoku-dachi, erguer o braço direito em guarda cruzada.\r\n2. Recuar para Kokutsu-dachi -> Haishu Uke.\r\n3. Avançar o pé para Zenkutsu-dachi -> Seiryuto Uke.\r\n4. Recuar para Kokutsu-dachi -> Haishu Uke esquerdo.\r\n5. Avançar para Zenkutsu-dachi -> Seiryuto Uke esquerdo.\r\n6-8. Repetição simétrica de desvios com costas da mão e ataques com a borda da mão alternando as pernas.\r\n9-14. Transição para Kiba-dachi executando rasteiras baixas com a sola do pé (Nami Gaeshi) seguidas de Morote Uke.\r\n15-17. Giro de 180° em Zenkutsu-dachi com projeção do punho no solo (Choku Zuki baixo).\r\n18. Elevação rápida da base para Kiba-dachi com gancho de cotovelo (KIAI).\r\n19-26. Sequência de desvio de armas curtas usando Tsukami Uke e recuos em Kokutsu-dachi.\r\n27. Puxada final de braço caindo firme em Kiba-dachi com Gedan Barai duplo (KIAI).\r\n\r\n==================================================\r\n17. KANKU SHO\r\n==================================================\r\nBUNKAI:\r\n- Salto com Giro Alto: Esquiva de ataque com espada/bastão em varredura baixa, utilizando a rotação do salto para cair atacando o pescoço.\r\n\r\nMOVIMENTOS:\r\n1. Em Yoi, cruzar as mãos à frente do corpo -> Avançar o pé esquerdo para Zenkutsu-dachi executando Morote Uke.\r\n2. Transição rápida de braço para Uchi Uke / Gedan Barai.\r\n3. Virar 180° em Zenkutsu-dachi -> Morote Uke direito.\r\n4. Transição de braço para Uchi Uke / Gedan Barai.\r\n5-10. Sequência em T com avanços rápidos em Zenkutsu-dachi misturando Oi Zuki, Gyaku Zuki e bloqueios Uchi Uke.\r\n11. Yoko Geri / Uraken esquerdo.\r\n12. Cair em Kokutsu-dachi -> Shuto Uke.\r\n13. Yoko Geri / Uraken direito.\r\n14. Cair em Kokutsu-dachi -> Shuto Uke.\r\n15. Salto vertical completo sobre ataque baixo caindo no solo em Kousa-dachi -> Teisho Uke para baixo (KIAI).\r\n16-30. Subida explosiva do solo para Zenkutsu-dachi desferindo Morote Zuki duplo e combinações de Mae Geri.\r\n31-47. Rotações em diagonal desferindo Uraken Uchi, Empi Uchi e defesas abertas com a palma da mão.\r\n48. Avanço final cravado em Zenkutsu-dachi com Oi Zuki alto (KIAI).\r\n\r\n==================================================\r\n18. CHINTE\r\n==================================================\r\nBUNKAI:\r\n- Nihon Nukite (Dois dedos): Contra-ataque de emergência direcionado aos olhos do agressor em situações de agarrão corporal.\r\n\r\nMOVIMENTOS:\r\n1. Em Heisoku-dachi, levar os punhos cruzados à cintura.\r\n2. Avançar em Zenkutsu-dachi -> Tate Shuto Uke direito.\r\n3. Avançar em Zenkutsu-dachi -> Tate Shuto Uke esquerdo.\r\n4. Avançar em Zenkutsu-dachi -> Tate Shuto Uke direito.\r\n5. Rotação circular ampla dos braços em Zenkutsu-dachi -> Ryosho Jodan Uke.\r\n6-12. Ataques de impacto duplo e elevações laterais de braço.\r\n13-20. Ataques focados nos olhos e pontos vitais utilizando Nihon Nukite combinados com Nakadaka Ippon Ken.\r\n21-27. Giros de quadril em Kiba-dachi executando golpes de martelo com o punho (Tetsui Uchi).\r\n28. Ataque de impacto duplo com a palma da mão na cabeça em Zenkutsu-dachi (KIAI).\r\n29-31. Três pequenos saltos consecutivos com os pés juntos (Tate-tobi) para trás para reajustar o Embusen.\r\n32. Trava final em Heisoku-dachi reequilibrando a postura (KIAI).\r\n\r\n==================================================\r\n19. UNSU\r\n==================================================\r\nBUNKAI:\r\n- Chute Rasteiro 360° no Solo: Queda intencional para se esquivar de golpe alto, acertando chute na virilha/perna do oponente a partir do chão.\r\n- Salto Mortal 360°: Liberar-se de múltiplos agarradores em círculo com salto e giro violento de corpo.\r\n\r\nMOVIMENTOS:\r\n1. Em Heisoku-dachi, afastar as mãos suavemente para os lados simulando o afastamento de nuvens.\r\n2. Avançar em Zenkutsu-dachi -> Keito Uke seguido por Ippon Nukite.\r\n3. Virar 180° em Zenkutsu-dachi -> Keito Uke seguido por Ippon Nukite.\r\n4-8. Repetição rápida de esquivas laterais com Keito Uke e estocadas nos pontos vitais do oponente.\r\n9-15. Mudança de ritmo com passadas em Kiba-dachi executando Mawashi Uke e pancadas de cotovelo.\r\n16-24. Projeção do corpo em agachamento total com a mão esquerda no solo -> Mawashi Geri rasante em 360° a partir do chão.\r\n25-35. Subida rápida desferindo Gyaku Zuki contínuos, Mae Geri e rotações rasas de esquiva.\r\n36. Salto mortal giratório de 360° no ar para se libertar de agarre -> aterrissagem firme em Kiba-dachi (KIAI).\r\n37-47. Bloco final de defesas Haishu Uke e rotações pesadas de braço para desestabilizar o adversário.\r\n48. Avanço decisivo em Zenkutsu-dachi desferindo Chudan Zuki (KIAI).\r\n\r\n==================================================\r\n20. SOCHIN\r\n==================================================\r\nBUNKAI:\r\n- Sochin-dachi com Tate Shuto: Enraizamento contra empurrão ou investida de grande impacto, retendo o avanço e aplicando golpe com a lateral da mão na garganta.\r\n\r\nMOVIMENTOS:\r\n1. Em Shizentai, recuar o pé direito para Sochin-dachi -> Tate Shuto Uke esquerdo e Gedan Kamae direito.\r\n2. Avançar o pé direito em Sochin-dachi -> Gyaku Zuki esquerdo + Oi Zuki direito duplo.\r\n3. Giro de 180° em Sochin-dachi -> Tate Shuto Uke direito.\r\n4. Avançar em Sochin-dachi -> Gyaku Zuki esquerdo + Oi Zuki direito.\r\n5. Girar 90° para a esquerda em Sochin-dachi -> Tate Shuto Uke.\r\n6. Yoko Geri lateral em Sochin-dachi sem alterar a altura da base.\r\n7. Cair em Sochin-dachi -> Empi Uchi.\r\n8. Uraken Uchi na mesma postura.\r\n9-27. Avanços lineares em Sochin-dachi com combinações de Age Uke, Gyaku Zuki e bloqueios com as palmas da mão (Teisho Uke).\r\n28. Trava em Sochin-dachi desferindo soco duplo forte (KIAI).\r\n29-39. Giros em 45° mantendo a base firme com Nagashi Uke e contra-ataques de soco direto.\r\n40. Avanço pesado e definitivo em Sochin-dachi desferindo Oi Zuki (KIAI).\r\n41. Recuo gradual do pé frontal retornando à postura inicial em Shizentai.\r\n\r\n==================================================\r\n21. NIJUSHIHO\r\n==================================================\r\nBUNKAI:\r\n- Haisho Uke Fluído: Bloqueio flexível desviando a trajetória do soco direto e redirecionando a força do oponente para uma cotovelada lateral rápida (Empi).\r\n\r\nMOVIMENTOS:\r\n1. Em Heisoku-dachi, abrir o pé esquerdo para Sanchin-dachi -> Haisho Uke.\r\n2. Avançar em Sanchin-dachi -> Gyaku Zuki direito rápido.\r\n3. Avançar em Sanchin-dachi -> Haisho Uke com a mão esquerda.\r\n4. Gyaku Zuki esquerdo em Sanchin-dachi.\r\n5-8. Troca fluida para Kiba-dachi com cotovelada sobre a palma da mão (Empi Uchi) e Uchiki rápido.\r\n9-17. Passadas laterais com desvios curtos, Mae Geri de articulação e queda imediata em Kokutsu-dachi aplicando Shuto Uke.\r\n18. Mudança de ritmo explosiva em Zenkutsu-dachi com soco duplo central (KIAI).\r\n19-32. Sequência fluida em T alternando Mawashi Uke, Teisho Uke e chutar com o calcanhar (Fumikomi).\r\n33. Trava final em Kiba-dachi aplicando golpe de gancho duplo (KIAI).\r\n34. Recolhimento do pé esquerdo unindo os calcanhares em Heisoku-dachi.\r\n\r\n==================================================\r\n22. GOJUSHIHO DAI\r\n==================================================\r\nBUNKAI:\r\n- Iwashaguruma (Bico de Pássaro): Ataque focado com a articulação dos dedos (Ippon Nukite) em artérias e pontos vitais da garganta/axila.\r\n\r\nMOVIMENTOS:\r\n1. Em Heisoku-dachi, mover o pé esquerdo para Neko-ashi-dachi -> Iwashaguruma.\r\n2. Avançar em Neko-ashi-dachi -> Iwashaguruma oposto.\r\n3. Avançar em Zenkutsu-dachi -> Seiryuto Uke.\r\n4. Avançar em Zenkutsu-dachi -> Ippon Nukite direito.\r\n5-18. Sequência em diagonal avançando em Zenkutsu-dachi e Kiba-dachi atacando com Ippon Nukite e Uraken.\r\n19-35. Varreduras contínuas de perna alternando com socos diretos em aceleração e giros de 180° com Gedan Barai.\r\n36-58. Rotações angulares com defesas Shuto Uke em Kokutsu-dachi, transicionando para ataques de cotovelo e bloqueios duplos.\r\n59. Avanço decisivo em Zenkutsu-dachi aplicando Tate Zuki (KIAI).\r\n60-65. Sequência rápida de desarmes e giros de quadril em Kiba-dachi.\r\n66. Soco final em Zenkutsu-dachi (KIAI).\r\n67. Retorno gradual à posição ereta Shizentai.\r\n\r\n==================================================\r\n23. GOJUSHIHO SHO\r\n==================================================\r\nBUNKAI:\r\n- Seiryuto (Aresta da Mão/Mandíbula): Defesa de estocada direta abrindo a linha central e desferindo corte de mão no queixo/têmpora.\r\n\r\nMOVIMENTOS:\r\n1. Em Heisoku-dachi, recuar o pé direito para Neko-ashi-dachi -> Seiryuto Uke suave.\r\n2. Avançar em Neko-ashi-dachi -> Seiryuto Uke oposto.\r\n3. Avançar em Zenkutsu-dachi -> Nukite direito na linha central.\r\n4. Avançar em Zenkutsu-dachi -> Nukite esquerdo.\r\n5-15. Avanços lineares em Zenkutsu-dachi intercalados por bloqueios de palma Teisho Uke.\r\n16-32. Movimentação rápida em zigue-zague com Gyakuzuki, trocas de base para Kiba-dachi e pancadas com a lateral do punho (Tetsui Uchi).\r\n33-57. Sequência de desvios angulares com as costas das mãos (Haishu Uke), acompanhados por Mae Geri e cotoveladas.\r\n58. Entrada forte em Zenkutsu-dachi com Oi Zuki alto (KIAI).\r\n59-63. Giros de defesa baixa e esquivas de braço.\r\n64. Ataque final de lança de mão em Zenkutsu-dachi (KIAI).\r\n65. Recolhimento do pé para a postura neutra em Yoi.\r\n\r\n==================================================\r\n24. MEIKYO\r\n==================================================\r\nBUNKAI:\r\n- Soko na Mente / Espelho Limpo: A mente deve estar sem máculas como um espelho. Contém o bloqueio de bastão pesado aplicado acima da cabeça com as duas mãos.\r\n\r\nMOVIMENTOS:\r\n1. Em Heisoku-dachi, elevar ambas as mãos abertas espelhadas na frente do rosto e descer lentamente.\r\n2. Avançar o pé esquerdo para Zenkutsu-dachi -> Age Uke direito.\r\n3. Avançar em Zenkutsu-dachi -> Age Uke esquerdo.\r\n4. Avançar em Zenkutsu-dachi -> Age Uke direito.\r\n5-15. Troca rápida para Kiba-dachi desferindo Empi Uchi lateral, seguido de giros de 180° com Gedan Barai e Gyaku Zuki.\r\n16-31. Sequência central simulando defesa contra bastão alto (Bo Uke), segurando a arma imaginária sobre a cabeça e aplicando chutes frontais Mae Geri.\r\n32. Salto baixo triangulado (Sankaku Tobi) caindo em Kiba-dachi com Gedan Kamae (KIAI).\r\n33. Ajuste de base e retorno à posição Shizentai.\r\n\r\n==================================================\r\n25. JIIN\r\n==================================================\r\nBUNKAI:\r\n- Pivoteamento em Kiba Dachi: Defesa contra ataques laterais simultâneos, utilizando o giro sobre o calcanhar para gerar energia de impacto duplo.\r\n\r\nMOVIMENTOS:\r\n1. Saudação em Renno-dachi com o punho direito coberto pela mão esquerda na frente do peito.\r\n2. Avançar o pé esquerdo em Zenkutsu-dachi -> Jodan Age Uke / Gedan Barai simultâneos.\r\n3. Avançar em Zenkutsu-dachi -> Jodan Age Uke direito / Gedan Barai esquerdo.\r\n4. Girar 90° para Kiba-dachi -> Sokumen Zuki.\r\n5. Juji Uke baixo em Kiba-dachi.\r\n6-10. Alternância de golpes laterais em Kiba-dachi.\r\n11. Pisotão forte (Fumikomi) em Kiba-dachi desferindo Morote Zuki duplo (KIAI).\r\n12-34. Avanços centrais em Zenkutsu-dachi com combinações de Mae Geri, Ren Zuki (socos duplos) e defesas baixas Gedan Barai.\r\n35. Giro final de 180° caindo em Kiba-dachi com Morote Age Zuki duplo (KIAI).\r\n\r\n==================================================\r\n26. WANKAN\r\n==================================================\r\nBUNKAI:\r\n- Agarre e Projeção: Desvio do punho do oponente segurando o cotovelo e a lapela para aplicar um arremesso/derrubada curta (Nage Waza).\r\n\r\nMOVIMENTOS:\r\n1. Em Heisoku-dachi, dar um passo à frente em Renno-dachi com as mãos em guarda suave.\r\n2. Avançar o pé esquerdo em Zenkutsu-dachi -> Nage Waza Kamae (postura de agarre/projeção).\r\n3. Puxar o braço do oponente em rotação caindo em Kokutsu-dachi -> Shuto Uke.\r\n4. Avançar em Zenkutsu-dachi -> Tate Zuki.\r\n5. Avançar em Zenkutsu-dachi -> Gyaku Zuki.\r\n6-12. Avanços retos em Zenkutsu-dachi e esquivas laterais curtas.\r\n13-23. Sequência rápida em Kiba-dachi com desvios de punho, pancadas de cotovelo e saltos curtos de ajuste de posição.\r\n24. Avanço decisivo em Zenkutsu-dachi cravando o soco duplo acelerado (Ren Zuki) (KIAI).\r\n",
+    "arvoreMestres": "\t\t\t[Sokon \"Bushi\" Matsumura]\r\n                                   │\r\n                     ┌─────────────┴─────────────┐\r\n                     │                           │\r\n              [Anko Asato]                 [Anko Itosu]\r\n                     │                           │\r\n                     └─────────────┬─────────────┘\r\n                                   │\r\n                           [Gichin Funakoshi]\r\n                    (Criador do Karate Shotokan)\r\n                                   │\r\n   ┌───────────────────────┬───────┴───────────────────┬────────────────────────┐\r\n   │                       │                           │                        │\r\n[Yoshitaka Funakoshi]  [Isao Obata]            [Masatoshi Nakayama]    [Hidetaka Nishiyama]\r\n(Inovação Técnica)    (1º Pres. JKA)           (Mestre-Chefe JKA)      (Co-fundador JKA / ITKF)\r\n   │                       │                           │                        │\r\n   ├─► (Base do Kumite     └─► [Tsutomu Ohshima]       │                        ├─► [Avi Rokah]\r\n   │    e chutes altos)        (Shotokan Karate        │                        ├─► [Vladimir Jorga]\r\n   │                            of America - SKA)      │                        └─► [Justo Gómez]\r\n   │                                                   │                            *(Supervisionou\r\n   │                                                   │                             Kanazawa, Shirai,\r\n   │                                                   │                             Mikami na JKA)*\r\n   │                                                   │\r\n   └───────────────────────┬───────────────────────────┴────────────────────────┐\r\n                           │                                                    │\r\n                 [Mestres do Kenshusei JKA]                                [Taiji Kase]\r\n          (Formados sob Nakayama/Nishiyama/Kase)                       (Kase Ha / WKSA)\r\n                           │                                                    │\r\n ┌──────────┬──────────────┼──────────────┬─────────────┐             ┌─────────┴─────────┬──────────────┐\r\n │          │              │              │             │             │                   │              │\r\n[Kanazawa] [Enoeda]    [Okazaki]       [Asai]        [Yahara]     [Hiroshi Shirai]      [Dirk Heene] [Jean-Pierre Lavorato]\r\n (SKIF)    (KUGB/JKA)   (ISKF)         (JKS)          (KWF)       (FIKTA/ITKF Itália)\r\n                            │\r\n               ┌────────────┴────────────────────┐\r\n               │                                 │\r\n       [Juichi Sagara]                   [Yasutaka Tanaka]  ... (e [Luiz Tasuke Watanabe])\r\n (Pioneiro JKA na Am. do Sul)             (JKA Brasil)\r\n               │                                 │\r\n               └────────────────┬────────────────┘\r\n                                │\r\n                      [Sensei Edson Nakama]\r\n                   (7º/8º Dan - FPK / CBK / Dojo Nakama)\r\n                   \r\nREDACTED\r\n",
+    "katasVideo": "heian shodan:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/q1Rg8rUpjjw?si=OmcOqZQcb9AOxxOO\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nheian nidan:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/rgs1ysn0R-0?si=7TkRmTo9oLO9nVZQ\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nheian sandan:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/1MrRmimBJoA?si=mmgN8na94_1ywXPG\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nheian yondan:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/k72E1u962Qg?si=ofEwfitGWoxeOi0X\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nheian godan:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/JA0Ym97vjLg?si=K7OP2XvEVRsUCJhF\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\ntekki shodan:\r\nbassai dai:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Qpt3W7Y06Kg?si=5pYA7damMFzW00Dx\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\njion:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/KErsdtTwqM8?si=VBIq8lrh3RXTfhnV\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nenpi:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/IInNlHZQUrE?si=iDRDyhPcI4kp9i6a\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nkanku dai:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/5Hgi2vi9EbA?si=YIvoV3z4nckosn0b\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\ntaikyoku shodan:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jH6bv4GDpp0?si=UCRzd_uzwV0D4Kv-\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nunsu:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/MjVKvHf_Ny0?si=TzIKaHXgjdOwLovK\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\ngojushiho sho:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/c2qiJNrCYGw?si=nC4ozrMCFna66xkK\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nkanku sho:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/veaayoYQ9D4?si=5h9leVsAiKcpWiRG\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\ngankaku:<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/OJi3lwnx0jI?si=3b76maTgCr1h0PYK\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nbassai sho:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/zpnA13Vg1lY?si=0MItYepXnRt0Hhcv\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\ngojushiho dai:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/qVGcqVEBRRs?si=cc2n0Mi_p6nBgBLD\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nsochin:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/KqmlVtZZuxY?si=4L84TF6YlHULQ5YJ\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\njiin:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/b8RcGoE7XiI?si=LVmJageVxi3zvOQU\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\njitte:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/IWZOQd6dvww?si=PqjnNvsoSNQHEz7B\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nnijushiho:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/ZE8EqPvwruE?si=n2_cq_NPjV-1Mpcx\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nwankan:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/DzFP2UilMtI?si=td3g8MVHyovJN9bL\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nmeikyo:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/HbX9X3JEI1E?si=IUnTW8UKP1s3hn53\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\nchinte:\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/RgwDv8MChWg?si=FmLnBgqLsKij7Elj\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\r\n\r\n",
+    "tabelaGenealogica": "Mestre Líder | Linhagem Direta | Organização Criada | Foco Principal -- | -- | -- | -- Tsutomu Ohshima | Isao Obata / Funakoshi | SKA (Shotokan Karate of America) | Preservação fiel do Karate pré-JKA Hidetaka Nishiyama | Funakoshi / JKA | ITKF | Karate Tradicional como Budo (Ikken Hissatsu) Hirokazu Kanazawa | Nakayama / Nishiyama | SKIF | Fluidez, Tai Chi, Kata e saúde Taiji Kase | Yoshitaka / Nakayama | Kase Ha (WKSA) | Aplicação prática, força e combate real Teruyuki Okazaki | Nakayama / JKA | ISKF | Padronização técnica e expansão pan-americana Tetsuhiko Asai | Nakayama / JKA | JKS | Movimentos circulares e Katas flexíveis Mikio Yahara | Nakayama / JKA | KWF | \"One Hit Kill\" / Biomecânica extrema Sagara / Tanaka | Nakayama / JKA | JKA Brasil / ASK | Introdução e consolidação do Shotokan no Brasil Edson Nakama | Sagara / Tanaka / CBK | Dojo Nakama / FPK | Tradição Budo + Formação de atletas de elite\r\n"
+  }
+}

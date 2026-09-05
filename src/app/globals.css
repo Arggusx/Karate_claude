@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tema claro (padrão do documento) */
+:root {
+  --canvas: 248 250 252; /* #F8FAFC */
+  --surface: 255 255 255; /* #FFFFFF */
+  --elevated: 241 245 249; /* #F1F5F9 */
+  --line: 226 232 240; /* #E2E8F0 */
+  --line-strong: 203 213 225; /* #CBD5E1 */
+  --fg: 15 23 42; /* #0F172A */
+  --muted: 100 116 139; /* #64748B */
+  --subtle: 148 163 184; /* #94A3B8 */
+}
+
+/* Tema escuro */
+.dark {
+  --canvas: 15 15 18; /* #0F0F12 */
+  --surface: 24 24 28; /* #18181C */
+  --elevated: 32 32 37; /* #202025 */
+  --line: 39 39 42; /* #27272A */
+  --line-strong: 63 63 70; /* #3F3F46 */
+  --fg: 255 255 255; /* #FFFFFF */
+  --muted: 161 161 170; /* #A1A1AA */
+  --subtle: 113 113 122; /* #71717A */
+}
+
+@layer base {
+  * {
+    border-color: rgb(var(--line));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-canvas text-fg antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background: rgba(220, 38, 38, 0.25);
+  }
+}
+
+@layer components {
+  /* Superfície sólida padrão — sem transparência e sem blur. */
+  .card {
+    @apply rounded-lg border border-line bg-surface;
+  }
+
+  .card-hover {
+    @apply transition-colors duration-150 hover:border-line-strong;
+  }
+
+  .section {
+    @apply mx-auto w-full max-w-[1180px] px-4 sm:px-6;
+  }
+
+  .eyebrow {
+    @apply text-2xs font-semibold uppercase tracking-[0.12em] text-muted;
+  }
+
+  .heading-xl {
+    @apply text-3xl font-semibold leading-[1.15] tracking-[-0.02em] text-fg sm:text-4xl;
+  }
+
+  .heading-lg {
+    @apply text-xl font-semibold tracking-[-0.015em] text-fg;
+  }
+
+  .heading-md {
+    @apply text-base font-semibold tracking-[-0.01em] text-fg;
+  }
+
+  .body-muted {
+    @apply text-sm leading-relaxed text-muted;
+  }
+
+  /* Campos de formulário */
+  .input {
+    @apply h-9 w-full rounded-md border border-line bg-canvas px-3 text-sm text-fg outline-none transition-colors placeholder:text-subtle focus:border-accent;
+  }
+
+  .label {
+    @apply text-2xs font-medium uppercase tracking-[0.08em] text-muted;
+  }
+
+  /* Kanji decorativo — sutil e legível nos dois temas. */
+  .kanji-mark {
+    @apply pointer-events-none select-none font-semibold leading-none text-fg opacity-[0.035];
+  }
+}
+
+@layer components {
+  /* Árvore genealógica: conectores desenhados só com CSS. */
+  .tree-children {
+    @apply relative space-y-2 pl-5;
+  }
+
+  .tree-item {
+    @apply relative;
+  }
+
+  /* cotovelo horizontal até o nó */
+  .tree-item::before {
+    content: "";
+    position: absolute;
+    left: -1.25rem;
+    top: 1.15rem;
+    width: 1.25rem;
+    height: 1px;
+    background: rgb(var(--line-strong));
+  }
+
+  /* trecho vertical: segue até o próximo irmão, ou para no último */
+  .tree-item::after {
+    content: "";
+    position: absolute;
+    left: -1.25rem;
+    top: -0.5rem;
+    width: 1px;
+    height: calc(100% + 1rem);
+    background: rgb(var(--line-strong));
+  }
+
+  .tree-item:last-child::after {
+    height: calc(1.15rem + 0.5rem);
+  }
+}

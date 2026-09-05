@@ -1,0 +1,202 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import { AlunoCampo, AlunoCard } from "@/components/portal/AlunoCard";
+import { Badge, BeltBadge, StatusBadge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { Modal } from "@/components/ui/Modal";
+import { TBody, TD, TH, THead, TR, Table } from "@/components/ui/Table";
+import { useAcademia } from "@/lib/academiaStore";
+import type { Chamada } from "@/types";
+
+/**
+ * Diário de classe: uma única tabela com todos os alunos, distinguidos pela
+ * coluna de turma. A chamada começa vazia — quem não for marcado é falta.
+ */
+export function DiarioPanel() {
+  const { turmas, alunos } = useAcademia();
+  const [chamada, setChamada] = useState<Chamada>({});
+  const [salva, setSalva] = useState<string | null>(null);
+
+  const nomeDaTurma = useMemo(
+    () => new Map(turmas.map((turma) => [turma.id, turma.nome])),
+    [turmas],
+  );
+
+  // Agrupa visualmente por turma sem quebrar a tabela em duas.
+  const ordenados = useMemo(
+    () =>
+      [...alunos].sort((a, b) => {
+        const turmaA = nomeDaTurma.get(a.turmaId) ?? "";
+        const turmaB = nomeDaTurma.get(b.turmaId) ?? "";
+        return turmaA.localeCompare(turmaB) || a.nome.localeCompare(b.nome);
+      }),
+    [alunos, nomeDaTurma],
+  );
+
+  const presentes = ordenados.filter((aluno) => chamada[aluno.id]).length;
+
+  function alternar(alunoId: string) {
+    setChamada((atual) => ({ ...atual, [alunoId]: !atual[alunoId] }));
+  }
+
+  return (
+    <div className="space-y-3">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="text-xs text-muted">
+          Nenhum aluno vem marcado: o padrão da chamada é{" "}
+          <span className="font-medium text-status-bad">falta</span>. Marque
+          quem esteve presente antes de salvar.
+        </p>
+        <div className="flex items-center gap-3">
+          <span className="text-2xs tabular-nums text-subtle">
+            {presentes} presentes · {ordenados.length - presentes} faltas
+          </span>
+          <Button
+            size="sm"
+            onClick={() =>
+              setSalva(
+                `${presentes} presenças e ${
+                  ordenados.length - presentes
+                } faltas registradas.`,
+              )
+            }
+          >
+            Salvar chamada
+          </Button>
+        </div>
+      </div>
+
+      {ordenados.length === 0 ? (
+        <div className="card px-4 py-6 text-center">
+          <p className="text-xs text-muted">Nenhum aluno matriculado.</p>
+        </div>
+      ) : (
+        <>
+          {/* Mobile: um card por aluno, expansível */}
+          <div className="space-y-2 sm:hidden">
+            {ordenados.map((aluno) => (
+              <AlunoCard
+                key={aluno.id}
+                aluno={aluno}
+                acao={
+                  <BotaoPresenca
+                    presente={Boolean(chamada[aluno.id])}
+                    onClick={() => alternar(aluno.id)}
+                  />
+                }
+              >
+                <AlunoCampo rotulo="Turma">
+                  <Badge>{nomeDaTurma.get(aluno.turmaId) ?? "—"}</Badge>
+                </AlunoCampo>
+                <AlunoCampo rotulo="Idade">{aluno.idade} anos</AlunoCampo>
+                <AlunoCampo rotulo="Faixa">
+                  <BeltBadge cor={aluno.corFaixa}>{aluno.faixa}</BeltBadge>
+                </AlunoCampo>
+                <AlunoCampo rotulo="Frequência">
+                  <span className="tabular-nums">{aluno.frequencia}%</span>
+                </AlunoCampo>
+                <AlunoCampo rotulo="Pagamento">
+                  <StatusBadge status={aluno.status} />
+                </AlunoCampo>
+              </AlunoCard>
+            ))}
+          </div>
+
+          {/* Desktop: tabela completa */}
+          <div className="hidden sm:block">
+          <Table minWidth="min-w-[820px]">
+            <THead>
+              <TR>
+                <TH>Aluno</TH>
+                <TH>Turma</TH>
+                <TH>Faixa</TH>
+                <TH className="text-right">Frequência</TH>
+                <TH>Pagamento</TH>
+                <TH>Presença</TH>
+              </TR>
+            </THead>
+            <TBody>
+              {ordenados.map((aluno) => {
+                const presente = Boolean(chamada[aluno.id]);
+                return (
+                  <TR key={aluno.id}>
+                    <TD>
+                      <div className="flex items-center gap-2.5">
+                        <span className="flex h-7 w-7 items-center justify-center rounded border border-line bg-elevated text-2xs font-medium text-fg">
+                          {aluno.foto}
+                        </span>
+                        <span>
+                          <span className="block font-medium text-fg">
+                            {aluno.nome}
+                          </span>
+                          <span className="block text-2xs text-subtle">
+                            {aluno.idade} anos
+                          </span>
+                        </span>
+                      </div>
+                    </TD>
+                    <TD>
+                      <Badge>{nomeDaTurma.get(aluno.turmaId) ?? "—"}</Badge>
+                    </TD>
+                    <TD>
+                      <BeltBadge cor={aluno.corFaixa}>{aluno.faixa}</BeltBadge>
+                    </TD>
+                    <TD className="text-right tabular-nums">
+                      {aluno.frequencia}%
+                    </TD>
+                    <TD>
+                      <StatusBadge status={aluno.status} />
+                    </TD>
+                    <TD>
+                      <BotaoPresenca
+                        presente={presente}
+                        onClick={() => alternar(aluno.id)}
+                      />
+                    </TD>
+                  </TR>
+                );
+              })}
+            </TBody>
+          </Table>
+          </div>
+        </>
+      )}
+
+      <Modal
+        open={salva !== null}
+        onClose={() => setSalva(null)}
+        titulo="Chamada registrada"
+      >
+        <p className="text-sm text-muted">{salva}</p>
+        <Button size="sm" className="mt-4" onClick={() => setSalva(null)}>
+          Fechar
+        </Button>
+      </Modal>
+    </div>
+  );
+}
+
+/** Alterna presença/falta — usado na tabela e no card mobile. */
+function BotaoPresenca({
+  presente,
+  onClick,
+}: {
+  presente: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={presente}
+      className={`rounded-md border px-2.5 py-1 text-2xs font-medium transition-colors ${
+        presente
+          ? "border-status-ok/40 bg-status-ok/10 text-status-ok"
+          : "border-status-bad/40 bg-status-bad/10 text-status-bad"
+      }`}
+    >
+      {presente ? "Presente" : "Falta"}
+    </button>
+  );
+}

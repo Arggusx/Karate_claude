@@ -1,11 +1,11 @@
 "use client";
 
 import { useAcademia } from "@/lib/academiaStore";
-import { MENSALIDADE_CENTAVOS, formatarReais } from "@/services/dataService";
+import { formatarReais } from "@/services/dataService";
 
 /** Faixa de indicadores compartilhada pelos portais do professor e do admin. */
 export function ResumoAcademia({ comFinanceiro = false }: { comFinanceiro?: boolean }) {
-  const { turmas, alunos } = useAcademia();
+  const { turmas, alunos, mensalidadeCentavos } = useAcademia();
 
   const pendentes = alunos.filter((aluno) => aluno.status !== "ativo").length;
   const frequencia = alunos.length
@@ -25,7 +25,7 @@ export function ResumoAcademia({ comFinanceiro = false }: { comFinanceiro?: bool
   if (comFinanceiro) {
     itens.push({
       label: "Receita prevista",
-      valor: `R$ ${formatarReais(alunos.length * MENSALIDADE_CENTAVOS)}`,
+      valor: `R$ ${formatarReais(alunos.length * mensalidadeCentavos)}`,
     });
   }
 

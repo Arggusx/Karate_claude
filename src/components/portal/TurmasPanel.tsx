@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { AlunoCampo, AlunoCard } from "@/components/portal/AlunoCard";
 import { CampoBusca, paraBusca } from "@/components/portal/CampoBusca";
+import { AlunoDetalheModal } from "@/components/portal/DetalheModal";
 import { SeletorTurma } from "@/components/portal/SeletorTurma";
 import { TurmaFormModal } from "@/components/portal/TurmaFormModal";
 import { Badge, BeltBadge, StatusBadge } from "@/components/ui/Badge";
@@ -156,6 +157,7 @@ export function TurmasPanel() {
 /** Lista paginada dos alunos de uma turma, filtrada pela busca global. */
 function AlunosDaTurma({ alunos, busca }: { alunos: Aluno[]; busca: string }) {
   const [pagina, setPagina] = useState(1);
+  const [emDetalhe, setEmDetalhe] = useState<Aluno | null>(null);
 
   const filtrados = useMemo(() => {
     const alvo = paraBusca(busca.trim());
@@ -200,7 +202,11 @@ function AlunosDaTurma({ alunos, busca }: { alunos: Aluno[]; busca: string }) {
       {/* Mobile: um card por aluno, expansível */}
       <div className="space-y-2 sm:hidden">
         {visiveis.map((aluno) => (
-          <AlunoCard key={aluno.id} aluno={aluno}>
+          <AlunoCard
+            key={aluno.id}
+            aluno={aluno}
+            onDetalhe={() => setEmDetalhe(aluno)}
+          >
             <AlunoCampo rotulo="Idade">{aluno.idade} anos</AlunoCampo>
             <AlunoCampo rotulo="Usuário">
               <span className="font-mono">{aluno.usuario}</span>
@@ -239,19 +245,25 @@ function AlunosDaTurma({ alunos, busca }: { alunos: Aluno[]; busca: string }) {
             {visiveis.map((aluno) => (
               <TR key={aluno.id}>
                 <TD>
-                  <div className="flex items-center gap-2.5">
+                  {/* Só o nome abre a ficha: a linha tem um select de turma,
+                      e linha inteira clicável engoliria esse clique. */}
+                  <button
+                    type="button"
+                    onClick={() => setEmDetalhe(aluno)}
+                    className="flex items-center gap-2.5 text-left"
+                  >
                     <span className="flex h-7 w-7 items-center justify-center rounded border border-line bg-elevated text-2xs font-medium text-fg">
                       {aluno.foto}
                     </span>
                     <span>
-                      <span className="block font-medium text-fg">
+                      <span className="block font-medium text-fg underline decoration-line underline-offset-4 hover:decoration-accent">
                         {aluno.nome}
                       </span>
                       <span className="block text-2xs text-subtle">
                         {aluno.idade} anos · {aluno.usuario}
                       </span>
                     </span>
-                  </div>
+                  </button>
                 </TD>
                 <TD>
                   <BeltBadge cor={aluno.corFaixa}>{aluno.faixa}</BeltBadge>
@@ -278,6 +290,11 @@ function AlunosDaTurma({ alunos, busca }: { alunos: Aluno[]; busca: string }) {
         porPagina={POR_PAGINA}
         onPagina={setPagina}
         rotulo="alunos"
+      />
+
+      <AlunoDetalheModal
+        aluno={emDetalhe}
+        onClose={() => setEmDetalhe(null)}
       />
     </>
   );

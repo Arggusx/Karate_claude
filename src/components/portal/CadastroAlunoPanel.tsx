@@ -12,6 +12,7 @@ import {
   CORES_FAIXA,
   formatarNome,
   getGraduacoes,
+  idadePorNascimento,
   normalizarUsuario,
 } from "@/services/dataService";
 
@@ -22,12 +23,16 @@ export function CadastroAlunoPanel() {
   const [nome, setNome] = useState("");
   const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
-  const [idade, setIdade] = useState("");
+  const [nascimento, setNascimento] = useState("");
   const [turmaId, setTurmaId] = useState(turmas[0]?.id ?? "");
   const [faixaId, setFaixaId] = useState(GRADUACOES[0]?.id ?? "");
   const [statusUsuario, setStatusUsuario] = useState<StatusUsuario>("vazio");
   const [erro, setErro] = useState<string | null>(null);
   const [confirmado, setConfirmado] = useState<string | null>(null);
+
+  // A idade deixou de ser digitada: vem da data de nascimento e nunca envelhece
+  // errado, porque é recalculada a cada leitura.
+  const idadeCalculada = idadePorNascimento(nascimento);
 
   async function cadastrar(event: React.FormEvent) {
     event.preventDefault();
@@ -44,14 +49,17 @@ export function CadastroAlunoPanel() {
       nome: formatarNome(nome),
       usuario,
       senha,
-      idade: Number(idade) || 0,
+      dataNascimento: nascimento,
+      idade: idadeCalculada ?? 0,
       turmaId: turmaId || turmas[0]?.id || "",
       faixa: `${graduacao?.faixa ?? "Branca"} · ${graduacao?.grau ?? "7º Kyu"}`,
       corFaixa: graduacao?.cor ?? CORES_FAIXA.branca,
       progresso: 0,
       proximoExame: "A definir",
       status: "ativo",
-      frequencia: 100,
+      frequencia: 0,
+      aptoParaExame: false,
+      criterios: null,
     });
 
     if (!resultado.ok) {
@@ -63,7 +71,7 @@ export function CadastroAlunoPanel() {
     setNome("");
     setUsuario("");
     setSenha("");
-    setIdade("");
+    setNascimento("");
     setStatusUsuario("vazio");
   }
 
@@ -122,17 +130,22 @@ export function CadastroAlunoPanel() {
           </div>
 
           <div>
-            <label htmlFor="aluno-idade" className="label">
-              Idade
+            <label htmlFor="aluno-nascimento" className="label">
+              Data de nascimento
             </label>
             <input
-              id="aluno-idade"
-              type="number"
+              id="aluno-nascimento"
+              type="date"
               className="input mt-1"
-              value={idade}
-              onChange={(event) => setIdade(event.target.value)}
-              placeholder="10"
+              value={nascimento}
+              max={new Date().toISOString().slice(0, 10)}
+              onChange={(event) => setNascimento(event.target.value)}
             />
+            <p className="mt-1 text-2xs text-subtle">
+              {idadeCalculada !== null
+                ? `${idadeCalculada} anos — a idade é calculada a partir daqui.`
+                : "A idade do aluno é calculada a partir desta data."}
+            </p>
           </div>
 
           <div>

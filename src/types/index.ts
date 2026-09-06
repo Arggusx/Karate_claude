@@ -229,10 +229,26 @@ export interface Professor {
   nome: string;
   usuario: string;
   senha: string;
+  /** "AAAA-MM-DD"; vazio quando não informada. */
+  dataNascimento: string;
+  idade: number | null;
   graduacao: string;
   email: string;
   desde: string;
   foto: string;
+}
+
+/** Um dos quatro critérios que compõem o progresso para o exame. */
+export interface CriterioProgresso {
+  percentual: number;
+  detalhe: string;
+}
+
+export interface CriteriosProgresso {
+  tecnica: CriterioProgresso;
+  tempo: CriterioProgresso;
+  aulas: CriterioProgresso;
+  financeiro: CriterioProgresso;
 }
 
 export interface Aluno {
@@ -240,6 +256,8 @@ export interface Aluno {
   nome: string;
   usuario: string;
   senha: string;
+  /** "AAAA-MM-DD"; vazio quando não informada. */
+  dataNascimento: string;
   idade: number;
   turmaId: string;
   faixa: string;
@@ -249,6 +267,9 @@ export interface Aluno {
   status: StatusPagamento;
   foto: string;
   frequencia: number;
+  aptoParaExame: boolean;
+  /** Null enquanto a API não respondeu. */
+  criterios: CriteriosProgresso | null;
 }
 
 /** Presença padrão da chamada é falta: só entra aqui quem for marcado. */

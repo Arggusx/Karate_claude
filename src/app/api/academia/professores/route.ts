@@ -12,6 +12,7 @@ export async function POST(request: Request) {
     usuario?: string;
     senha?: string;
     email?: string;
+    dataNascimento?: string | null;
   };
 
   try {
@@ -45,6 +46,7 @@ export async function POST(request: Request) {
       usuario: corpo.usuario,
       senha: corpo.senha,
       email: corpo.email?.trim() || `${corpo.usuario}@shotokan.local`,
+      dataNascimento: corpo.dataNascimento ?? null,
     });
 
     return NextResponse.json({ ok: true, id }, { status: 201 });

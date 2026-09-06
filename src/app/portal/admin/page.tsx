@@ -8,6 +8,7 @@ import {
   CampoUsuario,
   type StatusUsuario,
 } from "@/components/portal/CampoUsuario";
+import { ProfessorDetalheModal } from "@/components/portal/DetalheModal";
 import { DiarioPanel } from "@/components/portal/DiarioPanel";
 import { FinanceiroPanel } from "@/components/portal/FinanceiroPanel";
 import { ResumoAcademia } from "@/components/portal/ResumoAcademia";
@@ -21,8 +22,10 @@ import { useAcademia } from "@/lib/academiaStore";
 import {
   formatarNome,
   horarioDaTurma,
+  idadePorNascimento,
   normalizarUsuario,
 } from "@/services/dataService";
+import type { Professor } from "@/types";
 
 type Aba = "turmas" | "diario" | "financeiro" | "professores" | "cadastro";
 
@@ -89,11 +92,13 @@ function ProfessoresPanel() {
   const [graduacao, setGraduacao] = useState("");
   const [email, setEmail] = useState("");
   const [desde, setDesde] = useState("");
+  const [nascimento, setNascimento] = useState("");
   const [statusUsuario, setStatusUsuario] = useState<StatusUsuario>("vazio");
   const [erro, setErro] = useState<string | null>(null);
   const [confirmado, setConfirmado] = useState<string | null>(null);
   const [busca, setBusca] = useState("");
   const [pagina, setPagina] = useState(1);
+  const [emDetalhe, setEmDetalhe] = useState<Professor | null>(null);
 
   const filtrados = useMemo(() => {
     const alvo = paraBusca(busca.trim());
@@ -129,6 +134,8 @@ function ProfessoresPanel() {
       graduacao: graduacao.trim() || "1º Dan",
       email: email.trim(),
       desde: desde.trim() || String(new Date().getFullYear()),
+      dataNascimento: nascimento,
+      idade: idadePorNascimento(nascimento),
     });
 
     if (!resultado.ok) {
@@ -143,6 +150,7 @@ function ProfessoresPanel() {
     setGraduacao("");
     setEmail("");
     setDesde("");
+    setNascimento("");
     setStatusUsuario("vazio");
   }
 
@@ -184,15 +192,21 @@ function ProfessoresPanel() {
           return (
             <article key={professor.id} className="card">
               <div className="flex items-start justify-between gap-3 border-b border-line px-4 py-3">
-                <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => setEmDetalhe(professor)}
+                  className="flex items-center gap-3 text-left"
+                >
                   <span className="flex h-9 w-9 items-center justify-center rounded border border-line bg-elevated text-xs font-medium text-fg">
                     {professor.foto}
                   </span>
                   <div>
-                    <h3 className="heading-md">{professor.nome}</h3>
+                    <h3 className="heading-md underline decoration-line underline-offset-4 hover:decoration-accent">
+                      {professor.nome}
+                    </h3>
                     <p className="text-2xs text-muted">{professor.email}</p>
                   </div>
-                </div>
+                </button>
                 <Badge tone="accent">{professor.graduacao}</Badge>
               </div>
 
@@ -254,6 +268,11 @@ function ProfessoresPanel() {
         porPagina={POR_PAGINA}
         onPagina={setPagina}
         rotulo="professores"
+      />
+
+      <ProfessorDetalheModal
+        professor={emDetalhe}
+        onClose={() => setEmDetalhe(null)}
       />
 
       <section className="card max-w-2xl">
@@ -328,6 +347,25 @@ function ProfessoresPanel() {
               onChange={(event) => setDesde(event.target.value)}
               placeholder="2020"
             />
+          </div>
+
+          <div>
+            <label htmlFor="prof-nascimento" className="label">
+              Data de nascimento
+            </label>
+            <input
+              id="prof-nascimento"
+              type="date"
+              className="input mt-1"
+              value={nascimento}
+              max={new Date().toISOString().slice(0, 10)}
+              onChange={(event) => setNascimento(event.target.value)}
+            />
+            <p className="mt-1 text-2xs text-subtle">
+              {idadePorNascimento(nascimento) !== null
+                ? `${idadePorNascimento(nascimento)} anos — calculado a partir daqui.`
+                : "A idade é calculada a partir desta data."}
+            </p>
           </div>
 
           <div className="sm:col-span-2">

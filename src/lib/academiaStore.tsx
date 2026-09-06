@@ -9,8 +9,19 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { corDaFaixa } from "@/services/dataService";
-import type { Aluno, AulaPlano, Professor, Sessao, Turma } from "@/types";
+import {
+  MENSALIDADE_PADRAO_CENTAVOS,
+  corDaFaixa,
+} from "@/services/dataService";
+import type {
+  Aluno,
+  AulaPlano,
+  Chamada,
+  CriteriosProgresso,
+  Professor,
+  Sessao,
+  Turma,
+} from "@/types";
 
 /**
  * Estado da academia lido do banco (Neon) através de /api/academia.
@@ -32,6 +43,8 @@ interface AcademiaContexto {
   alunos: Aluno[];
   professores: Professor[];
   sessao: Sessao | null;
+  /** Mensalidade em centavos, definida pelo servidor. */
+  mensalidadeCentavos: number;
   erroCarregamento: string | null;
   recarregar: () => Promise<void>;
   alunosDaTurma: (turmaId: string) => Aluno[];
@@ -42,6 +55,27 @@ interface AcademiaContexto {
   atualizarTurma: (id: string, mudancas: Partial<Turma>) => void;
   removerTurma: (id: string) => void;
   moverAluno: (alunoId: string, turmaId: string) => Promise<void>;
+  atualizarAluno: (
+    alunoId: string,
+    mudancas: { faixa?: string; dataNascimento?: string | null },
+  ) => Promise<Resultado>;
+  desmatricularAluno: (alunoId: string) => Promise<Resultado>;
+  /** Lê a chamada já gravada de uma turma num dia. */
+  lerChamada: (turmaId: string, data: string) => Promise<Chamada>;
+  salvarChamada: (
+    turmaId: string,
+    data: string,
+    chamada: Chamada,
+    alunosDaChamada: string[],
+  ) => Promise<Resultado>;
+  lerPrograma: (
+    alunoId: string,
+  ) => Promise<{ tipo: string; item: string }[]>;
+  marcarItemPrograma: (
+    alunoId: string,
+    dados: { tipo: "kata" | "kihon"; item: string; concluido: boolean },
+  ) => Promise<Resultado>;
+  removerProfessor: (professorId: string) => Promise<Resultado>;
   criarAluno: (
     aluno: Omit<Aluno, "id" | "foto"> & { email?: string },
   ) => Promise<Resultado>;
@@ -85,6 +119,7 @@ interface RespostaAcademia {
     id: number;
     nome: string;
     usuario: string;
+    data_nascimento: string | null;
     idade: number | null;
     turma_id: number | null;
     faixa_atual: string;
@@ -92,6 +127,8 @@ interface RespostaAcademia {
     frequencia: number;
     proximo_exame: string | null;
     financial_status: string;
+    apto_exame: boolean;
+    criterios: CriteriosProgresso | null;
   }[];
   professores: {
     id: number;
@@ -100,7 +137,10 @@ interface RespostaAcademia {
     email: string;
     role: string;
     criado_em: string;
+    data_nascimento: string | null;
+    idade: number | null;
   }[];
+  mensalidade_centavos?: number;
 }
 
 export function AcademiaProvider({ children }: { children: ReactNode }) {
@@ -108,6 +148,9 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
   const [alunos, setAlunos] = useState<Aluno[]>([]);
   const [professores, setProfessores] = useState<Professor[]>([]);
   const [sessao, setSessao] = useState<Sessao | null>(null);
+  const [mensalidadeCentavos, setMensalidadeCentavos] = useState(
+    MENSALIDADE_PADRAO_CENTAVOS,
+  );
   const [carregado, setCarregado] = useState(false);
   const [erroCarregamento, setErroCarregamento] = useState<string | null>(null);
 
@@ -118,6 +161,10 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
         erro?: string;
       };
       if (!resposta.ok) throw new Error(dados.erro ?? "Falha ao carregar.");
+
+      if (typeof dados.mensalidade_centavos === "number") {
+        setMensalidadeCentavos(dados.mensalidade_centavos);
+      }
 
       setTurmas(
         dados.turmas.map((turma) => ({
@@ -140,6 +187,7 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
           nome: aluno.nome,
           usuario: aluno.usuario,
           senha: "",
+          dataNascimento: aluno.data_nascimento ?? "",
           idade: aluno.idade ?? 0,
           turmaId: String(aluno.turma_id ?? ""),
           faixa: aluno.faixa_atual,
@@ -154,6 +202,8 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
                 : "pendente",
           foto: iniciais(aluno.nome),
           frequencia: aluno.frequencia,
+          aptoParaExame: aluno.apto_exame ?? false,
+          criterios: aluno.criterios ?? null,
         })),
       );
 
@@ -163,6 +213,8 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
           nome: professor.nome,
           usuario: professor.usuario,
           senha: "",
+          dataNascimento: professor.data_nascimento ?? "",
+          idade: professor.idade ?? null,
           graduacao: professor.role === "admin" ? "Administração" : "Professor",
           email: professor.email,
           desde: professor.criado_em?.slice(0, 4) ?? "",
@@ -265,6 +317,131 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
     [recarregar],
   );
 
+  const atualizarAluno = useCallback<AcademiaContexto["atualizarAluno"]>(
+    async (alunoId, mudancas) => {
+      const resposta = await fetch(`/api/academia/alunos/${alunoId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(mudancas),
+      });
+      const dados = await resposta.json();
+      if (!resposta.ok) return { ok: false, erro: dados.erro };
+
+      await recarregar();
+      return { ok: true };
+    },
+    [recarregar],
+  );
+
+  /**
+   * Desmatricula desativando a conta no banco. O aluno some das listagens, mas
+   * as mensalidades dele continuam existindo para consulta.
+   */
+  const desmatricularAluno = useCallback<
+    AcademiaContexto["desmatricularAluno"]
+  >(
+    async (alunoId) => {
+      const resposta = await fetch(`/api/academia/alunos/${alunoId}`, {
+        method: "DELETE",
+      });
+      const dados = await resposta.json();
+      if (!resposta.ok) return { ok: false, erro: dados.erro };
+
+      await recarregar();
+      return { ok: true };
+    },
+    [recarregar],
+  );
+
+  const removerProfessor = useCallback<AcademiaContexto["removerProfessor"]>(
+    async (professorId) => {
+      const resposta = await fetch(`/api/academia/professores/${professorId}`, {
+        method: "DELETE",
+      });
+      const dados = await resposta.json();
+      if (!resposta.ok) return { ok: false, erro: dados.erro };
+
+      await recarregar();
+      return { ok: true };
+    },
+    [recarregar],
+  );
+
+  const lerChamada = useCallback<AcademiaContexto["lerChamada"]>(
+    async (turmaId, data) => {
+      const resposta = await fetch(
+        `/api/academia/chamada?turmaId=${turmaId}&data=${data}`,
+        { cache: "no-store" },
+      );
+      if (!resposta.ok) return {};
+      const dados = await resposta.json();
+      return (dados.presencas ?? {}) as Chamada;
+    },
+    [],
+  );
+
+  /**
+   * Manda a turma inteira, não só os presentes: quem não foi marcado precisa
+   * virar uma falta explícita para a frequência ter denominador.
+   */
+  const salvarChamada = useCallback<AcademiaContexto["salvarChamada"]>(
+    async (turmaId, data, chamada, alunosDaChamada) => {
+      const resposta = await fetch("/api/academia/chamada", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          turmaId: Number(turmaId),
+          data,
+          presencas: alunosDaChamada.map((alunoId) => ({
+            alunoId: Number(alunoId),
+            presente: Boolean(chamada[alunoId]),
+          })),
+        }),
+      });
+      const dados = await resposta.json();
+      if (!resposta.ok) return { ok: false, erro: dados.erro };
+
+      // A presença muda o progresso de quem esteve na chamada.
+      await recarregar();
+      return { ok: true };
+    },
+    [recarregar],
+  );
+
+  const lerPrograma = useCallback<AcademiaContexto["lerPrograma"]>(
+    async (alunoId) => {
+      const resposta = await fetch(
+        `/api/academia/alunos/${alunoId}/programa`,
+        { cache: "no-store" },
+      );
+      if (!resposta.ok) return [];
+      const dados = await resposta.json();
+      return dados.itens ?? [];
+    },
+    [],
+  );
+
+  const marcarItemPrograma = useCallback<
+    AcademiaContexto["marcarItemPrograma"]
+  >(
+    async (alunoId, dados) => {
+      const resposta = await fetch(
+        `/api/academia/alunos/${alunoId}/programa`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(dados),
+        },
+      );
+      const corpo = await resposta.json();
+      if (!resposta.ok) return { ok: false, erro: corpo.erro };
+
+      await recarregar();
+      return { ok: true };
+    },
+    [recarregar],
+  );
+
   const criarAluno = useCallback<AcademiaContexto["criarAluno"]>(
     async (aluno) => {
       const resposta = await fetch("/api/academia/alunos", {
@@ -275,6 +452,7 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
           usuario: aluno.usuario,
           senha: aluno.senha,
           email: aluno.email,
+          dataNascimento: aluno.dataNascimento || null,
           idade: aluno.idade,
           turmaId: Number(aluno.turmaId) || null,
           faixa: aluno.faixa,
@@ -299,6 +477,7 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
           usuario: professor.usuario,
           senha: professor.senha,
           email: professor.email,
+          dataNascimento: professor.dataNascimento || null,
         }),
       });
       const dados = await resposta.json();
@@ -351,6 +530,7 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
       alunos,
       professores,
       sessao,
+      mensalidadeCentavos,
       erroCarregamento,
       recarregar,
       alunosDaTurma,
@@ -361,6 +541,13 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
       atualizarTurma,
       removerTurma,
       moverAluno,
+      atualizarAluno,
+      desmatricularAluno,
+      lerChamada,
+      salvarChamada,
+      lerPrograma,
+      marcarItemPrograma,
+      removerProfessor,
       criarAluno,
       criarProfessor,
       entrar,
@@ -372,6 +559,7 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
       alunos,
       professores,
       sessao,
+      mensalidadeCentavos,
       erroCarregamento,
       recarregar,
       alunosDaTurma,
@@ -382,6 +570,13 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
       atualizarTurma,
       removerTurma,
       moverAluno,
+      atualizarAluno,
+      desmatricularAluno,
+      lerChamada,
+      salvarChamada,
+      lerPrograma,
+      marcarItemPrograma,
+      removerProfessor,
       criarAluno,
       criarProfessor,
       entrar,

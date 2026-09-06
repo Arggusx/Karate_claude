@@ -16,6 +16,7 @@ export async function POST(request: Request) {
     senha?: string;
     email?: string;
     idade?: number;
+    dataNascimento?: string | null;
     turmaId?: number;
     faixa?: string;
   };
@@ -52,6 +53,7 @@ export async function POST(request: Request) {
       senha: corpo.senha,
       email: corpo.email?.trim() || `${corpo.usuario}@shotokan.local`,
       idade: corpo.idade ?? null,
+      dataNascimento: corpo.dataNascimento ?? null,
       turmaId: corpo.turmaId ?? null,
       faixa: corpo.faixa ?? "7º Kyu - Faixa Branca",
     });

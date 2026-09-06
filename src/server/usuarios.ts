@@ -83,6 +83,7 @@ export interface AlunoDoBanco {
   nome: string;
   usuario: string;
   email: string;
+  data_nascimento: string | null;
   idade: number | null;
   turma_id: number | null;
   faixa_atual: string;
@@ -94,7 +95,14 @@ export interface AlunoDoBanco {
 
 export async function listarAlunos(): Promise<AlunoDoBanco[]> {
   const linhas = await sql`
-    SELECT u.id, u.nome, u.usuario, u.email, u.idade,
+    SELECT u.id, u.nome, u.usuario, u.email,
+           u.data_nascimento::text AS data_nascimento,
+           -- A data de nascimento manda. Idade solta é o fallback de quem foi
+           -- cadastrado antes de o campo passar a ser preenchido.
+           COALESCE(
+             EXTRACT(YEAR FROM age(u.data_nascimento))::int,
+             u.idade
+           ) AS idade,
            p.turma_id, p.faixa_atual,
            p.progresso, p.frequencia, p.proximo_exame,
            u.financial_status
@@ -112,11 +120,18 @@ export interface ProfessorDoBanco {
   email: string;
   role: Perfil;
   criado_em: string;
+  data_nascimento: string | null;
+  idade: number | null;
 }
 
 export async function listarProfessores(): Promise<ProfessorDoBanco[]> {
   const linhas = await sql`
-    SELECT id, nome, usuario, email, role, criado_em
+    SELECT id, nome, usuario, email, role, criado_em,
+           data_nascimento::text AS data_nascimento,
+           COALESCE(
+             EXTRACT(YEAR FROM age(data_nascimento))::int,
+             idade
+           ) AS idade
       FROM users
      WHERE role IN ('professor', 'admin') AND ativo = true
      ORDER BY nome`;
@@ -153,6 +168,7 @@ export async function criarAluno(dados: {
   senha: string;
   email: string;
   idade: number | null;
+  dataNascimento: string | null;
   turmaId: number | null;
   faixa: string;
 }): Promise<{ id: number }> {
@@ -160,9 +176,11 @@ export async function criarAluno(dados: {
 
   const linhas = await sql`
     INSERT INTO users (nome, email, senha_hash, role, usuario, idade,
-                       ativo, precisa_trocar_senha, financial_status)
+                       data_nascimento, ativo, precisa_trocar_senha,
+                       financial_status)
     VALUES (${dados.nome}, ${dados.email}, ${gerarHashSenha(dados.senha)},
-            'aluno', ${usuario}, ${dados.idade}, true, true, 'pendente')
+            'aluno', ${usuario}, ${dados.idade},
+            ${dados.dataNascimento}::date, true, true, 'pendente')
     RETURNING id`;
 
   const id = linhas[0].id as number;
@@ -181,16 +199,79 @@ export async function criarProfessor(dados: {
   usuario: string;
   senha: string;
   email: string;
+  dataNascimento?: string | null;
   role?: "professor" | "admin";
 }): Promise<{ id: number }> {
   const linhas = await sql`
     INSERT INTO users (nome, email, senha_hash, role, usuario,
-                       ativo, precisa_trocar_senha)
+                       data_nascimento, ativo, precisa_trocar_senha)
     VALUES (${dados.nome}, ${dados.email}, ${gerarHashSenha(dados.senha)},
             ${dados.role ?? "professor"}, ${normalizarUsuario(dados.usuario)},
-            true, true)
+            ${dados.dataNascimento ?? null}::date, true, true)
     RETURNING id`;
   return { id: linhas[0].id as number };
+}
+
+export async function buscarConta(id: number): Promise<ContaBasica | null> {
+  const linhas = await sql`
+    SELECT id, nome, usuario, role, ativo, precisa_trocar_senha
+      FROM users WHERE id = ${id} LIMIT 1`;
+  return (linhas[0] as ContaBasica) ?? null;
+}
+
+/**
+ * Desmatricula desativando a conta, sem apagar a linha.
+ *
+ * Mensalidades, lançamentos financeiros e chamadas apontam para users.id — uma
+ * exclusão física levaria junto o histórico que precisa continuar auditável, e
+ * o registro de quem já pagou não pode sumir. Todas as listagens dos portais
+ * filtram por ativo = true, então a conta desaparece das telas do mesmo jeito.
+ */
+export async function desativarConta(id: number): Promise<ContaBasica | null> {
+  const linhas = await sql`
+    UPDATE users SET ativo = false
+     WHERE id = ${id} AND ativo = true
+    RETURNING id, nome, usuario, role, ativo, precisa_trocar_senha`;
+
+  const conta = linhas[0] as ContaBasica | undefined;
+  if (!conta) return null;
+
+  // Turma órfã é melhor do que turma apontando para conta desativada: o admin
+  // reatribui pela tela de turmas.
+  await sql`UPDATE turmas SET professor_id = NULL WHERE professor_id = ${id}`;
+
+  return conta;
+}
+
+/**
+ * Edita os dados do aluno que a equipe pode mudar depois do cadastro.
+ * Campo ausente fica como está — COALESCE com o parâmetro nulo.
+ */
+export async function atualizarAluno(
+  alunoId: number,
+  mudancas: { faixa?: string; dataNascimento?: string | null },
+): Promise<void> {
+  if (mudancas.dataNascimento !== undefined) {
+    await sql`
+      UPDATE users
+         SET data_nascimento = ${mudancas.dataNascimento}::date
+       WHERE id = ${alunoId}`;
+  }
+
+  if (mudancas.faixa !== undefined) {
+    // Trocar de faixa é graduar: o ciclo de tempo mínimo e de aulas recomeça
+    // hoje. Regravar a mesma faixa não mexe na data — só uma correção de texto.
+    await sql`
+      UPDATE alunos_perfil
+         SET faixa_atual = ${mudancas.faixa},
+             data_graduacao = CASE
+               WHEN faixa_atual IS DISTINCT FROM ${mudancas.faixa}
+                 THEN CURRENT_DATE
+               ELSE data_graduacao
+             END,
+             atualizado_em = CURRENT_TIMESTAMP
+       WHERE user_id = ${alunoId}`;
+  }
 }
 
 export async function moverAlunoDeTurma(

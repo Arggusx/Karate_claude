@@ -31,3 +31,7 @@ next-env.d.ts
 # Env
 .env
 .env.local
+
+# Cache incremental do TypeScript (reescrito a cada build)
+tsconfig.tsbuildinfo
+*.tsbuildinfo

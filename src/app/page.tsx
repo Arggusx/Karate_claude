@@ -4,16 +4,16 @@ import { HeaderLanding } from "@/components/layout/HeaderLanding";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/Card";
+import { listarTurmas } from "@/server/usuarios";
 import {
-  MENSALIDADE,
-  TURMAS_INICIAIS,
+  MENSALIDADE_CENTAVOS,
   dados,
   getBeneficios,
   getDepoimentos,
   getKatas,
   getPilares,
+  formatarReais,
   getTecnicas,
-  horarioDaTurma,
 } from "@/services/dataService";
 
 const ESTRUTURA = [
@@ -30,7 +30,17 @@ const INCLUSO = [
   "Exames de graduação sem custo extra",
 ];
 
-export default function LandingPage() {
+/**
+ * A página é gerada estaticamente e revalidada a cada 5 minutos. Sem isso, os
+ * horários das turmas ficariam congelados no momento do build — e um build
+ * feito sem banco (ex.: preview sem env) publicaria a lista vazia para sempre.
+ */
+export const revalidate = 300;
+
+export default async function LandingPage() {
+  // Turmas e horários vêm do banco — é o mesmo dado que o portal usa.
+  // Se o banco não responder, a página ainda sobe sem a grade de horários.
+  const turmas = await listarTurmas().catch(() => []);
   const beneficios = getBeneficios();
   const pilares = getPilares();
   const depoimentos = getDepoimentos();
@@ -84,18 +94,19 @@ export default function LandingPage() {
                 <h2 className="heading-md">Turmas e horários</h2>
               </div>
               <ul className="divide-y divide-line">
-                {TURMAS_INICIAIS.map((turma) => (
+                {turmas.map((turma) => (
                   <li key={turma.id} className="px-4 py-3">
                     <div className="flex items-center justify-between gap-3">
                       <span className="text-sm font-medium text-fg">
                         {turma.nome}
                       </span>
                       <span className="text-xs tabular-nums text-muted">
-                        {turma.inicio} às {turma.fim}
+                        {turma.horario.slice(0, 5)} às{" "}
+                        {(turma.hora_fim ?? "").slice(0, 5)}
                       </span>
                     </div>
                     <p className="mt-0.5 text-2xs text-subtle">
-                      {turma.faixaEtaria} · {turma.dias.join(" e ")}
+                      {turma.faixa_etaria} · {turma.dias_semana}
                     </p>
                   </li>
                 ))}
@@ -235,9 +246,9 @@ export default function LandingPage() {
               <p className="mt-2 flex items-baseline gap-1">
                 <span className="text-sm text-muted">R$</span>
                 <span className="text-5xl font-semibold tabular-nums tracking-[-0.03em] text-fg">
-                  {MENSALIDADE}
+                  {formatarReais(MENSALIDADE_CENTAVOS)}
                 </span>
-                <span className="text-sm text-muted">,00 /mês</span>
+                <span className="text-sm text-muted">/mês</span>
               </p>
               <p className="mt-2 text-xs text-muted">
                 Mesmo valor para infantil e avançado, de qualquer faixa.
@@ -269,19 +280,20 @@ export default function LandingPage() {
                 </p>
               </div>
               <ul className="divide-y divide-line">
-                {TURMAS_INICIAIS.map((turma) => (
+                {turmas.map((turma) => (
                   <li key={turma.id} className="px-4 py-3">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className="text-sm font-medium text-fg">
                         Turma {turma.nome}
                       </span>
-                      <Badge>{turma.faixaEtaria}</Badge>
+                      <Badge>{turma.faixa_etaria}</Badge>
                     </div>
                     <p className="mt-1 text-xs text-muted">
-                      {horarioDaTurma(turma)}
+                      {turma.dias_semana} · {turma.horario.slice(0, 5)} às{" "}
+                      {(turma.hora_fim ?? "").slice(0, 5)}
                     </p>
                     <p className="mt-0.5 text-2xs text-subtle">
-                      Faixas típicas: {turma.faixasTipicas}
+                      Faixas típicas: {turma.faixas_tipicas}
                     </p>
                   </li>
                 ))}

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { CadastroAlunoPanel } from "@/components/portal/CadastroAlunoPanel";
 import { DiarioPanel } from "@/components/portal/DiarioPanel";
+import { FinanceiroPanel } from "@/components/portal/FinanceiroPanel";
 import { ResumoAcademia } from "@/components/portal/ResumoAcademia";
 import { TurmasPanel } from "@/components/portal/TurmasPanel";
 import { GuardaPortal } from "@/components/portal/GuardaPortal";
@@ -10,11 +11,12 @@ import { Badge } from "@/components/ui/Badge";
 import { SegmentedControl } from "@/components/ui/Tabs";
 import { useAcademia } from "@/lib/academiaStore";
 
-type Aba = "turmas" | "diario" | "cadastro";
+type Aba = "turmas" | "diario" | "financeiro" | "cadastro";
 
 const ABAS = [
   { value: "turmas" as const, label: "Turmas" },
   { value: "diario" as const, label: "Diário de classe" },
+  { value: "financeiro" as const, label: "Financeiro" },
   { value: "cadastro" as const, label: "Cadastro" },
 ];
 
@@ -53,6 +55,8 @@ function ConteudoProfessor() {
         <TurmasPanel />
       ) : aba === "diario" ? (
         <DiarioPanel />
+      ) : aba === "financeiro" ? (
+        <FinanceiroPanel />
       ) : (
         <CadastroAlunoPanel />
       )}

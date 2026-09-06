@@ -6,7 +6,7 @@ import { useState, type FormEvent } from "react";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { Button } from "@/components/ui/Button";
 import { useAcademia } from "@/lib/academiaStore";
-import { CREDENCIAIS_DEMO, DESTINO_POR_PERFIL } from "@/services/dataService";
+import { DESTINO_POR_PERFIL } from "@/services/dataService";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -16,27 +16,19 @@ export default function LoginPage() {
   const [erro, setErro] = useState<string | null>(null);
   const [enviando, setEnviando] = useState(false);
 
-  function preencher(credencial: (typeof CREDENCIAIS_DEMO)[number]) {
-    setUsuario(credencial.usuario);
-    setSenha(credencial.senha);
-    setErro(null);
-  }
-
   function onSubmit(event: FormEvent) {
     event.preventDefault();
     setEnviando(true);
     setErro(null);
 
-    // Simula a latência de uma chamada de autenticação real.
-    window.setTimeout(() => {
-      const resultado = entrar(usuario, senha);
+    entrar(usuario, senha).then((resultado) => {
       if (!resultado.ok || !resultado.sessao) {
         setErro(resultado.erro ?? "Não foi possível entrar.");
         setEnviando(false);
         return;
       }
       router.push(DESTINO_POR_PERFIL[resultado.sessao.perfil]);
-    }, 400);
+    });
   }
 
   return (
@@ -108,35 +100,10 @@ export default function LoginPage() {
               </Button>
             </form>
 
-            <div className="mt-5 border-t border-line pt-4">
-              <p className="label">Contas de teste</p>
-              <div className="mt-2 space-y-1.5">
-                {CREDENCIAIS_DEMO.map((credencial) => (
-                  <button
-                    key={credencial.perfil}
-                    type="button"
-                    onClick={() => preencher(credencial)}
-                    className="flex w-full items-center justify-between gap-3 rounded-md border border-line bg-canvas px-3 py-2 text-left transition-colors hover:border-line-strong"
-                  >
-                    <span>
-                      <span className="block text-xs font-medium text-fg">
-                        {credencial.perfil}
-                      </span>
-                      <span className="block font-mono text-2xs text-muted">
-                        {credencial.usuario} · {credencial.senha}
-                      </span>
-                    </span>
-                    <span className="text-2xs font-medium text-accent">
-                      Preencher
-                    </span>
-                  </button>
-                ))}
-              </div>
-              <p className="mt-3 text-2xs leading-relaxed text-subtle">
-                Alunos e professores cadastrados no portal entram com o usuário
-                e a senha definidos no cadastro.
-              </p>
-            </div>
+            <p className="mt-4 border-t border-line pt-4 text-2xs leading-relaxed text-subtle">
+              As contas são criadas pelo professor ou pelo admin no portal.
+              Esqueceu a senha? Fale com a administração do dojo.
+            </p>
           </div>
 
           <p className="mt-4 text-center text-xs text-muted">

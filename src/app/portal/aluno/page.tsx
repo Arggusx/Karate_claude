@@ -4,11 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { Badge, BeltBadge, StatusBadge } from "@/components/ui/Badge";
 import { Button, ButtonLink } from "@/components/ui/Button";
-import { Modal } from "@/components/ui/Modal";
+import { CheckoutModal } from "@/components/portal/CheckoutModal";
 import { GuardaPortal } from "@/components/portal/GuardaPortal";
 import { useAcademia } from "@/lib/academiaStore";
 import {
-  MENSALIDADE,
+  MENSALIDADE_CENTAVOS,
+  formatarReais,
   getGraduacoes,
   horarioDaTurma,
 } from "@/services/dataService";
@@ -166,7 +167,7 @@ function ConteudoAluno() {
           </div>
           <div className="p-4">
             <p className="text-2xl font-semibold tabular-nums tracking-[-0.02em] text-fg">
-              R$ {MENSALIDADE},00
+              R$ {formatarReais(MENSALIDADE_CENTAVOS)}
             </p>
             <p className="mt-0.5 text-xs text-muted">
               Valor único · vence dia 10
@@ -239,44 +240,12 @@ function ConteudoAluno() {
         </div>
       </section>
 
-      <Modal
-        open={checkoutAberto}
+      <CheckoutModal
+        aberto={checkoutAberto}
         onClose={() => setCheckoutAberto(false)}
-        titulo="Checkout — Mensalidade"
-      >
-        <div className="space-y-4">
-          <div className="rounded-md border border-line bg-canvas p-3">
-            <div className="flex items-center justify-between text-xs">
-              <span className="text-muted">Mensalidade · valor único</span>
-              <span className="font-medium text-fg">R$ {MENSALIDADE},00</span>
-            </div>
-            <div className="mt-2 flex items-center justify-between border-t border-line pt-2">
-              <span className="text-xs font-medium text-fg">Total</span>
-              <span className="text-sm font-semibold tabular-nums text-fg">
-                R$ {MENSALIDADE},00
-              </span>
-            </div>
-          </div>
-
-          <p className="text-xs leading-relaxed text-muted">
-            O pagamento será processado pelo provedor da academia. Esta tela é
-            uma prévia da integração de checkout.
-          </p>
-
-          <div className="flex flex-wrap gap-2">
-            <Button size="sm" onClick={() => setCheckoutAberto(false)}>
-              Pagar com Pix
-            </Button>
-            <Button
-              size="sm"
-              variant="secondary"
-              onClick={() => setCheckoutAberto(false)}
-            >
-              Cartão de crédito
-            </Button>
-          </div>
-        </div>
-      </Modal>
+        usuario={aluno.usuario}
+        valorCentavos={MENSALIDADE_CENTAVOS}
+      />
     </div>
   );
 }

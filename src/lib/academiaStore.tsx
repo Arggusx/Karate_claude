@@ -9,29 +9,18 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import {
-  ADMIN,
-  ALUNOS_INICIAIS,
-  PROFESSORES,
-  TURMAS_INICIAIS,
-  formatarNome,
-  normalizarUsuario,
-} from "@/services/dataService";
+import { corDaFaixa } from "@/services/dataService";
 import type { Aluno, AulaPlano, Professor, Sessao, Turma } from "@/types";
 
 /**
- * Estado da academia (turmas, alunos, professores) e da sessão. Vive em
- * memória e é espelhado no localStorage para que um cadastro feito agora
- * consiga entrar no portal em seguida. Quando existir back-end, cada ação
- * vira uma chamada de API mantendo a mesma assinatura.
+ * Estado da academia lido do banco (Neon) através de /api/academia.
  *
- * As senhas ficam em texto puro porque este é um protótipo de front-end sem
- * servidor — no back-end elas devem ser guardadas apenas como hash.
+ * A sessão NÃO é guardada no navegador: quem manda é o cookie httpOnly
+ * assinado pelo servidor. O que existe aqui é apenas um espelho para a
+ * interface saber que nome mostrar — o servidor revalida a cada chamada.
  */
 
-const CHAVE = "portal-shotokan:academia";
-
-interface ResultadoLogin {
+interface Resultado {
   ok: boolean;
   erro?: string;
   sessao?: Sessao;
@@ -43,6 +32,8 @@ interface AcademiaContexto {
   alunos: Aluno[];
   professores: Professor[];
   sessao: Sessao | null;
+  erroCarregamento: string | null;
+  recarregar: () => Promise<void>;
   alunosDaTurma: (turmaId: string) => Aluno[];
   professorDaTurma: (turmaId: string) => Professor | undefined;
   usuarioEmUso: (usuario: string, ignorarId?: string) => boolean;
@@ -50,11 +41,15 @@ interface AcademiaContexto {
   criarTurma: (turma: Omit<Turma, "id" | "plano"> & { plano?: AulaPlano[] }) => void;
   atualizarTurma: (id: string, mudancas: Partial<Turma>) => void;
   removerTurma: (id: string) => void;
-  moverAluno: (alunoId: string, turmaId: string) => void;
-  criarAluno: (aluno: Omit<Aluno, "id" | "foto">) => ResultadoLogin;
-  criarProfessor: (professor: Omit<Professor, "id" | "foto">) => ResultadoLogin;
-  entrar: (usuario: string, senha: string) => ResultadoLogin;
-  sair: () => void;
+  moverAluno: (alunoId: string, turmaId: string) => Promise<void>;
+  criarAluno: (
+    aluno: Omit<Aluno, "id" | "foto"> & { email?: string },
+  ) => Promise<Resultado>;
+  criarProfessor: (
+    professor: Omit<Professor, "id" | "foto"> & { senha: string },
+  ) => Promise<Resultado>;
+  entrar: (usuario: string, senha: string) => Promise<Resultado>;
+  sair: () => Promise<void>;
 }
 
 const Contexto = createContext<AcademiaContexto | null>(null);
@@ -71,49 +66,129 @@ const iniciais = (nome: string) => {
   return (primeiro + ultimo).toUpperCase();
 };
 
-interface Persistido {
-  turmas: Turma[];
-  alunos: Aluno[];
-  professores: Professor[];
-  sessao: Sessao | null;
+/** "19:30:00" → "19:30" */
+const hora = (valor: string | null) => (valor ?? "").slice(0, 5);
+
+interface RespostaAcademia {
+  turmas: {
+    id: number;
+    nome: string;
+    dias_semana: string;
+    horario: string;
+    hora_fim: string | null;
+    faixa_etaria: string | null;
+    faixas_tipicas: string | null;
+    professor_id: number | null;
+    plano: AulaPlano[];
+  }[];
+  alunos: {
+    id: number;
+    nome: string;
+    usuario: string;
+    idade: number | null;
+    turma_id: number | null;
+    faixa_atual: string;
+    progresso: number;
+    frequencia: number;
+    proximo_exame: string | null;
+    financial_status: string;
+  }[];
+  professores: {
+    id: number;
+    nome: string;
+    usuario: string;
+    email: string;
+    role: string;
+    criado_em: string;
+  }[];
 }
 
 export function AcademiaProvider({ children }: { children: ReactNode }) {
-  const [turmas, setTurmas] = useState<Turma[]>(TURMAS_INICIAIS);
-  const [alunos, setAlunos] = useState<Aluno[]>(ALUNOS_INICIAIS);
-  const [professores, setProfessores] = useState<Professor[]>(PROFESSORES);
+  const [turmas, setTurmas] = useState<Turma[]>([]);
+  const [alunos, setAlunos] = useState<Aluno[]>([]);
+  const [professores, setProfessores] = useState<Professor[]>([]);
   const [sessao, setSessao] = useState<Sessao | null>(null);
   const [carregado, setCarregado] = useState(false);
+  const [erroCarregamento, setErroCarregamento] = useState<string | null>(null);
 
-  // Hidrata a partir do navegador só depois da montagem, para não divergir
-  // do HTML renderizado no servidor.
-  useEffect(() => {
+  const recarregar = useCallback(async () => {
     try {
-      const bruto = window.localStorage.getItem(CHAVE);
-      if (bruto) {
-        const salvo = JSON.parse(bruto) as Partial<Persistido>;
-        if (salvo.turmas?.length) setTurmas(salvo.turmas);
-        if (salvo.alunos?.length) setAlunos(salvo.alunos);
-        if (salvo.professores?.length) setProfessores(salvo.professores);
-        setSessao(salvo.sessao ?? null);
-      }
-    } catch {
-      // localStorage indisponível: segue com os dados iniciais.
+      const resposta = await fetch("/api/academia", { cache: "no-store" });
+      const dados = (await resposta.json()) as RespostaAcademia & {
+        erro?: string;
+      };
+      if (!resposta.ok) throw new Error(dados.erro ?? "Falha ao carregar.");
+
+      setTurmas(
+        dados.turmas.map((turma) => ({
+          id: String(turma.id),
+          nome: turma.nome,
+          faixaEtaria: turma.faixa_etaria ?? "",
+          // "Terça e Quinta" → ["Terça", "Quinta"] sem partir o "e" de Terça.
+          dias: turma.dias_semana.split(/\s*,\s*|\s+e\s+/).filter(Boolean),
+          inicio: hora(turma.horario),
+          fim: hora(turma.hora_fim),
+          faixasTipicas: turma.faixas_tipicas ?? "",
+          professorId: String(turma.professor_id ?? ""),
+          plano: Array.isArray(turma.plano) ? turma.plano : [],
+        })),
+      );
+
+      setAlunos(
+        dados.alunos.map((aluno) => ({
+          id: String(aluno.id),
+          nome: aluno.nome,
+          usuario: aluno.usuario,
+          senha: "",
+          idade: aluno.idade ?? 0,
+          turmaId: String(aluno.turma_id ?? ""),
+          faixa: aluno.faixa_atual,
+          corFaixa: corDaFaixa(aluno.faixa_atual),
+          progresso: aluno.progresso,
+          proximoExame: aluno.proximo_exame ?? "A definir",
+          status:
+            aluno.financial_status === "ativo"
+              ? "ativo"
+              : aluno.financial_status === "atrasado"
+                ? "atrasado"
+                : "pendente",
+          foto: iniciais(aluno.nome),
+          frequencia: aluno.frequencia,
+        })),
+      );
+
+      setProfessores(
+        dados.professores.map((professor) => ({
+          id: String(professor.id),
+          nome: professor.nome,
+          usuario: professor.usuario,
+          senha: "",
+          graduacao: professor.role === "admin" ? "Administração" : "Professor",
+          email: professor.email,
+          desde: professor.criado_em?.slice(0, 4) ?? "",
+          foto: iniciais(professor.nome),
+        })),
+      );
+
+      setErroCarregamento(null);
+    } catch (falha) {
+      setErroCarregamento(
+        falha instanceof Error
+          ? falha.message
+          : "Não foi possível falar com o banco.",
+      );
     }
-    setCarregado(true);
   }, []);
 
   useEffect(() => {
-    if (!carregado) return;
-    try {
-      window.localStorage.setItem(
-        CHAVE,
-        JSON.stringify({ turmas, alunos, professores, sessao }),
-      );
-    } catch {
-      // Sem persistência: o estado continua válido durante a sessão.
-    }
-  }, [carregado, turmas, alunos, professores, sessao]);
+    // Quem responde "quem é você" é o cookie assinado, lido no servidor.
+    const restaurar = fetch("/api/auth/sessao", { cache: "no-store" })
+      .then((resposta) => resposta.json())
+      .then((dados) => setSessao(dados.sessao ?? null))
+      .catch(() => setSessao(null));
+
+    Promise.all([restaurar, recarregar()]).finally(() => setCarregado(true));
+  }, [recarregar]);
 
   const alunosDaTurma = useCallback(
     (turmaId: string) => alunos.filter((aluno) => aluno.turmaId === turmaId),
@@ -128,29 +203,21 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
     [turmas, professores],
   );
 
-  /** Um nome de usuário vale para todo o dojo: alunos, professores e admin. */
   const usuarioEmUso = useCallback(
     (usuario: string, ignorarId?: string) => {
-      const alvo = normalizarUsuario(usuario);
+      const alvo = usuario.trim().toLowerCase();
       if (!alvo) return false;
-      if (alvo === ADMIN.usuario) return true;
       return (
-        alunos.some(
-          (aluno) => aluno.usuario === alvo && aluno.id !== ignorarId,
-        ) ||
-        professores.some(
-          (professor) =>
-            professor.usuario === alvo && professor.id !== ignorarId,
-        )
+        alunos.some((a) => a.usuario === alvo && a.id !== ignorarId) ||
+        professores.some((p) => p.usuario === alvo && p.id !== ignorarId)
       );
     },
     [alunos, professores],
   );
 
-  /** Devolve o nome livre mais próximo da base ("ana.silva2", "ana.silva3"...). */
   const usuarioDisponivel = useCallback(
     (base: string) => {
-      const raiz = normalizarUsuario(base);
+      const raiz = base.trim().toLowerCase();
       if (!raiz) return "";
       if (!usuarioEmUso(raiz)) return raiz;
       let sufixo = 2;
@@ -160,6 +227,8 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
     [usuarioEmUso],
   );
 
+  // Turmas ainda são editadas em memória: a escrita no banco entra junto com
+  // a tela de edição de turma (o formulário já existe e envia o mesmo shape).
   const criarTurma = useCallback<AcademiaContexto["criarTurma"]>((turma) => {
     setTurmas((atual) => [
       ...atual,
@@ -181,124 +250,99 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const moverAluno = useCallback<AcademiaContexto["moverAluno"]>(
-    (alunoId, turmaId) => {
-      setAlunos((atual) =>
-        atual.map((aluno) =>
-          aluno.id === alunoId ? { ...aluno, turmaId } : aluno,
-        ),
-      );
+    async (alunoId, turmaId) => {
+      const resposta = await fetch(`/api/academia/alunos/${alunoId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ turmaId: Number(turmaId) }),
+      });
+      if (!resposta.ok) {
+        const dados = await resposta.json();
+        throw new Error(dados.erro ?? "Falha ao mover o aluno.");
+      }
+      await recarregar();
+    },
+    [recarregar],
+  );
+
+  const criarAluno = useCallback<AcademiaContexto["criarAluno"]>(
+    async (aluno) => {
+      const resposta = await fetch("/api/academia/alunos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nome: aluno.nome,
+          usuario: aluno.usuario,
+          senha: aluno.senha,
+          email: aluno.email,
+          idade: aluno.idade,
+          turmaId: Number(aluno.turmaId) || null,
+          faixa: aluno.faixa,
+        }),
+      });
+      const dados = await resposta.json();
+      if (!resposta.ok) return { ok: false, erro: dados.erro };
+
+      await recarregar();
+      return { ok: true };
+    },
+    [recarregar],
+  );
+
+  const criarProfessor = useCallback<AcademiaContexto["criarProfessor"]>(
+    async (professor) => {
+      const resposta = await fetch("/api/academia/professores", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nome: professor.nome,
+          usuario: professor.usuario,
+          senha: professor.senha,
+          email: professor.email,
+        }),
+      });
+      const dados = await resposta.json();
+      if (!resposta.ok) return { ok: false, erro: dados.erro };
+
+      await recarregar();
+      return { ok: true };
+    },
+    [recarregar],
+  );
+
+  const entrar = useCallback<AcademiaContexto["entrar"]>(
+    async (usuario, senha) => {
+      try {
+        const resposta = await fetch("/api/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ usuario, senha }),
+        });
+        const dados = await resposta.json();
+
+        if (!resposta.ok) {
+          return { ok: false, erro: dados.erro ?? "Não foi possível entrar." };
+        }
+
+        const nova: Sessao = {
+          perfil: dados.conta.role,
+          id: String(dados.conta.id),
+          nome: dados.conta.nome,
+          usuario: dados.conta.usuario,
+        };
+        setSessao(nova);
+        return { ok: true, sessao: nova };
+      } catch {
+        return { ok: false, erro: "Falha de conexão com o servidor." };
+      }
     },
     [],
   );
 
-  const criarAluno = useCallback<AcademiaContexto["criarAluno"]>(
-    (aluno) => {
-      const usuario = normalizarUsuario(aluno.usuario);
-      if (!usuario) return { ok: false, erro: "Informe um nome de usuário." };
-      if (usuario.length < 3) {
-        return { ok: false, erro: "O nome de usuário precisa ter ao menos 3 caracteres." };
-      }
-      if (aluno.senha.length < 6) {
-        return { ok: false, erro: "A senha precisa ter ao menos 6 caracteres." };
-      }
-      if (usuarioEmUso(usuario)) {
-        return { ok: false, erro: `O usuário "${usuario}" já está em uso.` };
-      }
-
-      const nome = formatarNome(aluno.nome);
-      setAlunos((atual) => [
-        ...atual,
-        { ...aluno, nome, usuario, id: `a-${Date.now()}`, foto: iniciais(nome) },
-      ]);
-      return { ok: true };
-    },
-    [usuarioEmUso],
-  );
-
-  const criarProfessor = useCallback<AcademiaContexto["criarProfessor"]>(
-    (professor) => {
-      const usuario = normalizarUsuario(professor.usuario);
-      if (!usuario) return { ok: false, erro: "Informe um nome de usuário." };
-      if (usuario.length < 3) {
-        return { ok: false, erro: "O nome de usuário precisa ter ao menos 3 caracteres." };
-      }
-      if (professor.senha.length < 6) {
-        return { ok: false, erro: "A senha precisa ter ao menos 6 caracteres." };
-      }
-      if (usuarioEmUso(usuario)) {
-        return { ok: false, erro: `O usuário "${usuario}" já está em uso.` };
-      }
-
-      const nome = formatarNome(professor.nome);
-      setProfessores((atual) => [
-        ...atual,
-        {
-          ...professor,
-          nome,
-          usuario,
-          id: `p-${Date.now()}`,
-          foto: iniciais(nome),
-        },
-      ]);
-      return { ok: true };
-    },
-    [usuarioEmUso],
-  );
-
-  const entrar = useCallback<AcademiaContexto["entrar"]>(
-    (usuarioInformado, senha) => {
-      const usuario = normalizarUsuario(usuarioInformado);
-
-      if (usuario === ADMIN.usuario) {
-        if (senha !== ADMIN.senha) {
-          return { ok: false, erro: "Usuário ou senha inválidos." };
-        }
-        const nova: Sessao = {
-          perfil: "admin",
-          id: ADMIN.id,
-          nome: ADMIN.nome,
-          usuario: ADMIN.usuario,
-        };
-        setSessao(nova);
-        return { ok: true, sessao: nova };
-      }
-
-      const professor = professores.find((item) => item.usuario === usuario);
-      if (professor) {
-        if (professor.senha !== senha) {
-          return { ok: false, erro: "Usuário ou senha inválidos." };
-        }
-        const nova: Sessao = {
-          perfil: "professor",
-          id: professor.id,
-          nome: professor.nome,
-          usuario: professor.usuario,
-        };
-        setSessao(nova);
-        return { ok: true, sessao: nova };
-      }
-
-      const aluno = alunos.find((item) => item.usuario === usuario);
-      if (aluno) {
-        if (aluno.senha !== senha) {
-          return { ok: false, erro: "Usuário ou senha inválidos." };
-        }
-        const nova: Sessao = {
-          perfil: "aluno",
-          id: aluno.id,
-          nome: aluno.nome,
-          usuario: aluno.usuario,
-        };
-        setSessao(nova);
-        return { ok: true, sessao: nova };
-      }
-
-      return { ok: false, erro: "Usuário ou senha inválidos." };
-    },
-    [alunos, professores],
-  );
-
-  const sair = useCallback(() => setSessao(null), []);
+  const sair = useCallback(async () => {
+    await fetch("/api/auth/logout", { method: "POST" }).catch(() => {});
+    setSessao(null);
+  }, []);
 
   const valor = useMemo(
     () => ({
@@ -307,6 +351,8 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
       alunos,
       professores,
       sessao,
+      erroCarregamento,
+      recarregar,
       alunosDaTurma,
       professorDaTurma,
       usuarioEmUso,
@@ -326,6 +372,8 @@ export function AcademiaProvider({ children }: { children: ReactNode }) {
       alunos,
       professores,
       sessao,
+      erroCarregamento,
+      recarregar,
       alunosDaTurma,
       professorDaTurma,
       usuarioEmUso,

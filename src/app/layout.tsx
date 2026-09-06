@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { ToastProvider } from "@/components/ui/Toast";
 import { AcademiaProvider } from "@/lib/academiaStore";
 import "./globals.css";
 
@@ -21,7 +22,9 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <body className="min-h-screen bg-canvas text-fg">
         <ThemeProvider>
-          <AcademiaProvider>{children}</AcademiaProvider>
+          <AcademiaProvider>
+            <ToastProvider>{children}</ToastProvider>
+          </AcademiaProvider>
         </ThemeProvider>
       </body>
     </html>

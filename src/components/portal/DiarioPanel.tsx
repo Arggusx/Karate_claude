@@ -1,40 +1,67 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AlunoCampo, AlunoCard } from "@/components/portal/AlunoCard";
+import { CampoBusca, paraBusca } from "@/components/portal/CampoBusca";
 import { Badge, BeltBadge, StatusBadge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
+import { Paginacao } from "@/components/ui/Paginacao";
 import { TBody, TD, TH, THead, TR, Table } from "@/components/ui/Table";
 import { useAcademia } from "@/lib/academiaStore";
 import type { Chamada } from "@/types";
 
+const POR_PAGINA = 10;
+
 /**
  * Diário de classe: uma única tabela com todos os alunos, distinguidos pela
- * coluna de turma. A chamada começa vazia — quem não for marcado é falta.
+ * coluna de turma, com busca, filtro de turma e paginação. A chamada começa
+ * vazia — quem não for marcado é falta.
  */
 export function DiarioPanel() {
   const { turmas, alunos } = useAcademia();
   const [chamada, setChamada] = useState<Chamada>({});
   const [salva, setSalva] = useState<string | null>(null);
+  const [busca, setBusca] = useState("");
+  const [turmaFiltro, setTurmaFiltro] = useState("todas");
+  const [pagina, setPagina] = useState(1);
 
   const nomeDaTurma = useMemo(
     () => new Map(turmas.map((turma) => [turma.id, turma.nome])),
     [turmas],
   );
 
-  // Agrupa visualmente por turma sem quebrar a tabela em duas.
-  const ordenados = useMemo(
-    () =>
-      [...alunos].sort((a, b) => {
+  // Agrupa por turma e ordena por nome, sem quebrar a tabela em duas.
+  const filtrados = useMemo(() => {
+    const alvo = paraBusca(busca.trim());
+
+    return alunos
+      .filter((aluno) => {
+        const naTurma =
+          turmaFiltro === "todas" || aluno.turmaId === turmaFiltro;
+        const combina =
+          !alvo ||
+          paraBusca(aluno.nome).includes(alvo) ||
+          paraBusca(aluno.usuario).includes(alvo);
+        return naTurma && combina;
+      })
+      .sort((a, b) => {
         const turmaA = nomeDaTurma.get(a.turmaId) ?? "";
         const turmaB = nomeDaTurma.get(b.turmaId) ?? "";
         return turmaA.localeCompare(turmaB) || a.nome.localeCompare(b.nome);
-      }),
-    [alunos, nomeDaTurma],
+      });
+  }, [alunos, busca, turmaFiltro, nomeDaTurma]);
+
+  // Qualquer filtro novo volta para a primeira página.
+  useEffect(() => setPagina(1), [busca, turmaFiltro]);
+
+  const visiveis = filtrados.slice(
+    (pagina - 1) * POR_PAGINA,
+    pagina * POR_PAGINA,
   );
 
-  const presentes = ordenados.filter((aluno) => chamada[aluno.id]).length;
+  // A contagem considera o recorte filtrado, que é o que será salvo.
+  const presentes = filtrados.filter((aluno) => chamada[aluno.id]).length;
 
   function alternar(alunoId: string) {
     setChamada((atual) => ({ ...atual, [alunoId]: !atual[alunoId] }));
@@ -42,22 +69,47 @@ export function DiarioPanel() {
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-xs text-muted">
-          Nenhum aluno vem marcado: o padrão da chamada é{" "}
-          <span className="font-medium text-status-bad">falta</span>. Marque
-          quem esteve presente antes de salvar.
-        </p>
+      <p className="text-xs text-muted">
+        Nenhum aluno vem marcado: o padrão da chamada é{" "}
+        <span className="font-medium text-status-bad">falta</span>. Marque quem
+        esteve presente antes de salvar.
+      </p>
+
+      {/* Filtros */}
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+          <CampoBusca
+            id="busca-diario"
+            valor={busca}
+            onChange={setBusca}
+            className="sm:w-64"
+          />
+          <select
+            aria-label="Filtrar por turma"
+            className="input sm:w-44"
+            value={turmaFiltro}
+            onChange={(event) => setTurmaFiltro(event.target.value)}
+          >
+            <option value="todas">Todas as turmas</option>
+            {turmas.map((turma) => (
+              <option key={turma.id} value={turma.id}>
+                {turma.nome}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <div className="flex items-center gap-3">
           <span className="text-2xs tabular-nums text-subtle">
-            {presentes} presentes · {ordenados.length - presentes} faltas
+            {presentes} presentes · {filtrados.length - presentes} faltas
           </span>
           <Button
             size="sm"
+            disabled={filtrados.length === 0}
             onClick={() =>
               setSalva(
                 `${presentes} presenças e ${
-                  ordenados.length - presentes
+                  filtrados.length - presentes
                 } faltas registradas.`,
               )
             }
@@ -67,15 +119,17 @@ export function DiarioPanel() {
         </div>
       </div>
 
-      {ordenados.length === 0 ? (
+      {filtrados.length === 0 ? (
         <div className="card px-4 py-6 text-center">
-          <p className="text-xs text-muted">Nenhum aluno matriculado.</p>
+          <p className="text-xs text-muted">
+            Nenhum aluno encontrado com os filtros atuais.
+          </p>
         </div>
       ) : (
         <>
           {/* Mobile: um card por aluno, expansível */}
           <div className="space-y-2 sm:hidden">
-            {ordenados.map((aluno) => (
+            {visiveis.map((aluno) => (
               <AlunoCard
                 key={aluno.id}
                 aluno={aluno}
@@ -88,6 +142,9 @@ export function DiarioPanel() {
               >
                 <AlunoCampo rotulo="Turma">
                   <Badge>{nomeDaTurma.get(aluno.turmaId) ?? "—"}</Badge>
+                </AlunoCampo>
+                <AlunoCampo rotulo="Usuário">
+                  <span className="font-mono">{aluno.usuario}</span>
                 </AlunoCampo>
                 <AlunoCampo rotulo="Idade">{aluno.idade} anos</AlunoCampo>
                 <AlunoCampo rotulo="Faixa">
@@ -105,21 +162,19 @@ export function DiarioPanel() {
 
           {/* Desktop: tabela completa */}
           <div className="hidden sm:block">
-          <Table minWidth="min-w-[820px]">
-            <THead>
-              <TR>
-                <TH>Aluno</TH>
-                <TH>Turma</TH>
-                <TH>Faixa</TH>
-                <TH className="text-right">Frequência</TH>
-                <TH>Pagamento</TH>
-                <TH>Presença</TH>
-              </TR>
-            </THead>
-            <TBody>
-              {ordenados.map((aluno) => {
-                const presente = Boolean(chamada[aluno.id]);
-                return (
+            <Table minWidth="min-w-[820px]">
+              <THead>
+                <TR>
+                  <TH>Aluno</TH>
+                  <TH>Turma</TH>
+                  <TH>Faixa</TH>
+                  <TH className="text-right">Frequência</TH>
+                  <TH>Pagamento</TH>
+                  <TH>Presença</TH>
+                </TR>
+              </THead>
+              <TBody>
+                {visiveis.map((aluno) => (
                   <TR key={aluno.id}>
                     <TD>
                       <div className="flex items-center gap-2.5">
@@ -131,7 +186,7 @@ export function DiarioPanel() {
                             {aluno.nome}
                           </span>
                           <span className="block text-2xs text-subtle">
-                            {aluno.idade} anos
+                            {aluno.idade} anos · {aluno.usuario}
                           </span>
                         </span>
                       </div>
@@ -150,16 +205,23 @@ export function DiarioPanel() {
                     </TD>
                     <TD>
                       <BotaoPresenca
-                        presente={presente}
+                        presente={Boolean(chamada[aluno.id])}
                         onClick={() => alternar(aluno.id)}
                       />
                     </TD>
                   </TR>
-                );
-              })}
-            </TBody>
-          </Table>
+                ))}
+              </TBody>
+            </Table>
           </div>
+
+          <Paginacao
+            total={filtrados.length}
+            pagina={pagina}
+            porPagina={POR_PAGINA}
+            onPagina={setPagina}
+            rotulo="alunos"
+          />
         </>
       )}
 

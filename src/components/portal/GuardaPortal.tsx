@@ -23,7 +23,7 @@ export function GuardaPortal({
   perfis: PerfilUsuario[];
   children: React.ReactNode;
 }) {
-  const { carregado, sessao } = useAcademia();
+  const { carregado, sessao, alunos } = useAcademia();
 
   if (!carregado) {
     return (
@@ -43,7 +43,12 @@ export function GuardaPortal({
     );
   }
 
-  if (!perfis.includes(sessao.perfil)) {
+  // Uma conta pode acumular papéis: o admin do dojo também treina, então ele
+  // acessa o portal do aluno se tiver matrícula.
+  const tambemAluno =
+    perfis.includes("aluno") && alunos.some((a) => a.id === sessao.id);
+
+  if (!perfis.includes(sessao.perfil) && !tambemAluno) {
     return (
       <Aviso
         titulo="Acesso restrito"

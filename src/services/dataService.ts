@@ -279,98 +279,21 @@ export function listarDestaques(kata: KataCompleto): string[] {
 
 // ------------------------------------------- Dados da academia (portais)
 
-/** Mensalidade única, igual para qualquer idade ou turma. */
-export const MENSALIDADE = 50;
+/**
+ * Alunos, professores e turmas NÃO moram mais aqui: vêm do banco (Neon) via
+ * /api/academia. Este módulo guarda o acervo de karatê (JSON) e as constantes
+ * de apresentação.
+ */
 
-export const PROFESSORES: Professor[] = [
-  {
-    id: "p-01",
-    nome: "Sensei Marcelo Aoki",
-    usuario: "marcelo.aoki",
-    senha: "sensei123",
-    graduacao: "5º Dan · JKA",
-    email: "sensei@shotokan.com",
-    desde: "2009",
-    foto: "MA",
-  },
-  {
-    id: "p-02",
-    nome: "Sensei Cláudia Ramos",
-    usuario: "claudia.ramos",
-    senha: "sensei123",
-    graduacao: "3º Dan · JKA",
-    email: "claudia@shotokan.com",
-    desde: "2016",
-    foto: "CR",
-  },
-];
+/** Mensalidade em centavos. Configurável por env para testes de pagamento. */
+export const MENSALIDADE_CENTAVOS = Number(
+  process.env.NP_VALOR_MENSALIDADE_CENTAVOS ?? 1,
+);
 
-export const TURMAS_INICIAIS: Turma[] = [
-  {
-    id: "t-infantil",
-    nome: "Infantil",
-    faixaEtaria: "7 a 12 anos",
-    dias: ["Terça", "Quinta"],
-    inicio: "18:30",
-    fim: "19:30",
-    faixasTipicas: "Branca até amarela / vermelha",
-    professorId: "p-02",
-    plano: [
-      {
-        dia: "Terça",
-        foco: "Kihon e disciplina",
-        conteudo: [
-          "Aquecimento lúdico e alongamento (10 min)",
-          "Zenkutsu-dachi e Kiba-dachi — deslocamento em linha",
-          "Oi-Zuki e Gedan Barai com contagem em japonês",
-          "Etiqueta do dojo: Rei, Seiza e Mokuso",
-        ],
-      },
-      {
-        dia: "Quinta",
-        foco: "Kata e coordenação",
-        conteudo: [
-          "Revisão do kihon da semana",
-          "Taikyoku Shodan e Heian Shodan por partes",
-          "Jogos de reação e equilíbrio",
-          "Dojo Kun — leitura e explicação de um lema",
-        ],
-      },
-    ],
-  },
-  {
-    id: "t-avancado",
-    nome: "Avançado",
-    faixaEtaria: "13 anos ou mais",
-    dias: ["Terça", "Quinta"],
-    inicio: "19:30",
-    fim: "20:30",
-    faixasTipicas: "Branca até vermelha ou acima",
-    professorId: "p-01",
-    plano: [
-      {
-        dia: "Terça",
-        foco: "Kihon e condicionamento",
-        conteudo: [
-          "Aquecimento articular e preparação física (15 min)",
-          "Renzoku Waza — combinações de 3 e 4 tempos",
-          "Gyaku-Zuki com rotação de quadril e hikite",
-          "Mawashi-Geri e Yoko-Geri Kekomi em deslocamento",
-        ],
-      },
-      {
-        dia: "Quinta",
-        foco: "Kata e kumite",
-        conteudo: [
-          "Kata da faixa: Heian Yondan / Godan e Tekki Shodan",
-          "Bunkai em duplas do kata trabalhado",
-          "Kihon Ippon Kumite e Jiyu Ippon Kumite",
-          "Zanshin e maai — leitura de distância",
-        ],
-      },
-    ],
-  },
-];
+/** 5000 → "50,00"; 1 → "0,01" */
+export function formatarReais(centavos: number): string {
+  return (centavos / 100).toFixed(2).replace(".", ",");
+}
 
 /**
  * A divisão real das turmas é por nível técnico e faixa, mas na prática o
@@ -378,144 +301,6 @@ export const TURMAS_INICIAIS: Turma[] = [
  */
 export const CRITERIO_TURMAS =
   "A divisão formal é por nível e faixa; na prática, a idade é o critério usado no dia a dia.";
-
-export const ALUNOS_INICIAIS: Aluno[] = [
-  {
-    id: "a-001",
-    nome: "Rafael Tanaka",
-    usuario: "rafael.tanaka",
-    senha: "aluno123",
-    idade: 24,
-    turmaId: "t-avancado",
-    faixa: "Verde · 3º Kyu",
-    corFaixa: CORES_FAIXA.verde,
-    progresso: 68,
-    proximoExame: "12/12/2026",
-    status: "pendente",
-    foto: "RT",
-    frequencia: 82,
-  },
-  {
-    id: "a-002",
-    nome: "Marina Alves",
-    usuario: "marina.alves",
-    senha: "aluno123",
-    idade: 17,
-    turmaId: "t-avancado",
-    faixa: "Marrom · 1º Kyu",
-    corFaixa: CORES_FAIXA.marrom,
-    progresso: 91,
-    proximoExame: "12/12/2026",
-    status: "ativo",
-    foto: "MA",
-    frequencia: 97,
-  },
-  {
-    id: "a-003",
-    nome: "Caio Fernandes",
-    usuario: "caio.fernandes",
-    senha: "aluno123",
-    idade: 11,
-    turmaId: "t-infantil",
-    faixa: "Laranja · 4º Kyu",
-    corFaixa: CORES_FAIXA.laranja,
-    progresso: 45,
-    proximoExame: "20/03/2027",
-    status: "ativo",
-    foto: "CF",
-    frequencia: 88,
-  },
-  {
-    id: "a-004",
-    nome: "Beatriz Lima",
-    usuario: "beatriz.lima",
-    senha: "aluno123",
-    idade: 32,
-    turmaId: "t-avancado",
-    faixa: "Amarela · 6º Kyu",
-    corFaixa: CORES_FAIXA.amarela,
-    progresso: 30,
-    proximoExame: "20/03/2027",
-    status: "atrasado",
-    foto: "BL",
-    frequencia: 61,
-  },
-  {
-    id: "a-005",
-    nome: "Hugo Nakamura",
-    usuario: "hugo.nakamura",
-    senha: "aluno123",
-    idade: 28,
-    turmaId: "t-avancado",
-    faixa: "Preta · 2º Dan",
-    corFaixa: CORES_FAIXA.preta,
-    progresso: 74,
-    proximoExame: "05/07/2027",
-    status: "ativo",
-    foto: "HN",
-    frequencia: 94,
-  },
-  {
-    id: "a-006",
-    nome: "Larissa Duarte",
-    usuario: "larissa.duarte",
-    senha: "aluno123",
-    idade: 9,
-    turmaId: "t-infantil",
-    faixa: "Branca · 7º Kyu",
-    corFaixa: CORES_FAIXA.branca,
-    progresso: 22,
-    proximoExame: "20/03/2027",
-    status: "ativo",
-    foto: "LD",
-    frequencia: 90,
-  },
-  {
-    id: "a-007",
-    nome: "Théo Barbosa",
-    usuario: "theo.barbosa",
-    senha: "aluno123",
-    idade: 8,
-    turmaId: "t-infantil",
-    faixa: "Branca · 7º Kyu",
-    corFaixa: CORES_FAIXA.branca,
-    progresso: 15,
-    proximoExame: "20/03/2027",
-    status: "ativo",
-    foto: "TB",
-    frequencia: 76,
-  },
-  {
-    id: "a-008",
-    nome: "Alice Moreira",
-    usuario: "alice.moreira",
-    senha: "aluno123",
-    idade: 12,
-    turmaId: "t-infantil",
-    faixa: "Amarela · 6º Kyu",
-    corFaixa: CORES_FAIXA.amarela,
-    progresso: 52,
-    proximoExame: "20/03/2027",
-    status: "pendente",
-    foto: "AM",
-    frequencia: 84,
-  },
-];
-
-/** Conta administrativa única do dojo. */
-export const ADMIN: Admin = {
-  id: "adm-01",
-  nome: "Administração do dojo",
-  usuario: "admin",
-  senha: "admin123",
-  foto: "AD",
-};
-
-export const CREDENCIAIS_DEMO = [
-  { perfil: "Aluno", usuario: "rafael.tanaka", senha: "aluno123" },
-  { perfil: "Professor", usuario: "marcelo.aoki", senha: "sensei123" },
-  { perfil: "Admin", usuario: "admin", senha: "admin123" },
-];
 
 /** Rota inicial de cada perfil depois do login. */
 export const DESTINO_POR_PERFIL: Record<PerfilUsuario, string> = {
@@ -553,26 +338,13 @@ export function sugerirUsuario(nomeCompleto: string): string {
 
 /** Partículas que permanecem em minúsculas no meio do nome. */
 const PARTICULAS = new Set([
-  "de",
-  "da",
-  "do",
-  "das",
-  "dos",
-  "e",
-  "di",
-  "du",
-  "del",
-  "van",
-  "von",
-  "der",
-  "la",
-  "le",
+  "de", "da", "do", "das", "dos", "e", "di", "du", "del",
+  "van", "von", "der", "la", "le",
 ]);
 
 /**
  * Padroniza o nome digitado: espaços extras removidos, cada palavra com a
  * inicial maiúscula e partículas ("da", "dos", "e") em minúsculas.
- * "MARIA   dos SANTOS" vira "Maria dos Santos".
  */
 export function formatarNome(nome: string): string {
   return nome
@@ -582,7 +354,6 @@ export function formatarNome(nome: string): string {
     .split(" ")
     .map((palavra, indice) => {
       if (indice > 0 && PARTICULAS.has(palavra)) return palavra;
-      // Nomes compostos por hífen ou apóstrofo capitalizam nos dois lados.
       return palavra.replace(
         /(^|[-'’])([\p{L}])/gu,
         (_, separador: string, letra: string) =>
@@ -590,6 +361,12 @@ export function formatarNome(nome: string): string {
       );
     })
     .join(" ");
+}
+
+/** Formata o horário completo da turma: "Ter e Qui · 18:30 às 19:30". */
+export function horarioDaTurma(turma: Turma): string {
+  const dias = turma.dias.map((dia) => dia.slice(0, 3)).join(" e ");
+  return `${dias} · ${turma.inicio} às ${turma.fim}`;
 }
 
 // --------------------------------------------- API assíncrona (client-side)
@@ -604,10 +381,4 @@ export async function fetchKatas(): Promise<KataCompleto[]> {
 export async function fetchTecnicas(): Promise<Tecnica[]> {
   await delay();
   return getTecnicas();
-}
-
-/** Formata o horário completo da turma: "Ter e Qui · 18:30 às 19:30". */
-export function horarioDaTurma(turma: Turma): string {
-  const dias = turma.dias.map((dia) => dia.slice(0, 3)).join(" e ");
-  return `${dias} · ${turma.inicio} às ${turma.fim}`;
 }

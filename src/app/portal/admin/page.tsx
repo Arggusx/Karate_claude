@@ -1,15 +1,21 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { CadastroAlunoPanel } from "@/components/portal/CadastroAlunoPanel";
 import { GuardaPortal } from "@/components/portal/GuardaPortal";
-import { CampoUsuario } from "@/components/portal/CampoUsuario";
+import { CampoBusca, paraBusca } from "@/components/portal/CampoBusca";
+import {
+  CampoUsuario,
+  type StatusUsuario,
+} from "@/components/portal/CampoUsuario";
 import { DiarioPanel } from "@/components/portal/DiarioPanel";
+import { FinanceiroPanel } from "@/components/portal/FinanceiroPanel";
 import { ResumoAcademia } from "@/components/portal/ResumoAcademia";
 import { TurmasPanel } from "@/components/portal/TurmasPanel";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
+import { Paginacao } from "@/components/ui/Paginacao";
 import { SegmentedControl } from "@/components/ui/Tabs";
 import { useAcademia } from "@/lib/academiaStore";
 import {
@@ -18,11 +24,12 @@ import {
   normalizarUsuario,
 } from "@/services/dataService";
 
-type Aba = "turmas" | "diario" | "professores" | "cadastro";
+type Aba = "turmas" | "diario" | "financeiro" | "professores" | "cadastro";
 
 const ABAS = [
   { value: "turmas" as const, label: "Turmas" },
   { value: "diario" as const, label: "Diário de classe" },
+  { value: "financeiro" as const, label: "Financeiro" },
   { value: "professores" as const, label: "Professores" },
   { value: "cadastro" as const, label: "Cadastro" },
 ];
@@ -60,6 +67,8 @@ function ConteudoAdmin() {
         <TurmasPanel />
       ) : aba === "diario" ? (
         <DiarioPanel />
+      ) : aba === "financeiro" ? (
+        <FinanceiroPanel />
       ) : aba === "professores" ? (
         <ProfessoresPanel />
       ) : (
@@ -68,6 +77,8 @@ function ConteudoAdmin() {
     </div>
   );
 }
+
+const POR_PAGINA = 8;
 
 /** Exclusivo do admin: cadastro de professores e suas turmas. */
 function ProfessoresPanel() {
@@ -78,10 +89,31 @@ function ProfessoresPanel() {
   const [graduacao, setGraduacao] = useState("");
   const [email, setEmail] = useState("");
   const [desde, setDesde] = useState("");
+  const [statusUsuario, setStatusUsuario] = useState<StatusUsuario>("vazio");
   const [erro, setErro] = useState<string | null>(null);
   const [confirmado, setConfirmado] = useState<string | null>(null);
+  const [busca, setBusca] = useState("");
+  const [pagina, setPagina] = useState(1);
 
-  function cadastrar(event: FormEvent) {
+  const filtrados = useMemo(() => {
+    const alvo = paraBusca(busca.trim());
+    if (!alvo) return professores;
+    return professores.filter(
+      (professor) =>
+        paraBusca(professor.nome).includes(alvo) ||
+        paraBusca(professor.usuario).includes(alvo),
+    );
+  }, [professores, busca]);
+
+  // Qualquer filtro novo volta para a primeira página.
+  useEffect(() => setPagina(1), [busca]);
+
+  const visiveis = filtrados.slice(
+    (pagina - 1) * POR_PAGINA,
+    pagina * POR_PAGINA,
+  );
+
+  async function cadastrar(event: FormEvent) {
     event.preventDefault();
     setErro(null);
 
@@ -90,7 +122,7 @@ function ProfessoresPanel() {
       return;
     }
 
-    const resultado = criarProfessor({
+    const resultado = await criarProfessor({
       nome: formatarNome(nome),
       usuario,
       senha,
@@ -111,14 +143,36 @@ function ProfessoresPanel() {
     setGraduacao("");
     setEmail("");
     setDesde("");
+    setStatusUsuario("vazio");
   }
 
   const [nomeConfirmado, usuarioConfirmado] = (confirmado ?? "").split("|");
 
   return (
     <div className="space-y-4">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <CampoBusca
+          id="busca-professor"
+          valor={busca}
+          onChange={setBusca}
+          placeholder="Buscar professor por nome ou usuário"
+          className="w-full sm:max-w-xs"
+        />
+        <span className="text-2xs tabular-nums text-subtle">
+          {filtrados.length} de {professores.length} professores
+        </span>
+      </div>
+
+      {filtrados.length === 0 ? (
+        <div className="card px-4 py-6 text-center">
+          <p className="text-xs text-muted">
+            Nenhum professor encontrado para “{busca}”.
+          </p>
+        </div>
+      ) : null}
+
       <div className="grid gap-3 lg:grid-cols-2">
-        {professores.map((professor) => {
+        {visiveis.map((professor) => {
           const doProfessor = turmas.filter(
             (turma) => turma.professorId === professor.id,
           );
@@ -194,6 +248,14 @@ function ProfessoresPanel() {
         })}
       </div>
 
+      <Paginacao
+        total={filtrados.length}
+        pagina={pagina}
+        porPagina={POR_PAGINA}
+        onPagina={setPagina}
+        rotulo="professores"
+      />
+
       <section className="card max-w-2xl">
         <div className="border-b border-line px-4 py-2.5">
           <h2 className="heading-md">Cadastrar professor</h2>
@@ -222,6 +284,7 @@ function ProfessoresPanel() {
             nomeCompleto={nome}
             valor={usuario}
             onChange={setUsuario}
+            onStatus={setStatusUsuario}
           />
 
           <div>
@@ -291,10 +354,15 @@ function ProfessoresPanel() {
             </p>
           ) : null}
 
-          <div className="sm:col-span-2">
-            <Button type="submit" size="sm">
+          <div className="flex items-center gap-3 sm:col-span-2">
+            <Button type="submit" size="sm" disabled={statusUsuario !== "livre"}>
               Cadastrar professor
             </Button>
+            {statusUsuario === "ocupado" ? (
+              <span className="text-2xs text-status-bad">
+                Escolha um nome de usuário livre para continuar.
+              </span>
+            ) : null}
           </div>
         </form>
       </section>

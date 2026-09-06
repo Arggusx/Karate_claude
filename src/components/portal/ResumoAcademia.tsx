@@ -1,7 +1,7 @@
 "use client";
 
 import { useAcademia } from "@/lib/academiaStore";
-import { MENSALIDADE } from "@/services/dataService";
+import { MENSALIDADE_CENTAVOS, formatarReais } from "@/services/dataService";
 
 /** Faixa de indicadores compartilhada pelos portais do professor e do admin. */
 export function ResumoAcademia({ comFinanceiro = false }: { comFinanceiro?: boolean }) {
@@ -25,7 +25,7 @@ export function ResumoAcademia({ comFinanceiro = false }: { comFinanceiro?: bool
   if (comFinanceiro) {
     itens.push({
       label: "Receita prevista",
-      valor: `R$ ${(alunos.length * MENSALIDADE).toLocaleString("pt-BR")}`,
+      valor: `R$ ${formatarReais(alunos.length * MENSALIDADE_CENTAVOS)}`,
     });
   }
 

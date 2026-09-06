@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { CampoUsuario } from "@/components/portal/CampoUsuario";
+import {
+  CampoUsuario,
+  type StatusUsuario,
+} from "@/components/portal/CampoUsuario";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
 import { useAcademia } from "@/lib/academiaStore";
@@ -22,10 +25,11 @@ export function CadastroAlunoPanel() {
   const [idade, setIdade] = useState("");
   const [turmaId, setTurmaId] = useState(turmas[0]?.id ?? "");
   const [faixaId, setFaixaId] = useState(GRADUACOES[0]?.id ?? "");
+  const [statusUsuario, setStatusUsuario] = useState<StatusUsuario>("vazio");
   const [erro, setErro] = useState<string | null>(null);
   const [confirmado, setConfirmado] = useState<string | null>(null);
 
-  function cadastrar(event: React.FormEvent) {
+  async function cadastrar(event: React.FormEvent) {
     event.preventDefault();
     setErro(null);
 
@@ -36,7 +40,7 @@ export function CadastroAlunoPanel() {
 
     const graduacao = GRADUACOES.find((item) => item.id === faixaId);
 
-    const resultado = criarAluno({
+    const resultado = await criarAluno({
       nome: formatarNome(nome),
       usuario,
       senha,
@@ -60,8 +64,10 @@ export function CadastroAlunoPanel() {
     setUsuario("");
     setSenha("");
     setIdade("");
+    setStatusUsuario("vazio");
   }
 
+  const usuarioValido = statusUsuario === "livre";
   const [nomeConfirmado, usuarioConfirmado] = (confirmado ?? "").split("|");
 
   return (
@@ -95,6 +101,7 @@ export function CadastroAlunoPanel() {
             nomeCompleto={nome}
             valor={usuario}
             onChange={setUsuario}
+            onStatus={setStatusUsuario}
           />
 
           <div>
@@ -199,10 +206,15 @@ export function CadastroAlunoPanel() {
             </p>
           ) : null}
 
-          <div className="sm:col-span-2">
-            <Button type="submit" size="sm">
+          <div className="flex items-center gap-3 sm:col-span-2">
+            <Button type="submit" size="sm" disabled={!usuarioValido}>
               Cadastrar aluno
             </Button>
+            {statusUsuario === "ocupado" ? (
+              <span className="text-2xs text-status-bad">
+                Escolha um nome de usuário livre para continuar.
+              </span>
+            ) : null}
           </div>
         </form>
       </section>

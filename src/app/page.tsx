@@ -5,8 +5,8 @@ import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/Card";
 import { listarTurmas } from "@/server/usuarios";
+import { VALOR_MENSALIDADE_CENTAVOS } from "@/server/pagamentos";
 import {
-  MENSALIDADE_CENTAVOS,
   dados,
   getBeneficios,
   getDepoimentos,
@@ -246,7 +246,7 @@ export default async function LandingPage() {
               <p className="mt-2 flex items-baseline gap-1">
                 <span className="text-sm text-muted">R$</span>
                 <span className="text-5xl font-semibold tabular-nums tracking-[-0.03em] text-fg">
-                  {formatarReais(MENSALIDADE_CENTAVOS)}
+                  {formatarReais(VALOR_MENSALIDADE_CENTAVOS)}
                 </span>
                 <span className="text-sm text-muted">/mês</span>
               </p>

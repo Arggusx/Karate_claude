@@ -36,6 +36,8 @@ export interface Cobranca {
   vencimento: string;
   status: string;
   pago_em: string | null;
+  /** Quem processou: "mercadopago", "stripe" ou "manual". */
+  provedor: string | null;
   payment_method: string | null;
   external_payment_id: string | null;
   pix_qr_code: string | null;

@@ -8,7 +8,6 @@ import { CheckoutModal } from "@/components/portal/CheckoutModal";
 import { GuardaPortal } from "@/components/portal/GuardaPortal";
 import { useAcademia } from "@/lib/academiaStore";
 import {
-  MENSALIDADE_CENTAVOS,
   formatarReais,
   getGraduacoes,
   horarioDaTurma,
@@ -32,7 +31,7 @@ export default function PortalAlunoPage() {
 }
 
 function ConteudoAluno() {
-  const { turmas, alunos, sessao } = useAcademia();
+  const { turmas, alunos, sessao, mensalidadeCentavos } = useAcademia();
   const [checkoutAberto, setCheckoutAberto] = useState(false);
 
   const aluno = alunos.find((item) => item.id === sessao?.id);
@@ -167,7 +166,7 @@ function ConteudoAluno() {
           </div>
           <div className="p-4">
             <p className="text-2xl font-semibold tabular-nums tracking-[-0.02em] text-fg">
-              R$ {formatarReais(MENSALIDADE_CENTAVOS)}
+              R$ {formatarReais(mensalidadeCentavos)}
             </p>
             <p className="mt-0.5 text-xs text-muted">
               Valor único · vence dia 10
@@ -244,7 +243,7 @@ function ConteudoAluno() {
         aberto={checkoutAberto}
         onClose={() => setCheckoutAberto(false)}
         usuario={aluno.usuario}
-        valorCentavos={MENSALIDADE_CENTAVOS}
+        valorCentavos={mensalidadeCentavos}
       />
     </div>
   );

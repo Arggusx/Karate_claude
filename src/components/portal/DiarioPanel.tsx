@@ -2,14 +2,16 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { AlunoCampo, AlunoCard } from "@/components/portal/AlunoCard";
+import { AlunoDetalheModal } from "@/components/portal/DetalheModal";
 import { CampoBusca, paraBusca } from "@/components/portal/CampoBusca";
 import { Badge, BeltBadge, StatusBadge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
 import { Paginacao } from "@/components/ui/Paginacao";
+import { useToast } from "@/components/ui/Toast";
 import { TBody, TD, TH, THead, TR, Table } from "@/components/ui/Table";
 import { useAcademia } from "@/lib/academiaStore";
-import type { Chamada } from "@/types";
+import type { Aluno, Chamada } from "@/types";
 
 const POR_PAGINA = 10;
 
@@ -19,12 +21,16 @@ const POR_PAGINA = 10;
  * vazia — quem não for marcado é falta.
  */
 export function DiarioPanel() {
-  const { turmas, alunos } = useAcademia();
+  const { turmas, alunos, lerChamada, salvarChamada } = useAcademia();
+  const toast = useToast();
   const [chamada, setChamada] = useState<Chamada>({});
   const [salva, setSalva] = useState<string | null>(null);
+  const [data, setData] = useState(() => new Date().toISOString().slice(0, 10));
+  const [salvando, setSalvando] = useState(false);
   const [busca, setBusca] = useState("");
   const [turmaFiltro, setTurmaFiltro] = useState("todas");
   const [pagina, setPagina] = useState(1);
+  const [emDetalhe, setEmDetalhe] = useState<Aluno | null>(null);
 
   const nomeDaTurma = useMemo(
     () => new Map(turmas.map((turma) => [turma.id, turma.nome])),
@@ -67,12 +73,63 @@ export function DiarioPanel() {
     setChamada((atual) => ({ ...atual, [alunoId]: !atual[alunoId] }));
   }
 
+  // A aula existe por turma e data: sem uma turma escolhida não há o que gravar.
+  const turmaEscolhida = turmaFiltro !== "todas";
+
+  // Abre a chamada já gravada daquele dia, para corrigir em vez de recomeçar.
+  useEffect(() => {
+    if (!turmaEscolhida) {
+      setChamada({});
+      return;
+    }
+
+    let valido = true;
+    lerChamada(turmaFiltro, data).then((gravada) => {
+      if (valido) setChamada(gravada);
+    });
+    return () => {
+      valido = false;
+    };
+  }, [turmaEscolhida, turmaFiltro, data, lerChamada]);
+
+  async function salvar() {
+    setSalvando(true);
+    const resultado = await salvarChamada(
+      turmaFiltro,
+      data,
+      chamada,
+      filtrados.map((aluno) => aluno.id),
+    );
+    setSalvando(false);
+
+    if (!resultado.ok) {
+      toast(resultado.erro ?? "Não foi possível salvar a chamada.", "erro");
+      return;
+    }
+
+    setSalva(
+      `${presentes} presenças e ${filtrados.length - presentes} faltas gravadas em ${data
+        .split("-")
+        .reverse()
+        .join("/")}.`,
+    );
+    toast("Chamada salva.");
+  }
+
   return (
     <div className="space-y-3">
       <p className="text-xs text-muted">
         Nenhum aluno vem marcado: o padrão da chamada é{" "}
         <span className="font-medium text-status-bad">falta</span>. Marque quem
         esteve presente antes de salvar.
+        {!turmaEscolhida ? (
+          <>
+            {" "}
+            <span className="text-status-bad">
+              Escolha uma turma para gravar — a chamada é por turma e data.
+            </span>
+          </>
+        ) : null}
       </p>
 
       {/* Filtros */}
@@ -99,22 +156,30 @@ export function DiarioPanel() {
           </select>
         </div>
 
+        <div>
+          <label htmlFor="diario-data" className="label">
+            Data da aula
+          </label>
+          <input
+            id="diario-data"
+            type="date"
+            className="input mt-1"
+            value={data}
+            max={new Date().toISOString().slice(0, 10)}
+            onChange={(evento) => setData(evento.target.value)}
+          />
+        </div>
+
         <div className="flex items-center gap-3">
           <span className="text-2xs tabular-nums text-subtle">
             {presentes} presentes · {filtrados.length - presentes} faltas
           </span>
           <Button
             size="sm"
-            disabled={filtrados.length === 0}
-            onClick={() =>
-              setSalva(
-                `${presentes} presenças e ${
-                  filtrados.length - presentes
-                } faltas registradas.`,
-              )
-            }
+            disabled={filtrados.length === 0 || !turmaEscolhida || salvando}
+            onClick={salvar}
           >
-            Salvar chamada
+            {salvando ? "Salvando…" : "Salvar chamada"}
           </Button>
         </div>
       </div>
@@ -133,6 +198,7 @@ export function DiarioPanel() {
               <AlunoCard
                 key={aluno.id}
                 aluno={aluno}
+                onDetalhe={() => setEmDetalhe(aluno)}
                 acao={
                   <BotaoPresenca
                     presente={Boolean(chamada[aluno.id])}
@@ -177,19 +243,23 @@ export function DiarioPanel() {
                 {visiveis.map((aluno) => (
                   <TR key={aluno.id}>
                     <TD>
-                      <div className="flex items-center gap-2.5">
+                      <button
+                        type="button"
+                        onClick={() => setEmDetalhe(aluno)}
+                        className="flex items-center gap-2.5 text-left"
+                      >
                         <span className="flex h-7 w-7 items-center justify-center rounded border border-line bg-elevated text-2xs font-medium text-fg">
                           {aluno.foto}
                         </span>
                         <span>
-                          <span className="block font-medium text-fg">
+                          <span className="block font-medium text-fg underline decoration-line underline-offset-4 hover:decoration-accent">
                             {aluno.nome}
                           </span>
                           <span className="block text-2xs text-subtle">
                             {aluno.idade} anos · {aluno.usuario}
                           </span>
                         </span>
-                      </div>
+                      </button>
                     </TD>
                     <TD>
                       <Badge>{nomeDaTurma.get(aluno.turmaId) ?? "—"}</Badge>
@@ -221,6 +291,11 @@ export function DiarioPanel() {
             porPagina={POR_PAGINA}
             onPagina={setPagina}
             rotulo="alunos"
+          />
+
+          <AlunoDetalheModal
+            aluno={emDetalhe}
+            onClose={() => setEmDetalhe(null)}
           />
         </>
       )}

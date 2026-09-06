@@ -13,6 +13,51 @@ import {
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
+/** TLDs reservados pela RFC 2606/6761 — o Mercado Pago recusa todos eles. */
+const TLDS_NAO_ROTEAVEIS = [
+  "local",
+  "localhost",
+  "internal",
+  "test",
+  "invalid",
+  "example",
+];
+
+/**
+ * E-mail que vai no campo payer do Mercado Pago.
+ *
+ * Quem se cadastra sem informar e-mail recebe o placeholder
+ * "usuario@shotokan.local", e o provedor rejeita a cobrança com
+ * "payer.email must be a valid email". Nesse caso trocamos por um endereço no
+ * domínio da própria aplicação, que é só informativo para o PIX.
+ */
+function emailDoPagador(aluno: {
+  id: number;
+  usuario: string | null;
+  email: string;
+}): string {
+  const dominio = aluno.email.split("@")[1] ?? "";
+  const tld = dominio.split(".").pop() ?? "";
+
+  if (dominio.includes(".") && !TLDS_NAO_ROTEAVEIS.includes(tld)) {
+    return aluno.email;
+  }
+
+  let host = "";
+  try {
+    host = new URL(process.env.APP_URL ?? "").hostname;
+  } catch {
+    host = "";
+  }
+
+  const base =
+    host.includes(".") && !TLDS_NAO_ROTEAVEIS.includes(host.split(".").pop()!)
+      ? host
+      : "example.com";
+
+  return `${aluno.usuario ?? `aluno${aluno.id}`}@${base}`;
+}
+
 /**
  * POST /api/payments/mercadopago/create
  *
@@ -91,6 +136,10 @@ export async function POST(request: Request) {
           erro: "A mensalidade deste mês já está paga.",
           cobranca_id: existente.id,
           status: "approved",
+          // O portal usa isto para dizer no toast como e quando foi paga.
+          provedor: existente.provedor,
+          payment_method: existente.payment_method,
+          pago_em: existente.pago_em,
         },
         { status: 409 },
       );
@@ -136,7 +185,7 @@ export async function POST(request: Request) {
         date_of_expiration: expiraEm.toISOString(),
         notification_url: process.env.MERCADOPAGO_WEBHOOK_URL,
         payer: {
-          email: aluno.email,
+          email: emailDoPagador(aluno),
           first_name: primeiroNome,
           last_name: resto.join(" ") || primeiroNome,
         },
@@ -179,9 +228,33 @@ export async function POST(request: Request) {
     );
   } catch (erro) {
     console.error("[mercadopago/create]", erro);
+
+    // Erro 400 do provedor é recusa do que mandamos (e-mail, valor, conta sem
+    // chave PIX), não falha transitória: repetir não resolve. O texto do
+    // Mercado Pago vem em inglês e técnico, então traduzimos o que é conhecido.
+    const recusa =
+      erro && typeof erro === "object" && "status" in erro && erro.status === 400
+        ? ((erro as { message?: string }).message ?? "")
+        : null;
+
+    if (recusa === null) {
+      return NextResponse.json(
+        { erro: "Não foi possível gerar o PIX. Tente novamente." },
+        { status: 500 },
+      );
+    }
+
+    const semChavePix = /key enabled for qr/i.test(recusa);
+
     return NextResponse.json(
-      { erro: "Não foi possível gerar o PIX. Tente novamente." },
-      { status: 500 },
+      {
+        erro: semChavePix
+          ? "Pagamento por PIX indisponível: a chave PIX do dojo ainda não " +
+            "está cadastrada no Mercado Pago. Use o cartão ou procure a " +
+            "secretaria."
+          : "O Mercado Pago recusou a cobrança. Avise a secretaria do dojo.",
+      },
+      { status: 422 },
     );
   }
 }

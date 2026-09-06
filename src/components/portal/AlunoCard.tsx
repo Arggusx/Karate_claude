@@ -11,10 +11,13 @@ import type { Aluno } from "@/types";
 export function AlunoCard({
   aluno,
   acao,
+  onDetalhe,
   children,
 }: {
   aluno: Aluno;
   acao?: ReactNode;
+  /** Abre a ficha completa. Sem isto o card só expande. */
+  onDetalhe?: () => void;
   children: ReactNode;
 }) {
   const [aberto, setAberto] = useState(false);
@@ -44,6 +47,15 @@ export function AlunoCard({
             ▾
           </span>
         </button>
+        {onDetalhe ? (
+          <button
+            type="button"
+            onClick={onDetalhe}
+            className="shrink-0 rounded border border-line px-2 py-1 text-2xs text-muted transition-colors hover:border-line-strong hover:text-fg"
+          >
+            Ficha
+          </button>
+        ) : null}
         {acao ? <div className="shrink-0">{acao}</div> : null}
       </div>
 

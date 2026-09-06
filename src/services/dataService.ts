@@ -233,6 +233,18 @@ export function getGraduacoes(): GraduacaoCompleta[] {
 }
 
 /**
+ * Graduação a partir do texto livre guardado no aluno ("Marrom · 1º Kyu",
+ * "1º Dan - Faixa Preta"). O nome da faixa é o que os dois formatos têm em
+ * comum, então é por ele que se procura.
+ */
+export function graduacaoDaFaixa(faixa: string): GraduacaoCompleta | undefined {
+  const alvo = faixa.toLowerCase();
+  return getGraduacoes().find((graduacao) =>
+    alvo.includes(graduacao.faixa.toLowerCase()),
+  );
+}
+
+/**
  * Katas completos: cruza `katas26Detalhados` (ficha técnica, vídeo, embusen,
  * bunkai e movimentos) com `katasShotokan` (kanji e decomposição do nome).
  */
@@ -285,10 +297,76 @@ export function listarDestaques(kata: KataCompleto): string[] {
  * de apresentação.
  */
 
-/** Mensalidade em centavos. Configurável por env para testes de pagamento. */
-export const MENSALIDADE_CENTAVOS = Number(
-  process.env.NP_VALOR_MENSALIDADE_CENTAVOS ?? 1,
-);
+/**
+ * Valor exibido enquanto /api/academia não respondeu. O número que vale é o do
+ * servidor (VALOR_MENSALIDADE_CENTAVOS): env sem prefixo NEXT_PUBLIC_ não é
+ * injetada no bundle do cliente, então ler env aqui daria sempre o fallback.
+ */
+export const MENSALIDADE_PADRAO_CENTAVOS = 5000;
+
+// ------------------------------------------------- critérios para o exame
+
+/** Aulas por semana: terça, quinta e sexta. */
+export const AULAS_POR_SEMANA = 3;
+
+/**
+ * Frequência mínima exigida para prestar exame. O intervalo combinado foi
+ * 75% a 80%: 75 é o piso que reprova e 80 é a meta que o portal mostra como
+ * situação confortável.
+ */
+export const FREQUENCIA_MINIMA = 75;
+export const FREQUENCIA_ALVO = 80;
+
+/**
+ * Peso de cada critério na barra de progresso. Técnica pesa mais porque é o
+ * único que depende de avaliação do professor — os outros três são contáveis.
+ */
+export const PESOS_PROGRESSO = {
+  tecnica: 0.4,
+  tempo: 0.25,
+  aulas: 0.25,
+  financeiro: 0.1,
+} as const;
+
+/** "6 meses no 4º Kyu" → 6. Zero quando não há número no texto. */
+export function mesesExigidos(tempoMinimo: string): number {
+  const encontrado = /(\d+)\s*m[êe]s/i.exec(tempoMinimo);
+  return encontrado ? Number(encontrado[1]) : 0;
+}
+
+/**
+ * Quantas presenças são esperadas no período da faixa: os meses exigidos, em
+ * semanas, vezes as aulas semanais, aplicada a frequência mínima. Um aluno que
+ * comparece ao mínimo exigido fecha este critério em 100%.
+ */
+export function aulasExigidas(tempoMinimo: string): number {
+  const semanas = mesesExigidos(tempoMinimo) * 4.345;
+  return Math.round((semanas * AULAS_POR_SEMANA * FREQUENCIA_MINIMA) / 100);
+}
+
+/**
+ * Idade completa em anos a partir de "AAAA-MM-DD". Null quando a data está
+ * vazia, malformada ou fora de um intervalo plausível — assim a interface
+ * consegue distinguir "não informado" de "zero ano".
+ */
+export function idadePorNascimento(data: string): number | null {
+  const partes = /^(\d{4})-(\d{2})-(\d{2})$/.exec(data.trim());
+  if (!partes) return null;
+
+  const ano = Number(partes[1]);
+  const mes = Number(partes[2]);
+  const dia = Number(partes[3]);
+
+  const hoje = new Date();
+  const mesAtual = hoje.getMonth() + 1;
+
+  let idade = hoje.getFullYear() - ano;
+  const jaFezAniversario =
+    mesAtual > mes || (mesAtual === mes && hoje.getDate() >= dia);
+  if (!jaFezAniversario) idade -= 1;
+
+  return idade >= 0 && idade < 120 ? idade : null;
+}
 
 /** 5000 → "50,00"; 1 → "0,01" */
 export function formatarReais(centavos: number): string {
@@ -363,9 +441,19 @@ export function formatarNome(nome: string): string {
     .join(" ");
 }
 
-/** Formata o horário completo da turma: "Ter e Qui · 18:30 às 19:30". */
+/**
+ * Formata o horário da turma: "Ter, Qui e Sex · 18:30 às 19:30".
+ * Vírgula entre todos e "e" só antes do último — com três dias, encadear "e"
+ * ficava ilegível ("Ter e Qui e Sex").
+ */
 export function horarioDaTurma(turma: Turma): string {
-  const dias = turma.dias.map((dia) => dia.slice(0, 3)).join(" e ");
+  const abreviados = turma.dias.map((dia) => dia.slice(0, 3));
+  const ultimo = abreviados[abreviados.length - 1];
+  const dias =
+    abreviados.length > 1
+      ? `${abreviados.slice(0, -1).join(", ")} e ${ultimo}`
+      : (ultimo ?? "");
+
   return `${dias} · ${turma.inicio} às ${turma.fim}`;
 }
 

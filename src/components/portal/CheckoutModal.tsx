@@ -17,6 +17,36 @@ interface CobrancaPix {
 
 type Etapa = "escolha" | "gerando" | "pix" | "pago" | "erro";
 
+/** Bandeiras aceitas no checkout de cartão (Stripe · Brasil). */
+const BANDEIRAS = ["Visa", "Mastercard", "Elo", "Amex", "Hipercard"];
+
+/** Como o provedor gravado na cobrança aparece para o aluno. */
+const FORMA_DE_PAGAMENTO: Record<string, string> = {
+  mercadopago: "PIX",
+  stripe: "cartão de crédito",
+  manual: "baixa manual no dojo",
+};
+
+/** "Mensalidade já paga via PIX em 06/09/2026." */
+function textoJaPaga(dados: {
+  provedor?: string | null;
+  pago_em?: string | null;
+}): string {
+  const forma = dados.provedor
+    ? (FORMA_DE_PAGAMENTO[dados.provedor] ?? dados.provedor)
+    : null;
+  const data = dados.pago_em
+    ? new Date(dados.pago_em).toLocaleDateString("pt-BR")
+    : null;
+
+  return [
+    "Mensalidade deste mês já paga",
+    forma ? ` via ${forma}` : "",
+    data ? ` em ${data}` : "",
+    ". Nenhuma cobrança foi gerada.",
+  ].join("");
+}
+
 /**
  * Checkout do aluno: gera o PIX no Mercado Pago, mostra o QR Code com o
  * copia e cola e faz polling do status a cada 5s até o webhook confirmar.
@@ -66,9 +96,12 @@ export function CheckoutModal({
       const dados = await resposta.json();
 
       if (!resposta.ok) {
+        // 409: a competência já estava quitada antes deste clique. Não é uma
+        // confirmação de pagamento — avisa no toast como já foi paga e fecha.
         if (dados.status === "approved") {
-          setEtapa("pago");
+          toast(textoJaPaga(dados));
           onPago?.();
+          onClose();
           return;
         }
         throw new Error(dados.erro ?? "Falha ao gerar o PIX.");
@@ -80,7 +113,7 @@ export function CheckoutModal({
       setErro(falha instanceof Error ? falha.message : "Falha ao gerar o PIX.");
       setEtapa("erro");
     }
-  }, [usuario, onPago]);
+  }, [usuario, onPago, onClose, toast]);
 
   async function abrirStripe() {
     setEtapa("gerando");
@@ -202,6 +235,20 @@ export function CheckoutModal({
               </Button>
             ) : null}
           </div>
+
+          {cartaoDisponivel ? (
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="text-2xs text-subtle">Bandeiras aceitas:</span>
+              {BANDEIRAS.map((bandeira) => (
+                <span
+                  key={bandeira}
+                  className="rounded border border-line px-1.5 py-0.5 text-2xs font-medium text-muted"
+                >
+                  {bandeira}
+                </span>
+              ))}
+            </div>
+          ) : null}
 
           {!cartaoDisponivel ? (
             <p className="text-2xs text-subtle">

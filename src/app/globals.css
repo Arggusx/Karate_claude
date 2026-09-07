@@ -141,7 +141,16 @@
 
   /* Kanji decorativo — sutil e legível nos dois temas. */
   .kanji-mark {
-    @apply pointer-events-none select-none font-semibold leading-none text-fg opacity-[0.035];
+    @apply pointer-events-none select-none font-kanji leading-none text-fg opacity-[0.035];
+  }
+
+  /*
+    Todo kanji do site usa o pincel japonês. Aplicar por classe, e não pela
+    fonte do body, evita que a fonte japonesa — bem mais pesada — seja baixada
+    em páginas que não mostram nenhum caractere CJK.
+  */
+  .kanji {
+    @apply font-kanji;
   }
 }
 

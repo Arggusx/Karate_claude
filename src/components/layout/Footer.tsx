@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MarcaTorakan } from "@/components/ui/MarcaTorakan";
 
 const COLUNAS = [
   {
@@ -27,16 +28,21 @@ export function Footer() {
       <div className="section grid gap-8 py-10 md:grid-cols-[1.6fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex h-6 w-6 items-center justify-center rounded bg-accent text-2xs font-semibold text-white">
-              松
-            </span>
-            <span className="text-sm font-semibold tracking-[-0.01em] text-fg">
-              Portal Shotokan
+            <MarcaTorakan className="h-9 w-9" />
+            <span className="font-marca text-2xl leading-none text-accent">
+              Torakan
+              {/* O kanji sai da fonte de pincel: ela não tem glifos CJK e
+                  cairia num fallback qualquer do sistema. */}
+              <span className="ml-1.5 font-kanji text-sm font-normal text-subtle">
+                虎館
+              </span>
             </span>
           </div>
           <p className="body-muted mt-3 max-w-sm">
-            Academia e plataforma de estudos de Karatê Shotokan. Tradição de
-            Okinawa, método moderno e acompanhamento contínuo do praticante.
+            Nome fantasia da{" "}
+            <span className="text-fg">Academia Tigre de Karatê</span> — dojo
+            Shotokan e plataforma de estudos. Tradição de Okinawa, método
+            moderno e acompanhamento contínuo do praticante.
           </p>
         </div>
 
@@ -63,8 +69,8 @@ export function Footer() {
 
       <div className="section flex flex-col gap-2 border-t border-line py-4 text-xs text-subtle sm:flex-row sm:items-center sm:justify-between">
         <p>
-          © {new Date().getFullYear()} Portal Shotokan. Todos os direitos
-          reservados.
+          © {new Date().getFullYear()} Academia Tigre de Karatê. Todos os
+          direitos reservados.
         </p>
         <p>空手に先手なし — No karatê, não existe atitude ofensiva.</p>
       </div>

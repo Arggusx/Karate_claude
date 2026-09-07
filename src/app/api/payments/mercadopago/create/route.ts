@@ -178,7 +178,7 @@ export async function POST(request: Request) {
         transaction_amount: Number(
           (cobranca.valor_centavos / 100).toFixed(2),
         ),
-        description: `Mensalidade ${competencia.slice(0, 7)} — Portal Shotokan`,
+        description: `Mensalidade ${competencia.slice(0, 7)} — Torakan`,
         payment_method_id: "pix",
         // external_reference liga o pagamento do provedor à linha do banco.
         external_reference: String(cobranca.id),

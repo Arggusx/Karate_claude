@@ -147,7 +147,7 @@ export default function EstudosHomePage() {
             <article key={pilar.nome} className="card p-4">
               <div className="flex items-baseline justify-between gap-2">
                 <h3 className="heading-md">{pilar.nome}</h3>
-                <span className="text-xs text-subtle">{pilar.kanji}</span>
+                <span className="font-kanji text-sm text-subtle">{pilar.kanji}</span>
               </div>
               <p className="mt-0.5 text-xs font-medium text-accent">
                 {pilar.pt}
@@ -192,7 +192,7 @@ export default function EstudosHomePage() {
                   <span className="text-sm font-medium text-fg">
                     {termo.romaji}
                   </span>
-                  <span className="ml-2 text-xs text-subtle">{termo.jp}</span>
+                  <span className="ml-2 font-kanji text-sm text-subtle">{termo.jp}</span>
                 </span>
                 <span className="text-right text-xs text-muted">
                   {termo.pt}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MarcaTorakan } from "@/components/ui/MarcaTorakan";
 import { Footer } from "@/components/layout/Footer";
 import { SessaoHeader } from "@/components/portal/SessaoHeader";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
@@ -14,11 +15,9 @@ export default function PortalLayout({
       <header className="sticky top-0 z-40 border-b border-line bg-surface">
         <div className="section flex h-14 items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-2">
-            <span className="flex h-6 w-6 items-center justify-center rounded bg-accent text-2xs font-semibold text-white">
-              松
-            </span>
-            <span className="text-sm font-semibold tracking-[-0.01em] text-fg">
-              Portal Shotokan
+            <MarcaTorakan className="h-8 w-8" />
+            <span className="font-marca text-2xl leading-none text-accent">
+              Torakan
             </span>
           </Link>
 

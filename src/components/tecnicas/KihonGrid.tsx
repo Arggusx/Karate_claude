@@ -46,7 +46,7 @@ export function KihonGrid({ tecnicas }: { tecnicas: Tecnica[] }) {
                 {categoria.label}
                 <span
                   aria-hidden
-                  className="ml-2 text-sm font-normal text-subtle"
+                  className="ml-2 font-kanji text-base font-normal text-subtle"
                 >
                   {categoria.kanji}
                 </span>
@@ -153,7 +153,7 @@ function Cabecalho({ tecnica }: { tecnica: Tecnica }) {
     <>
       <span className="flex items-baseline justify-between gap-2">
         <span className="text-sm font-semibold text-fg">{tecnica.nome}</span>
-        <span className="shrink-0 text-xs text-subtle">{tecnica.kanji}</span>
+        <span className="shrink-0 font-kanji text-sm text-subtle">{tecnica.kanji}</span>
       </span>
       <span className="mt-0.5 block text-xs font-medium text-accent">
         {tecnica.pt}

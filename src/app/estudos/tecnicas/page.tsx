@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { KataTable } from "@/components/tecnicas/KataTable";
 import { KihonGrid } from "@/components/tecnicas/KihonGrid";
 import { SkeletonCard, SkeletonTable } from "@/components/ui/Skeleton";
+import { HeroPagina } from "@/components/layout/HeroPagina";
 import { FilterChips, SegmentedControl } from "@/components/ui/Tabs";
 import {
   fetchKatas,
@@ -15,8 +16,8 @@ import type { KataCompleto, Tecnica } from "@/types";
 type Visao = "kihon" | "katas";
 
 const VISOES = [
-  { value: "kihon" as const, label: "Kihon", hint: "Técnicas de base" },
-  { value: "katas" as const, label: "Katas", hint: "Formas" },
+  { value: "kihon" as const, label: "Kihon" },
+  { value: "katas" as const, label: "Katas" },
 ];
 
 const CATEGORIAS_KIHON = [
@@ -74,19 +75,30 @@ export default function TecnicasPage() {
   );
 
   return (
-    <div className="section space-y-6">
-      <header className="border-b border-line pb-5">
-        <p className="eyebrow">Técnicas · 技術</p>
-        <h1 className="heading-xl mt-1.5">Kihon e Katas</h1>
-        <p className="body-muted mt-2 max-w-3xl">
-          O kihon é o vocabulário; o kata, a frase completa. {tecnicas.length}{" "}
-          técnicas catalogadas e {katas.length} katas com ficha técnica,
-          bunkai e sequência de movimentos.
-        </p>
-      </header>
+    <>
+      <HeroPagina
+        sobretitulo="Técnicas · 技術"
+        titulo="Kihon e Katas"
+        imagem="/imagens/dojo.jpg"
+        kanji="技術"
+        descricao={
+          <>
+            O kihon é o vocabulário; o kata, a frase completa.{" "}
+            {tecnicas.length} técnicas catalogadas e {katas.length} katas com
+            ficha técnica, bunkai e sequência de movimentos.
+          </>
+        }
+      />
+
+      <div className="section space-y-6 py-10">
 
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-        <SegmentedControl options={VISOES} value={visao} onChange={setVisao} />
+        <SegmentedControl
+          options={VISOES}
+          value={visao}
+          onChange={setVisao}
+          destaque
+        />
         {visao === "kihon" ? (
           <FilterChips
             options={CATEGORIAS_KIHON}
@@ -146,6 +158,7 @@ export default function TecnicasPage() {
           ) : null}
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

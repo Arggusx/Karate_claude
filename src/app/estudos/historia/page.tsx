@@ -3,6 +3,7 @@ import {
   ArvoreGenealogica,
   FichasMestres,
 } from "@/components/historia/LineageTree";
+import { HeroPagina } from "@/components/layout/HeroPagina";
 import { LinhaDoTempo } from "@/components/historia/Timeline";
 import { SectionHeading } from "@/components/ui/Card";
 import {
@@ -23,20 +24,23 @@ export default function HistoriaPage() {
   const preceitos = getPreceitosFunakoshi();
 
   return (
-    <div className="section space-y-10">
-      <header className="border-b border-line pb-5">
-        <p className="eyebrow">História · 歴史</p>
-        <h1 className="heading-xl mt-1.5">
-          De Okinawa ao mundo: a linhagem do Shotokan
-        </h1>
-        <p className="body-muted mt-2 max-w-3xl">
-          {timeline.length} marcos históricos e {mestres.length} mestres
-          catalogados. Conhecer essa trajetória muda a forma como se executa
-          cada kata.
-        </p>
-      </header>
+    <>
+      <HeroPagina
+        sobretitulo="História · 歴史"
+        titulo="De Okinawa ao mundo: a linhagem do Shotokan"
+        imagem="/imagens/historia.jpg"
+        kanji="歴史"
+        descricao={
+          <>
+            {timeline.length} marcos históricos e {mestres.length} mestres
+            catalogados. Conhecer essa trajetória muda a forma como se executa
+            cada kata.
+          </>
+        }
+      />
 
-      <section className="space-y-4">
+      <div className="section space-y-10 py-10">
+        <section className="space-y-4">
         <SectionHeading
           eyebrow="Seção I"
           titulo="Linha do tempo"
@@ -45,16 +49,22 @@ export default function HistoriaPage() {
         <LinhaDoTempo marcos={timeline} />
       </section>
 
-      <section className="space-y-4">
-        <SectionHeading
-          eyebrow="Seção II · Keifu 系譜"
-          titulo="Árvore genealógica completa"
-          descricao="A sucessão de mestres que levou a arte de Shuri aos dojos contemporâneos, com as organizações fundadas por cada linha."
-        />
-        <ArvoreGenealogica />
-        <FichasMestres mestres={mestres} />
+      </div>
+
+      {/* Faixa separando a linha do tempo (acima) dos preceitos (abaixo). */}
+      <section className="faixa-destacada py-12">
+        <div className="section space-y-4">
+          <SectionHeading
+            eyebrow="Seção II · Keifu 系譜"
+            titulo="Árvore genealógica completa"
+            descricao="A sucessão de mestres que levou a arte de Shuri aos dojos contemporâneos, com as organizações fundadas por cada linha."
+          />
+          <ArvoreGenealogica />
+          <FichasMestres mestres={mestres} />
+        </div>
       </section>
 
+      <div className="section space-y-10 py-10">
       <section className="card p-5">
         <p className="eyebrow">Preceitos de Gichin Funakoshi</p>
         <ul className="mt-3 space-y-2">
@@ -67,7 +77,8 @@ export default function HistoriaPage() {
             </li>
           ))}
         </ul>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   );
 }

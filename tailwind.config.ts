@@ -15,6 +15,8 @@ const config: Config = {
         fg: "rgb(var(--fg) / <alpha-value>)",
         muted: "rgb(var(--muted) / <alpha-value>)",
         subtle: "rgb(var(--subtle) / <alpha-value>)",
+        faixa: "rgb(var(--faixa) / <alpha-value>)",
+        gold: "rgb(var(--gold) / <alpha-value>)",
 
         // Identidade fixa nos dois temas.
         accent: {
@@ -35,6 +37,10 @@ const config: Config = {
       },
       fontSize: {
         "2xs": ["0.6875rem", { lineHeight: "1rem" }],
+      },
+      fontFamily: {
+        // Serifada só para títulos de vitrine; a interface segue sem serifa.
+        display: ["var(--fonte-display)", "Georgia", "serif"],
       },
       keyframes: {
         "fade-in": {

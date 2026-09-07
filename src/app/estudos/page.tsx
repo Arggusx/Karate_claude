@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { HeroPagina } from "@/components/layout/HeroPagina";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/Card";
 import {
@@ -61,27 +62,33 @@ export default function EstudosHomePage() {
   ];
 
   return (
-    <div className="section space-y-10">
-      <header className="flex flex-wrap items-end justify-between gap-4 border-b border-line pb-5">
-        <div className="max-w-2xl">
-          <p className="eyebrow">Portal de Estudos</p>
-          <h1 className="heading-xl mt-1.5">
-            O acervo completo do Shotokan, organizado em três pilares
-          </h1>
-          <p className="body-muted mt-2">
+    <>
+      <HeroPagina
+        sobretitulo="Portal de Estudos"
+        titulo="O acervo completo do Shotokan, organizado em três pilares"
+        imagem="/imagens/estudos.jpg"
+        opacidadeImagem={0.4}
+        descricao={
+          <>
             Todo o conteúdo desta área vem do acervo do dojo — {katas.length}{" "}
             katas com sequência de movimentos e bunkai, {tecnicas.length}{" "}
             técnicas de kihon e {dados.timeline.length} marcos históricos.
-          </p>
-        </div>
-        <div className="flex gap-2">
-          <ButtonLink href="/estudos/tecnicas">Ver katas</ButtonLink>
-          <ButtonLink href="/estudos/historia" variant="secondary">
-            História
-          </ButtonLink>
-        </div>
-      </header>
+          </>
+        }
+        acao={
+          <div className="flex gap-2">
+            <ButtonLink href="/estudos/tecnicas">Ver katas</ButtonLink>
+            <ButtonLink
+              href="/estudos/historia"
+              className="border border-white/35 bg-transparent text-white hover:border-white hover:bg-white/10"
+            >
+              História
+            </ButtonLink>
+          </div>
+        }
+      />
 
+      <div className="section space-y-10 py-10">
       {/* Números do acervo */}
       <section className="card grid grid-cols-2 divide-x divide-y divide-line sm:grid-cols-3 lg:grid-cols-6 lg:divide-y-0">
         {numeros.map((numero) => (
@@ -124,8 +131,12 @@ export default function EstudosHomePage() {
         ))}
       </section>
 
-      {/* Os 3 pilares do treino (dados do acervo) */}
-      <section className="space-y-3">
+      </div>
+
+      {/* Os 3 pilares do treino — faixa que separa o bloco de navegação
+          do bloco de consulta (dicionário e curiosidades). */}
+      <section className="faixa-destacada py-12">
+        <div className="section space-y-3">
         <SectionHeading
           eyebrow="Kihon · Kata · Kumite"
           titulo="Os três pilares do treino"
@@ -161,8 +172,10 @@ export default function EstudosHomePage() {
             </article>
           ))}
         </div>
+        </div>
       </section>
 
+      <div className="section space-y-10 py-10">
       {/* Dicionário + curiosidades */}
       <section className="grid gap-4 lg:grid-cols-[1fr_1.3fr]">
         <div className="card">
@@ -210,6 +223,7 @@ export default function EstudosHomePage() {
           </ul>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

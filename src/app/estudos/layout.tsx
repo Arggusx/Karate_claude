@@ -9,7 +9,12 @@ export default function EstudosLayout({
   return (
     <div className="flex min-h-screen flex-col">
       <HeaderEstudos />
-      <main className="flex-1 pb-10 pt-12">{children}</main>
+      {/*
+        Sem padding no topo: a faixa escura de abertura de cada página encosta
+        no header. O respiro do conteúdo vem do padding interno da própria
+        página, logo abaixo do hero.
+      */}
+      <main className="flex-1 pb-10">{children}</main>
       <Footer />
     </div>
   );

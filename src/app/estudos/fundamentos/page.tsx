@@ -1,3 +1,4 @@
+import { HeroPagina } from "@/components/layout/HeroPagina";
 import type { Metadata } from "next";
 import { SectionHeading } from "@/components/ui/Card";
 import {
@@ -22,17 +23,18 @@ export default function FundamentosPage() {
   const etiqueta = getEtiquetaDojo();
 
   return (
-    <div className="section space-y-10">
-      <header className="border-b border-line pb-5">
-        <p className="eyebrow">Fundamentos · 基本</p>
-        <h1 className="heading-xl mt-1.5">Graduação, etiqueta e princípio</h1>
-        <p className="body-muted mt-2 max-w-3xl">
-          A faixa registra um percurso, não um troféu. Aqui estão as exigências
-          de cada graduação e os princípios que dão sentido a cada movimento.
-        </p>
-      </header>
+    <>
+      <HeroPagina
+        sobretitulo="Fundamentos · 基本"
+        titulo="Graduação, etiqueta e princípio"
+        descricao="A faixa registra um percurso, não um troféu. Aqui estão as exigências de cada graduação e os princípios que dão sentido a cada movimento."
+        imagem="/imagens/faixa.jpg"
+        opacidadeImagem={0.8}
+        kanji="基本"
+      />
 
-      {/* Seção 1 — Sistema de faixas */}
+      <div className="section space-y-10 py-10">
+        {/* Seção 1 — Sistema de faixas */}
       <section className="space-y-4">
         <SectionHeading
           eyebrow="Seção I"
@@ -40,67 +42,70 @@ export default function FundamentosPage() {
           descricao="Ordem de progressão do 7º Kyu ao 1º Dan, com tempo mínimo recomendado e o programa exigido em cada exame."
         />
 
-        <div className="grid gap-2 md:grid-cols-2">
+        {/*
+          Cartões compactos: quatro por linha no desktop. O programa do exame
+          virou uma linha corrida em vez de duas listas — a mesma informação
+          ocupando um terço da altura, e a sequência de faixas cabe de relance.
+        */}
+        <div className="grid gap-1.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {graduacoes.map((faixa) => (
             <article
               key={faixa.id}
-              className="card card-hover overflow-hidden border-l-4 p-4"
+              className="card card-hover overflow-hidden border-l-[3px] px-2.5 py-2"
               style={{ borderLeftColor: faixa.cor }}
             >
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <div className="flex items-center gap-2.5">
-                  <span
-                    className="h-6 w-6 rounded ring-1 ring-inset ring-black/20"
-                    style={{ backgroundColor: faixa.cor }}
-                  />
-                  <div>
-                    <h3 className="text-sm font-semibold text-fg">
-                      Faixa {faixa.faixa}
-                      <span className="ml-1.5 text-xs font-normal text-subtle">
-                        {faixa.jp}
-                      </span>
-                    </h3>
-                    <p className="text-2xs font-medium uppercase tracking-[0.08em] text-accent">
-                      {faixa.grau}
-                    </p>
-                  </div>
-                </div>
-                <span className="text-2xs text-muted">{faixa.tempoMinimo}</span>
+              <div className="flex items-center gap-1.5">
+                <span
+                  className="h-3 w-3 shrink-0 rounded-sm ring-1 ring-inset ring-black/20"
+                  style={{ backgroundColor: faixa.cor }}
+                />
+                <h3 className="min-w-0 flex-1 truncate text-2xs font-semibold text-fg">
+                  {faixa.faixa}
+                  <span className="ml-1 font-normal text-subtle">
+                    {faixa.jp}
+                  </span>
+                </h3>
+                <span className="shrink-0 text-2xs font-medium uppercase tracking-[0.06em] text-accent">
+                  {faixa.grau}
+                </span>
               </div>
 
-              <p className="mt-2.5 text-xs italic leading-relaxed text-muted">
-                {faixa.txt}
-              </p>
-
-              <div className="mt-3 grid gap-3 border-t border-line pt-3 sm:grid-cols-2">
-                <div>
-                  <p className="label">Katas exigidos</p>
-                  <ul className="mt-1 space-y-0.5">
-                    {faixa.katasExigidos.map((kata) => (
-                      <li key={kata} className="text-xs text-fg/85">
-                        {kata}
-                      </li>
-                    ))}
-                  </ul>
+              {/*
+                Rótulo à esquerda na mesma linha do valor, em vez de acima:
+                economiza três linhas por cartão sem cortar nenhum texto. O
+                kihon continua quebrando em quantas linhas precisar.
+              */}
+              <dl className="mt-1.5 space-y-1 border-t border-line pt-1.5 text-2xs leading-snug">
+                <div className="flex gap-2">
+                  <dt className="w-9 shrink-0 text-subtle">Tempo</dt>
+                  <dd className="min-w-0 flex-1 text-muted">
+                    {faixa.tempoMinimo}
+                  </dd>
                 </div>
-                <div>
-                  <p className="label">Kihon do exame</p>
-                  <ul className="mt-1 space-y-0.5">
-                    {faixa.kihonExigido.map((tecnica) => (
-                      <li key={tecnica} className="text-xs text-muted">
-                        {tecnica}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="flex gap-2">
+                  <dt className="w-9 shrink-0 text-subtle">Katas</dt>
+                  <dd className="min-w-0 flex-1 text-fg/85">
+                    {faixa.katasExigidos.join(" · ")}
+                  </dd>
                 </div>
-              </div>
+                <div className="flex gap-2">
+                  <dt className="w-9 shrink-0 text-subtle">Kihon</dt>
+                  <dd className="min-w-0 flex-1 text-muted">
+                    {faixa.kihonExigido.join(" · ")}
+                  </dd>
+                </div>
+              </dl>
             </article>
           ))}
         </div>
       </section>
 
-      {/* Seção 2 — Filosofia */}
-      <section className="space-y-4">
+      </div>
+
+      {/* Seção 2 — Filosofia. Faixa separando o programa técnico (acima)
+          da parte de princípio e etiqueta. */}
+      <section className="faixa-destacada py-12">
+        <div className="section space-y-4">
         <SectionHeading
           eyebrow="Seção II"
           titulo="Pilares e filosofia do Shotokan"
@@ -221,7 +226,8 @@ export default function FundamentosPage() {
             ))}
           </div>
         </div>
+        </div>
       </section>
-    </div>
+    </>
   );
 }

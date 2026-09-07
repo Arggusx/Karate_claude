@@ -12,6 +12,13 @@
   --fg: 15 23 42; /* #0F172A */
   --muted: 100 116 139; /* #64748B */
   --subtle: 148 163 184; /* #94A3B8 */
+
+  /* Faixa que separa seções: vermelho bem diluído, não um branco rosado. */
+  --faixa: 248 232 229; /* #F8E8E5 */
+
+  /* Segundo acento: dourado sumi-e. Destaca título, subtítulo e o botão que
+     não é a ação principal, sem competir com o vermelho. */
+  --gold: 176 141 61; /* #B08D3D */
 }
 
 /* Tema escuro */
@@ -24,6 +31,12 @@
   --fg: 255 255 255; /* #FFFFFF */
   --muted: 161 161 170; /* #A1A1AA */
   --subtle: 113 113 122; /* #71717A */
+
+  /* No escuro a faixa esquenta em vez de clarear: fica um degrau acima do
+     canvas e puxada para o vinho, o que separa sem virar um bloco claro. */
+  --faixa: 34 20 21; /* #221415 */
+
+  --gold: 212 175 90; /* #D4AF5A */
 }
 
 @layer base {
@@ -59,16 +72,54 @@
     @apply mx-auto w-full max-w-[1180px] px-4 sm:px-6;
   }
 
-  .eyebrow {
-    @apply text-2xs font-semibold uppercase tracking-[0.12em] text-muted;
+  /*
+    Faixa de fundo que separa uma seção das vizinhas.
+    Ocupa a largura toda da tela, então precisa envolver um `.section` por
+    dentro para o conteúdo continuar alinhado com o resto da página.
+
+    A trama diagonal é o que evita que no tema claro pareça um retângulo
+    rosa chapado: dá superfície sem competir com o texto. Nos dois temas a
+    inclinação é a mesma e só a opacidade muda.
+  */
+  .faixa-destacada {
+    background-color: rgb(var(--faixa));
+    border-top: 1px solid rgb(var(--line));
+    border-bottom: 1px solid rgb(var(--line));
+    background-image: repeating-linear-gradient(
+      135deg,
+      rgba(220, 38, 38, 0.045) 0 1px,
+      transparent 1px 10px
+    );
   }
 
+  .dark .faixa-destacada {
+    background-image: repeating-linear-gradient(
+      135deg,
+      rgba(220, 38, 38, 0.07) 0 1px,
+      transparent 1px 10px
+    );
+  }
+
+  /*
+    O sobretítulo passa a usar o dourado: separa a hierarquia do vermelho, que
+    fica reservado para ação e identidade. Mesmo tratamento na vitrine e nos
+    portais, para os dois lados parecerem o mesmo produto.
+  */
+  .eyebrow {
+    @apply text-2xs font-semibold uppercase tracking-[0.12em] text-gold;
+  }
+
+  /*
+    Títulos de página em serifada de display. A serifada fica só neste nível —
+    tabelas, formulários e rótulos seguem sem serifa, que é o que mantém a
+    leitura densa dos portais funcionando.
+  */
   .heading-xl {
-    @apply text-3xl font-semibold leading-[1.15] tracking-[-0.02em] text-fg sm:text-4xl;
+    @apply font-display text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-fg sm:text-4xl;
   }
 
   .heading-lg {
-    @apply text-xl font-semibold tracking-[-0.015em] text-fg;
+    @apply font-display text-xl font-medium tracking-[-0.015em] text-fg;
   }
 
   .heading-md {

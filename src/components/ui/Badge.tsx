@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
-import type { StatusPagamento } from "@/types";
+import type { NivelKata, StatusPagamento } from "@/types";
 
 type Tone = "neutral" | "accent" | "ok" | "warn" | "bad";
 
@@ -26,6 +26,41 @@ export function Badge({
       className={cn(
         "inline-flex items-center gap-1.5 rounded border px-1.5 py-0.5 text-2xs font-medium",
         TONES[tone],
+        className,
+      )}
+    >
+      {children}
+    </span>
+  );
+}
+
+/**
+ * Tag do nível de dificuldade do kata.
+ *
+ * O acervo traz cinco rótulos ("Iniciante", "Intermediário-Avançado",
+ * "Especialista"...), mas eles se agrupam em três degraus reais — que é o que
+ * a cor comunica. O texto continua sendo o rótulo original, mais preciso.
+ */
+const NIVEL_TOM: Record<NivelKata, string> = {
+  basico: "border-status-ok/40 bg-status-ok/10 text-status-ok",
+  intermediario: "border-status-warn/40 bg-status-warn/10 text-status-warn",
+  avancado: "border-accent/40 bg-accent/10 text-accent",
+};
+
+export function NivelTag({
+  nivel,
+  children,
+  className,
+}: {
+  nivel: NivelKata;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <span
+      className={cn(
+        "inline-flex items-center whitespace-nowrap rounded-full border px-2 py-0.5 text-2xs font-medium",
+        NIVEL_TOM[nivel],
         className,
       )}
     >

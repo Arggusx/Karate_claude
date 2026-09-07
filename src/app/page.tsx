@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Footer } from "@/components/layout/Footer";
 import { HeaderLanding } from "@/components/layout/HeaderLanding";
+import { HeroLanding } from "@/components/layout/HeroLanding";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/Card";
@@ -16,15 +17,8 @@ import {
   getTecnicas,
 } from "@/services/dataService";
 
-const ESTRUTURA = [
-  { label: "Tatame oficial", valor: "180 m²" },
-  { label: "Turmas", valor: "2" },
-  { label: "Alunos ativos", valor: "120+" },
-  { label: "Faixas pretas formadas", valor: "38" },
-];
-
 const INCLUSO = [
-  "Duas aulas por semana, terça e quinta",
+  "Três aulas por semana, terça, quinta e sexta",
   "Acesso integral ao portal de estudos",
   "Acompanhamento individual do sensei",
   "Exames de graduação sem custo extra",
@@ -52,40 +46,21 @@ export default async function LandingPage() {
       <HeaderLanding />
 
       <main className="flex-1">
-        {/* Hero */}
+        <HeroLanding katas={katas.length} tecnicas={tecnicas.length} />
+
+        {/* Turmas e horários */}
         <section className="border-b border-line bg-surface">
-          <div className="section grid gap-8 py-14 lg:grid-cols-[1.25fr_1fr] lg:py-20">
-            <div>
+          <div className="section grid gap-8 py-14 lg:grid-cols-[1.25fr_1fr] lg:py-16">
+            <div className="max-w-xl">
               <Badge tone="accent">Dojo Shotokan · desde 1998</Badge>
-              <h1 className="heading-xl mt-4 text-4xl sm:text-5xl">
-                O caminho da mão vazia, ensinado do jeito certo.
-              </h1>
-              <p className="body-muted mt-4 max-w-xl text-base">
-                Academia de Karatê Shotokan com linhagem, método e
-                acompanhamento individual — somada a um portal de estudos com{" "}
-                {katas.length} katas detalhados e {tecnicas.length} técnicas
-                catalogadas.
+              <h2 className="mt-4 font-display text-3xl font-normal leading-tight tracking-[-0.02em] text-fg">
+                Duas turmas, um mesmo método
+              </h2>
+              <p className="body-muted mt-3 text-sm">
+                A divisão é por faixa etária, não por nível: a técnica é a
+                mesma, o ritmo é que muda. A primeira aula é experimental e
+                gratuita.
               </p>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                <ButtonLink href="#matricula">Comece a treinar</ButtonLink>
-                <ButtonLink href="/estudos" variant="secondary">
-                  Explorar o portal de estudos
-                </ButtonLink>
-              </div>
-
-              <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
-                {ESTRUTURA.map((item) => (
-                  <div key={item.label}>
-                    <dd className="text-xl font-semibold tabular-nums tracking-[-0.02em] text-fg">
-                      {item.valor}
-                    </dd>
-                    <dt className="mt-0.5 text-2xs uppercase tracking-[0.08em] text-muted">
-                      {item.label}
-                    </dt>
-                  </div>
-                ))}
-              </dl>
             </div>
 
             {/* Horários */}
@@ -150,7 +125,12 @@ export default async function LandingPage() {
         </section>
 
         {/* Pilares */}
-        <section id="pilares" className="section scroll-mt-16 py-12">
+        {/* Faixa separando os benefícios (acima) da apresentação do dojo. */}
+        <section
+          id="pilares"
+          className="faixa-destacada scroll-mt-16 py-12"
+        >
+          <div className="section">
           <SectionHeading
             eyebrow="Método"
             titulo="Kihon, Kata e Kumite"
@@ -175,6 +155,7 @@ export default async function LandingPage() {
                 </p>
               </article>
             ))}
+          </div>
           </div>
         </section>
 

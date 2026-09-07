@@ -8,10 +8,10 @@ import {
   CampoUsuario,
   type StatusUsuario,
 } from "@/components/portal/CampoUsuario";
+import { HeroPagina } from "@/components/layout/HeroPagina";
 import { ProfessorDetalheModal } from "@/components/portal/DetalheModal";
 import { DiarioPanel } from "@/components/portal/DiarioPanel";
 import { FinanceiroPanel } from "@/components/portal/FinanceiroPanel";
-import { ResumoAcademia } from "@/components/portal/ResumoAcademia";
 import { TurmasPanel } from "@/components/portal/TurmasPanel";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -49,22 +49,25 @@ function ConteudoAdmin() {
   const [aba, setAba] = useState<Aba>("turmas");
 
   return (
-    <div className="section space-y-4">
-      <header className="flex flex-wrap items-end justify-between gap-3 border-b border-line pb-4">
-        <div>
-          <p className="eyebrow">Portal do Admin</p>
-          <h1 className="heading-lg mt-1">Administração do dojo</h1>
-          <p className="mt-1 text-xs text-muted">
-            Tudo que o professor vê, mais o cadastro de professores e a
-            distribuição de turmas entre eles.
-          </p>
+    <>
+      <HeroPagina
+        compacto
+        sobretitulo="Portal do Admin"
+        titulo="Administração do dojo"
+        descricao="Tudo que o professor vê, mais o cadastro de professores e a distribuição de turmas entre eles."
+        imagem="/imagens/dojo.jpg"
+        acao={<Badge tone="accent">Acesso total</Badge>}
+      />
+
+      {/* Ver comentário em portal/professor: a faixa segura a barra de abas,
+          separando a abertura da área de trabalho. */}
+      <div className="faixa-destacada py-3">
+        <div className="section">
+          <SegmentedControl options={ABAS} value={aba} onChange={setAba} />
         </div>
-        <Badge tone="accent">Acesso total</Badge>
-      </header>
+      </div>
 
-      <ResumoAcademia comFinanceiro />
-
-      <SegmentedControl options={ABAS} value={aba} onChange={setAba} />
+      <div className="section space-y-4 py-6">
 
       {aba === "turmas" ? (
         <TurmasPanel />
@@ -77,7 +80,8 @@ function ConteudoAdmin() {
       ) : (
         <CadastroAlunoPanel />
       )}
-    </div>
+      </div>
+    </>
   );
 }
 

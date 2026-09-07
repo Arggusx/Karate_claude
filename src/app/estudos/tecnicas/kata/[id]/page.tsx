@@ -36,7 +36,7 @@ export default async function KataPage({
   const { anterior, proximo } = getKataVizinhos(kata.id);
 
   return (
-    <div className="section">
+    <div className="section pt-10">
       <KataDetailView kata={kata} anterior={anterior} proximo={proximo} />
     </div>
   );

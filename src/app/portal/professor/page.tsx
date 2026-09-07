@@ -4,9 +4,9 @@ import { useState } from "react";
 import { CadastroAlunoPanel } from "@/components/portal/CadastroAlunoPanel";
 import { DiarioPanel } from "@/components/portal/DiarioPanel";
 import { FinanceiroPanel } from "@/components/portal/FinanceiroPanel";
-import { ResumoAcademia } from "@/components/portal/ResumoAcademia";
 import { TurmasPanel } from "@/components/portal/TurmasPanel";
 import { GuardaPortal } from "@/components/portal/GuardaPortal";
+import { HeroPagina } from "@/components/layout/HeroPagina";
 import { Badge } from "@/components/ui/Badge";
 import { SegmentedControl } from "@/components/ui/Tabs";
 import { useAcademia } from "@/lib/academiaStore";
@@ -35,21 +35,32 @@ function ConteudoProfessor() {
   const professor = professores.find((item) => item.id === sessao?.id);
 
   return (
-    <div className="section space-y-4">
-      <header className="flex flex-wrap items-end justify-between gap-3 border-b border-line pb-4">
-        <div>
-          <p className="eyebrow">Portal do Professor</p>
-          <h1 className="heading-lg mt-1">{professor?.nome ?? sessao?.nome}</h1>
-          <p className="mt-1 text-xs text-muted">
-            Turmas, plano de aulas, chamada e cadastro de alunos.
-          </p>
+    <>
+      <HeroPagina
+        compacto
+        sobretitulo="Portal do Professor"
+        titulo={professor?.nome ?? sessao?.nome ?? ""}
+        descricao="Turmas, plano de aulas, chamada e cadastro de alunos."
+        imagem="/imagens/dojo.jpg"
+        acao={
+          professor ? (
+            <Badge tone="accent">{professor.graduacao}</Badge>
+          ) : undefined
+        }
+      />
+
+      {/*
+        A faixa segura a barra de abas, e não o conteúdo: o painel muda a cada
+        aba, então não existe fluxo vertical de seções para alternar. A única
+        fronteira estável aqui é entre a abertura e a área de trabalho.
+      */}
+      <div className="faixa-destacada py-3">
+        <div className="section">
+          <SegmentedControl options={ABAS} value={aba} onChange={setAba} />
         </div>
-        {professor ? <Badge tone="accent">{professor.graduacao}</Badge> : null}
-      </header>
+      </div>
 
-      <ResumoAcademia />
-
-      <SegmentedControl options={ABAS} value={aba} onChange={setAba} />
+      <div className="section space-y-4 py-6">
 
       {aba === "turmas" ? (
         <TurmasPanel />
@@ -60,6 +71,7 @@ function ConteudoProfessor() {
       ) : (
         <CadastroAlunoPanel />
       )}
-    </div>
+      </div>
+    </>
   );
 }

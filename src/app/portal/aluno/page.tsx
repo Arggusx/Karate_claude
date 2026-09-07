@@ -6,6 +6,7 @@ import { Badge, BeltBadge, StatusBadge } from "@/components/ui/Badge";
 import { Button, ButtonLink } from "@/components/ui/Button";
 import { CheckoutModal } from "@/components/portal/CheckoutModal";
 import { GuardaPortal } from "@/components/portal/GuardaPortal";
+import { HeroPagina } from "@/components/layout/HeroPagina";
 import { useAcademia } from "@/lib/academiaStore";
 import {
   formatarReais,
@@ -53,15 +54,16 @@ function ConteudoAluno() {
   const programa = programaDaFaixa(aluno.faixa);
 
   return (
-    <div className="section space-y-4">
-      <header className="flex flex-wrap items-end justify-between gap-3 border-b border-line pb-4">
-        <div>
-          <p className="eyebrow">Portal do Aluno</p>
-          <h1 className="heading-lg mt-1">Olá, {aluno.nome.split(" ")[0]}</h1>
-        </div>
-        <StatusBadge status={aluno.status} />
-      </header>
+    <>
+      <HeroPagina
+        compacto
+        sobretitulo="Portal do Aluno"
+        titulo={`Olá, ${aluno.nome.split(" ")[0]}`}
+        imagem="/imagens/faixa.jpg"
+        acao={<StatusBadge status={aluno.status} />}
+      />
 
+      <div className="section space-y-4 py-6">
       {/* Identificação e progresso */}
       <section className="card p-4">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
@@ -103,8 +105,13 @@ function ConteudoAluno() {
         </div>
       </section>
 
-      {/* Quadro de horários e conteúdo das aulas */}
+      </div>
+
+      {/* Quadro de horários — faixa separando a identificação do aluno
+          (acima) do bloco financeiro e de estudo (abaixo). */}
       {turma ? (
+        <div className="faixa-destacada py-8">
+          <div className="section">
         <section className="card">
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line px-4 py-2.5">
             <div>
@@ -156,8 +163,11 @@ function ConteudoAluno() {
             ajustado pelo professor a cada semana.
           </p>
         </section>
+          </div>
+        </div>
       ) : null}
 
+      <div className="section space-y-4 py-6">
       {/* Financeiro, programa e atalhos */}
       <section className="grid gap-3 lg:grid-cols-3">
         <div className="card">
@@ -245,6 +255,7 @@ function ConteudoAluno() {
         usuario={aluno.usuario}
         valorCentavos={mensalidadeCentavos}
       />
-    </div>
+      </div>
+    </>
   );
 }

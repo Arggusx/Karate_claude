@@ -41,6 +41,10 @@ const config: Config = {
       fontFamily: {
         // Serifada só para títulos de vitrine; a interface segue sem serifa.
         display: ["var(--fonte-display)", "Georgia", "serif"],
+        // Pincel, só para o nome da marca.
+        marca: ["var(--fonte-marca)", "cursive"],
+        // Pincel japonês, padrão de todo kanji.
+        kanji: ["var(--fonte-kanji)", "serif"],
       },
       keyframes: {
         "fade-in": {

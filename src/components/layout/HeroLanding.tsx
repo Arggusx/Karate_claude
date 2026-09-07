@@ -3,11 +3,11 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ButtonLink } from "@/components/ui/Button";
-import { Tora } from "@/components/ui/Tora";
+import { LuaVermelha } from "@/components/ui/LuaVermelha";
 
 /**
- * Abertura da landing: foto sangrando, kanji 空手 em escala de cartaz e o
- * emblema do tigre ao fundo.
+ * Abertura da landing: foto sangrando, kanji 空手 em escala de cartaz e a
+ * lua vermelha ao fundo.
  *
  * A entrada é animada com GSAP, mas nunca segura o conteúdo: se a animação não
  * puder rodar, o texto aparece do mesmo jeito.
@@ -107,10 +107,10 @@ export function HeroLanding({
           { ...assentar, duration: 0.6, stagger: 0.08 },
           "-=0.45",
         )
-        // Nem o tigre anima opacidade: quando a timeline congela, ele some
-        // por completo. Só escala — travado em 0,92 ninguém percebe.
+        // A lua também não anima opacidade: se a timeline congelasse, ela
+        // sumiria. Só escala — travada em 0,92 ninguém percebe.
         .fromTo(
-          "[data-hero='tora']",
+          "[data-hero='lua']",
           { scale: 0.92 },
           { scale: 1, duration: 1.4 },
           0.2,
@@ -138,22 +138,20 @@ export function HeroLanding({
         className="absolute inset-0 -z-10 bg-[radial-gradient(120%_80%_at_15%_20%,rgba(220,38,38,0.16),transparent_60%),linear-gradient(100deg,#0B0B0D_35%,rgba(11,11,13,0.72)_70%,rgba(11,11,13,0.45)_100%)]"
       />
 
-      {/*
-        Estava com -right-20: um quinto do emblema ficava cortado fora da tela.
-        Agora fica inteiro, alinhado com a margem direita do conteúdo.
-      */}
+      {/* 224px + 40% = 314px. Mesma posição de antes: inteira dentro da tela,
+          alinhada com a margem direita do conteúdo. */}
       <div
-        data-hero="tora"
+        data-hero="lua"
         aria-hidden
         className="pointer-events-none absolute right-8 top-1/2 -z-10 hidden -translate-y-1/2 lg:block xl:right-16"
       >
-        <Tora className="h-56 w-56 opacity-[0.14] grayscale" />
+        <LuaVermelha className="h-[314px] w-[314px] opacity-40" />
       </div>
 
       <div className="section relative py-24 sm:py-32 lg:py-40">
         <p
           data-hero="kanji"
-          className="font-display text-[clamp(4.5rem,16vw,11rem)] font-medium leading-[0.85] tracking-[-0.04em] text-accent"
+          className="font-kanji text-[clamp(4.5rem,16vw,11rem)] leading-[0.85] tracking-[-0.04em] text-accent"
         >
           空手
         </p>

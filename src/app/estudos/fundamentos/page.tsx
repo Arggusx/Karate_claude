@@ -61,7 +61,7 @@ export default function FundamentosPage() {
                 />
                 <h3 className="min-w-0 flex-1 truncate text-2xs font-semibold text-fg">
                   {faixa.faixa}
-                  <span className="ml-1 font-normal text-subtle">
+                  <span className="ml-1 font-kanji font-normal text-subtle">
                     {faixa.jp}
                   </span>
                 </h3>
@@ -166,7 +166,7 @@ export default function FundamentosPage() {
             <article key={item.nome} className="card p-4">
               <div className="flex items-baseline justify-between gap-2">
                 <h3 className="heading-md">{item.nome}</h3>
-                <span className="text-xs text-subtle">{item.kanji}</span>
+                <span className="font-kanji text-sm text-subtle">{item.kanji}</span>
               </div>
               <p className="mt-0.5 text-xs font-medium text-accent">
                 {item.traducao}

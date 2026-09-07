@@ -73,7 +73,7 @@ export function KataTable({
                     {kata.nome}
                   </Link>
                   {kata.kanji ? (
-                    <span className="ml-1.5 text-2xs text-subtle">
+                    <span className="ml-1.5 font-kanji text-xs text-subtle">
                       {kata.kanji}
                     </span>
                   ) : null}
@@ -140,7 +140,7 @@ function CardKata({
           <span className="block truncate text-sm font-medium text-fg">
             {kata.nome}
             {kata.kanji ? (
-              <span className="ml-1.5 text-2xs font-normal text-subtle">
+              <span className="ml-1.5 font-kanji text-xs font-normal text-subtle">
                 {kata.kanji}
               </span>
             ) : null}

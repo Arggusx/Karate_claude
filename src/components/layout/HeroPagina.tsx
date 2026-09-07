@@ -63,7 +63,7 @@ export function HeroPagina({
       {kanji ? (
         <span
           aria-hidden
-          className="pointer-events-none absolute right-6 top-1/2 -z-10 hidden -translate-y-1/2 select-none font-display text-[9rem] leading-none text-white/[0.06] lg:block"
+          className="pointer-events-none absolute right-6 top-1/2 -z-10 hidden -translate-y-1/2 select-none font-kanji text-[9rem] leading-none text-white/[0.06] lg:block"
         >
           {kanji}
         </span>

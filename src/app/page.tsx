@@ -52,7 +52,9 @@ export default async function LandingPage() {
         <section className="border-b border-line bg-surface">
           <div className="section grid gap-8 py-14 lg:grid-cols-[1.25fr_1fr] lg:py-16">
             <div className="max-w-xl">
-              <Badge tone="accent">Dojo Shotokan · desde 1998</Badge>
+              <Badge tone="accent">
+                Academia Tigre de Karatê · desde 1998
+              </Badge>
               <h2 className="mt-4 font-display text-3xl font-normal leading-tight tracking-[-0.02em] text-fg">
                 Duas turmas, um mesmo método
               </h2>
@@ -142,7 +144,7 @@ export default async function LandingPage() {
               <article key={pilar.nome} className="card p-4">
                 <div className="flex items-baseline justify-between gap-2">
                   <h3 className="heading-md">{pilar.nome}</h3>
-                  <span className="text-xs text-subtle">{pilar.kanji}</span>
+                  <span className="font-kanji text-sm text-subtle">{pilar.kanji}</span>
                 </div>
                 <p className="mt-0.5 text-xs font-medium text-accent">
                   {pilar.pt}

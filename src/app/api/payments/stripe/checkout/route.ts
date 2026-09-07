@@ -117,7 +117,7 @@ export async function POST(request: Request) {
             currency: "brl",
             unit_amount: cobranca.valor_centavos,
             product_data: {
-              name: `Mensalidade ${competencia.slice(0, 7)} — Portal Shotokan`,
+              name: `Mensalidade ${competencia.slice(0, 7)} — Torakan`,
             },
           },
         },

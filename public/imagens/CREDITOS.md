@@ -11,20 +11,8 @@ registrar a origem aqui evita dúvida futura sobre a procedência de cada arquiv
 | `dojo.jpg` | [Unsplash — "Man doing karate stunts on gym"](https://unsplash.com/photos/man-doing-karate-stunts-on-gym-ngd2uo1eyZg) | [Unsplash License](https://unsplash.com/license) |
 | `historia.jpg` | [Unsplash — pagode em rua de Kyoto ao entardecer](https://unsplash.com/photos/SlIl9eZjWUc) | [Unsplash License](https://unsplash.com/license) |
 | `estudos.jpg` | [Unsplash — pagode Chureito e o Monte Fuji](https://unsplash.com/photos/n--CMLApjfI) | [Unsplash License](https://unsplash.com/license) |
-| `tora-no-maki.png` | [Wikimedia Commons — Shotokan-Karate-Tiger.png](https://commons.wikimedia.org/wiki/File:Shotokan-Karate-Tiger.png), autor Mistashoto | **CC BY-SA 3.0 / GFDL — exige atribuição** |
+| `marca-torakan.png` | **Arte do próprio cliente**, gerada por ele com IA. Recorte e remoção de fundo feitos aqui. Também origina `src/app/icon.png` e `src/app/apple-icon.png`. | Própria — sem restrição |
 
-## Atenção ao Tora no Maki
-
-Duas ressalvas sobre `tora-no-maki.png`:
-
-1. **A licença exige atribuição.** CC BY-SA, diferente das fotos da Unsplash.
-   Creditar em uma página de créditos do site, ou no rodapé, atende à exigência.
-2. **O emblema é a arte de Hoan Kosugi (1922) e funciona como marca de JKA e
-   de outras federações Shotokan.** Exibi-lo num site comercial sugere filiação.
-   Confirme que a academia tem o vínculo que o site afirma antes de publicar.
-
-O arquivo tem 119x120: serve para marca-d'água e emblema pequeno, mas perde
-nitidez acima de ~240px.
 
 ## Ao adicionar uma imagem nova
 

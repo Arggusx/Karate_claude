@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MarcaTorakan } from "@/components/ui/MarcaTorakan";
 import {
   MenuMobile,
   MenuMobileLink,
@@ -21,11 +22,9 @@ export function HeaderLanding() {
       <div className="section flex h-14 items-center justify-between gap-4">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">
-            <span className="flex h-6 w-6 items-center justify-center rounded bg-accent text-2xs font-semibold text-white">
-              松
-            </span>
-            <span className="text-sm font-semibold tracking-[-0.01em] text-fg">
-              Portal Shotokan
+            <MarcaTorakan className="h-10 w-10" />
+            <span className="font-marca text-2xl leading-none text-accent">
+              Torakan
             </span>
           </Link>
 
@@ -44,7 +43,7 @@ export function HeaderLanding() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <ButtonLink
+          {/* <ButtonLink
             href="/login"
             variant="secondary"
             size="sm"
@@ -54,7 +53,7 @@ export function HeaderLanding() {
           </ButtonLink>
           <ButtonLink href="#matricula" size="sm" className="hidden sm:inline-flex">
             Matricule-se
-          </ButtonLink>
+          </ButtonLink> */}
 
           <MenuMobile className="lg:hidden" rotulo="Abrir menu do site">
             {LINKS.map((link) => (

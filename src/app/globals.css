@@ -190,3 +190,90 @@
     height: calc(1.15rem + 0.5rem);
   }
 }
+
+/*
+  Quadros da virada de página. Ficam fora de @layer porque animações de
+  ::view-transition rodam na camada de transição do navegador, não na cascata
+  normal — dentro de um @layer o Tailwind poderia removê-las por não achar uso.
+*/
+@keyframes folha-sai {
+  from {
+    transform: perspective(1600px) rotateY(0deg);
+    filter: brightness(1);
+  }
+  to {
+    transform: perspective(1600px) rotateY(-92deg);
+    filter: brightness(0.45);
+  }
+}
+
+@keyframes folha-entra {
+  from {
+    transform: perspective(1600px) rotateY(88deg);
+    filter: brightness(0.5);
+  }
+  to {
+    transform: perspective(1600px) rotateY(0deg);
+    filter: brightness(1);
+  }
+}
+
+@keyframes folha-sai-tras {
+  from {
+    transform: perspective(1600px) rotateY(0deg);
+    filter: brightness(1);
+  }
+  to {
+    transform: perspective(1600px) rotateY(92deg);
+    filter: brightness(0.45);
+  }
+}
+
+@keyframes folha-entra-tras {
+  from {
+    transform: perspective(1600px) rotateY(-88deg);
+    filter: brightness(0.5);
+  }
+  to {
+    transform: perspective(1600px) rotateY(0deg);
+    filter: brightness(1);
+  }
+}
+
+/*
+  Virada de página entre katas.
+
+  Os pseudo-elementos ::view-transition são do documento, não do React — por
+  isso ficam no nível raiz da folha, fora de @layer, e o sentido chega por um
+  atributo no <html> que o componente de navegação escreve antes de disparar
+  a transição.
+
+  A folha gira sobre a lombada (transform-origin na borda) com perspectiva, e
+  escurece enquanto vira, como papel saindo da luz. A que entra vem do lado
+  oposto. Sem data-virada nada se aplica: navegação comum segue sem animação.
+*/
+html[data-virada]::view-transition-old(root) {
+  animation: 420ms cubic-bezier(0.4, 0, 0.2, 1) both folha-sai;
+  transform-origin: left center;
+  z-index: 2;
+}
+
+html[data-virada]::view-transition-new(root) {
+  animation: 420ms cubic-bezier(0.4, 0, 0.2, 1) both folha-entra;
+  transform-origin: left center;
+  z-index: 1;
+}
+
+/* Voltando: a lombada troca de lado e o giro inverte. */
+html[data-virada="tras"]::view-transition-old(root),
+html[data-virada="tras"]::view-transition-new(root) {
+  transform-origin: right center;
+}
+
+html[data-virada="tras"]::view-transition-old(root) {
+  animation-name: folha-sai-tras;
+}
+
+html[data-virada="tras"]::view-transition-new(root) {
+  animation-name: folha-entra-tras;
+}

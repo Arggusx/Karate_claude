@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { Embusen } from "@/components/tecnicas/Embusen";
 import { EmbusenImage } from "@/components/tecnicas/EmbusenImage";
+import { NavegacaoKata } from "@/components/tecnicas/NavegacaoKata";
 import { Badge, BeltBadge } from "@/components/ui/Badge";
 import { listarDestaques } from "@/services/dataService";
+import { tracadoDoKata } from "@/services/embusen";
 import type { KataCompleto } from "@/types";
 
 export function KataDetailView({
@@ -13,6 +16,8 @@ export function KataDetailView({
   anterior: KataCompleto | null;
   proximo: KataCompleto | null;
 }) {
+  const tracado = tracadoDoKata(kata.id);
+
   const ficha = [
     { label: "Movimentos", valor: String(kata.quantidadeMovimentos) },
     { label: "Kiais", valor: kata.posicoesKiai },
@@ -100,25 +105,31 @@ export function KataDetailView({
           </div>
         </section>
 
-        {/* Embusen */}
-        <section className="card">
-          <div className="flex items-center justify-between border-b border-line px-4 py-2.5">
-            <h2 className="heading-md">Embusen</h2>
-            <span className="text-2xs text-subtle">Linha de atuação</span>
-          </div>
-          <div className="grid grid-cols-2 gap-3 p-4">
-            <EmbusenImage
-              src={kata.embusenOficialImg}
-              alt={`Embusen oficial do kata ${kata.nome}`}
-              legenda="Oficial"
-            />
-            <EmbusenImage
-              src={kata.embusenCompletoImg}
-              alt={`Embusen completo do kata ${kata.nome}`}
-              legenda="Completo"
-            />
-          </div>
-        </section>
+        {/*
+          Enquanto o kata não tem traçado em coordenadas, ficam os dois espaços
+          reservados para as imagens. Quando tem, o diagrama interativo entra no
+          lugar — ele faz o que as duas imagens fariam, e ainda anda.
+        */}
+        {tracado ? null : (
+          <section className="card">
+            <div className="flex items-center justify-between border-b border-line px-4 py-2.5">
+              <h2 className="heading-md">Embusen</h2>
+              <span className="text-2xs text-subtle">Linha de atuação</span>
+            </div>
+            <div className="grid grid-cols-2 gap-3 p-4">
+              <EmbusenImage
+                src={kata.embusenOficialImg}
+                alt={`Embusen oficial do kata ${kata.nome}`}
+                legenda="Oficial"
+              />
+              <EmbusenImage
+                src={kata.embusenCompletoImg}
+                alt={`Embusen completo do kata ${kata.nome}`}
+                legenda="Completo"
+              />
+            </div>
+          </section>
+        )}
       </div>
 
       {/* Destaques + bunkai */}
@@ -158,6 +169,11 @@ export function KataDetailView({
         </section>
       </div>
 
+      {/* Embusen — só aparece para os katas com traçado conferido. */}
+      {tracado ? (
+        <Embusen tracado={tracado} movimentos={kata.movimentos} />
+      ) : null}
+
       {/* Sequência de movimentos */}
       <section className="card">
         <div className="flex items-center justify-between border-b border-line px-4 py-2.5">
@@ -178,46 +194,8 @@ export function KataDetailView({
         </ol>
       </section>
 
-      {/* Navegação sequencial */}
-      <nav className="grid gap-3 sm:grid-cols-2">
-        {anterior ? (
-          <Link
-            href={`/estudos/tecnicas/kata/${anterior.id}`}
-            className="card card-hover px-4 py-3"
-          >
-            <p className="text-2xs text-muted">← Kata anterior</p>
-            <p className="mt-0.5 text-sm font-semibold text-fg">
-              {anterior.nome}
-            </p>
-          </Link>
-        ) : (
-          <div className="card px-4 py-3 opacity-50">
-            <p className="text-2xs text-muted">← Kata anterior</p>
-            <p className="mt-0.5 text-sm font-semibold text-fg">
-              Início da sequência
-            </p>
-          </div>
-        )}
-
-        {proximo ? (
-          <Link
-            href={`/estudos/tecnicas/kata/${proximo.id}`}
-            className="card card-hover px-4 py-3 text-right"
-          >
-            <p className="text-2xs text-muted">Próximo kata →</p>
-            <p className="mt-0.5 text-sm font-semibold text-fg">
-              {proximo.nome}
-            </p>
-          </Link>
-        ) : (
-          <div className="card px-4 py-3 text-right opacity-50">
-            <p className="text-2xs text-muted">Próximo kata →</p>
-            <p className="mt-0.5 text-sm font-semibold text-fg">
-              Fim da sequência
-            </p>
-          </div>
-        )}
-      </nav>
+      {/* Navegação sequencial, com virada de página. */}
+      <NavegacaoKata anterior={anterior} proximo={proximo} />
     </div>
   );
 }

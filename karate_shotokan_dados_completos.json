@@ -80,6 +80,14 @@
       "detail": "Aos 53 anos, Funakoshi é escolhido para representar Okinawa na 1ª Exposição Nacional de Educação Física, em Tóquio. Sua demonstração impressiona Jigoro Kano (fundador do Judô), que o convida ao Kodokan. Funakoshi decide ficar — abandona o cargo de professor, deixa a família em Okinawa e vive em alojamentos de estudantes, dando aulas em troca de hospedagem. Começa a publicar livros para difundir a arte."
     },
     {
+      "year": "1930—1940",
+      "title": "Os clubes universitários",
+      "kanjiTranslate": "DAIGAKU",
+      "kanji": "大学",
+      "text": "O karatê entra em Keio, Waseda e Takushoku — e deixa de ser demonstração para virar método de ensino.",
+      "detail": "Entre a demonstração de 1922 e a guerra, o karatê se enraíza nas universidades de Tóquio. Keio abre o primeiro clube em 1924; Waseda, Takushoku e outras seguem. É uma mudança de natureza, não só de público: para ensinar turmas grandes de estudantes, Funakoshi e seus assistentes precisam organizar o que até então se transmitia de mestre para aluno — sequências, graduações, terminologia. Foi dessas salas que saiu a geração inteira que fundaria a JKA: Nakayama entra no clube da Takushoku em 1932 e vira aluno de Funakoshi ali."
+    },
+    {
       "year": "1935",
       "title": "Karatê muda de ideograma",
       "kanjiTranslate": "Mão Vazia",
@@ -109,7 +117,15 @@
       "kanjiTranslate": "JKA",
       "kanji": "協会",
       "text": "Fundada a Japan Karate Association, que populariza o estilo no mundo.",
-      "detail": "Discípulos diretos de Funakoshi — entre eles Masatoshi Nakayama — fundam a Nihon Karate Kyōkai (JKA) para preservar e expandir o ensino. Nakayama sistematiza o currículo, cria as primeiras regras de competição (kumite shiai, 1957) e implementa o lendário 'curso de instrutores', programa de 3 anos que forma os mestres responsáveis por levar o Shotokan ao mundo: Kanazawa, Enoeda, Nishiyama, Kase, Asai, Mikami…"
+      "detail": "Discípulos diretos de Funakoshi — entre eles Masatoshi Nakayama — fundam a Nihon Karate Kyōkai (JKA) para preservar e expandir o ensino. Aqui nasce a maior divergência da história do estilo: Funakoshi era contrário à competição, que via como desvio do Budō. Nakayama e a geração da JKA seguem por outro caminho e criam as regras de kata e kumite (shiai, 1957) e implementa o lendário 'curso de instrutores', programa de 3 anos que forma os mestres responsáveis por levar o Shotokan ao mundo: Kanazawa, Enoeda, Nishiyama, Kase, Asai, Mikami…"
+    },
+    {
+      "year": "1955",
+      "title": "O Shotokan chega ao Brasil",
+      "kanjiTranslate": "BURAJIRU",
+      "kanji": "伯国",
+      "text": "Mitsusuke Harada desembarca em São Paulo e abre a primeira porta do Shotokan no país.",
+      "detail": "Harada chega a São Paulo em 1955 para trabalhar no Banco América do Sul e recebe, no mesmo ano, o 5º Dan das mãos de Funakoshi — seguia a linha Shotokai, não a JKA. Juichi Sagara chega em 1957 e funda a Federação Paulista de Karatê em 1959; Sadamu Uriu e Yasutaka Tanaka desembarcam em 1958; Yoshizo Machida aporta em Belém em 1968 e transforma o Pará num polo do estilo; Taketo Okuda vem em 1972, o primeiro enviado oficialmente pela JKA como instrutor-chefe no país. É dessas raízes que descende a maior parte das academias de Shotokan no Brasil."
     },
     {
       "year": "1957",
@@ -117,7 +133,7 @@
       "kanjiTranslate": "Fim",
       "kanji": "終焉",
       "text": "Aos 88 anos, o pai do karatê moderno parte — mas seu legado já alcança os cinco continentes.",
-      "detail": "Funakoshi morre em 26 de abril de 1957, em Tóquio. Sua autobiografia 'Karate-Dō: Meu Modo de Vida' já é leitura obrigatória; os Niju Kun (20 preceitos) já foram esculpidos em pedra; seus discípulos já partiram para abrir dojos da Alemanha aos Estados Unidos, da África do Sul à América do Sul. Em seu túmulo, em Kamakura, lê-se: 空手に先手なし — 'No karatê, não existe primeiro ataque'."
+      "detail": "Funakoshi morre em 26 de abril de 1957, em Tóquio. Sua autobiografia 'Karate-Dō: Meu Modo de Vida' já é leitura obrigatória; os Niju Kun (20 preceitos) já foram esculpidos em pedra; seus discípulos já partiram para abrir dojos da Alemanha aos Estados Unidos, da África do Sul à América do Sul. Em seu túmulo, em Kamakura, lê-se: 空手に先手なし — 'No karatê, não existe primeiro ataque'. No mesmo ano, a JKA realiza o 1º Campeonato Nacional de Kata e Kumite — a competição que ele rejeitava começa no ano em que ele parte."
     },
     {
       "year": "1960s-80s",
